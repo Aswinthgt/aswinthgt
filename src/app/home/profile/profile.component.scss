@@ -1,0 +1,25 @@
+.name {
+    color: var(--yellow-color);
+}
+
+.image-back {
+    mix-blend-mode: multiply;
+    max-width: 100%;
+    height: auto;
+}
+
+.contact {
+    margin-top: 2dvw;
+}
+
+.contact-button {
+    border: 0.35dvw solid var(--yellow-color);
+    color: var(--yellow-color);
+    border-radius: 0.6dvw;
+    padding: 1dvw 3dvw;
+    font-size: 2dvw;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    box-shadow: none;
+}

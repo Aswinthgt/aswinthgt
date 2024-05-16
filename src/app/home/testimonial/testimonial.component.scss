@@ -1,0 +1,80 @@
+.container-testimonial {
+    margin-top: 7dvw;
+}
+
+.heading {
+    font-size: 3.8dvw;
+    font-weight: 500;
+}
+
+.yellow-line {
+    background-color: var(--yellow-color);
+    border-radius: 0.4dvw;
+    height: 0.2dvw;
+}
+
+.line {
+    width: 100%;
+    margin-top: 2.3dvw;
+}
+
+.content {
+    margin-top: 1.2dvw;
+    font-weight: 400;
+    font-size: 1.7dvw;
+    line-height: 2dvw;
+    color: var(--secondary-color);
+}
+
+.color {
+    color: var(--yellow-color);
+}
+
+.by-name {
+    font-size: 1.6dvw;
+    line-height: 3dvw;
+}
+
+.by-position {
+    width: 2dvw;
+}
+
+.by-position-content {
+    font-size: 1.4dvw;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+.right {
+    width: 100%;
+    height: auto;
+}
+
+.right-back {
+    background-color: var(--yellow-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.image {
+    max-width: 50%;
+    transform-origin: bottom;
+    transform: scale(1.5);
+}
+
+
+@media screen and (max-width: 768px) {
+    .content{
+        font-size: 2.5dvw;
+        line-height: 3.5dvw;
+    }
+
+    .by-name{
+        font-size: 2.2dvw;
+    }
+    .by-position-content {
+        font-size: 2.5dvw;
+    }
+
+
+}

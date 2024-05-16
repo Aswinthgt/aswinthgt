@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-12 d-flex justify-content-center">
+        <button (click)="goTo()" matRipple class="button mx-2 font-alegreya-sans"><mat-icon
+                fontIcon="web"></mat-icon>View My CV</button>
+        <button (click)="download()" matRipple class="button mx-2 font-alegreya-sans">
+            <mat-icon [ngClass]="{'rotate-inifinite': isLoading}"
+                [fontIcon]="isLoading ? 'autorenew' : 'download'">
+            </mat-icon>
+            Download Resume</button>
+    </div>
+</div>

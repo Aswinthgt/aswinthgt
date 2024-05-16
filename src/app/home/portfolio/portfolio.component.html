@@ -1,0 +1,29 @@
+<div class="row">
+
+    <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <span class="heading font-roboto-slab">Portfolio</span>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="row d-flex justify-content-center">
+            @for (content of portfolioData; track $index) {
+            <div class="col-6 col-md-4 mt-5">
+                <div class="image-container">
+                    <img [src]="content.backGroundImage" alt="Image">
+                    <div class="overlay">
+                        <div class="content">
+                            <h2 class="head">{{content.head}}</h2>
+                            <p class="body">{{textShort(content.body)}}</p>
+                            <button (click)="goTo(content.url)" matRipple class="d-inline-flex align-items-center">See More&nbsp;&nbsp; <mat-icon
+                                    fontIcon="east"></mat-icon> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+</div>

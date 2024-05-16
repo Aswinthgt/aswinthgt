@@ -1,0 +1,40 @@
+.button{
+    color: var(--yellow-color);
+    background-color: var(--background-color);
+    display:flex;
+    align-items: center;
+    border: none;
+    padding: 0.3dvw 3dvw;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    text-wrap: nowrap;
+    font-size: 1.3dvw;
+    
+    & mat-icon{
+        color: var(--color);
+        margin:10px
+    }
+    
+}
+
+.rotate-inifinite{
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+@media screen and (max-width: 768px) {
+
+  .button{
+    font-size: 2.5dvw;
+    padding: 0.3dvw 1dvw;
+  }
+
+}

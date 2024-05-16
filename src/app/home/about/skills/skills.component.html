@@ -1,0 +1,12 @@
+<div class="row mt-3">
+    <div class="col-12">
+        <app-icons-card [iconDetails]="showData"></app-icons-card>
+    </div>
+
+    @if(iconData.length){
+        <div class="col-12 mt-5 d-flex justify-content-center">
+            <button (click)="showMore()" matRipple class="button">Show ({{iconData.length >=4 ? 4 : iconData.length}}) More</button>
+       </div>
+    }
+    
+</div>

@@ -1,0 +1,125 @@
+.main-heading {
+    margin-left: 0.7dvw;
+    margin-top: -1.5dvw;
+}
+
+.heading {
+    font-size: 3.8dvw;
+    font-weight: 500;
+}
+
+.head {
+    font-size: 3dvw;
+    margin-top: -0.5dvw;
+}
+
+.sub-head {
+    font-size: 2dvw;
+    font-weight: 400;
+    line-height: 4dvw;
+}
+
+.body {
+    color: var(--secondary-color);
+    line-height: 2dvw;
+    font-size: 1.5dvw;
+}
+
+.experience-body {
+    margin: 3dvw 12dvw 7dvw 12dvw;
+}
+
+
+.dot-container {
+    position: relative;
+    width: 100px;
+    /* Adjust the width of the container */
+    height: 100%;
+    /* Adjust the height of the container */
+}
+
+.year {
+
+    position: absolute;
+    top: 0;
+    left: -2dvw;
+    transform: translate(-50%, -50%);
+    width: 5dvw;
+    /* Adjust the size of the dot */
+    height: 2.3dvw;
+    /* Adjust the size of the dot */
+    background-color: var(--year-card-background);
+    /* Adjust the color of the dot */
+    clip-path: polygon(0 0, 82% 2%, 100% 50%, 82% 100%, 0 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    font-size: 1dvw;
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    left: 4dvw;
+    transform: translate(-50%, -50%);
+    width: 2.5dvw;
+    /* Adjust the size of the dot */
+    height: 2.5dvw;
+    /* Adjust the size of the dot */
+    background-color: var(--yellow-color);
+    /* Adjust the color of the dot */
+    border-radius: 50%;
+    /* Make the dot rounded */
+    box-shadow: 0px 0px 18px 1px rgba(240, 191, 108, 1);
+    -webkit-box-shadow: 0px 0px 18px 1px rgba(240, 191, 108, 1);
+    -moz-box-shadow: 0px 0px 18px 1px rgba(240, 191, 108, 1);
+}
+
+.line {
+    position: absolute;
+    top: 5dvw;
+    bottom: 0;
+    left: 4dvw;
+    transform: translateX(-50%);
+    width: 0.1dvw;
+    /* Adjust the width of the line */
+    // height: 100%;
+    /* Adjust the height of the line */
+    background-color: var(--color);
+    /* Adjust the color of the line */
+}
+
+@media screen and (max-width: 768px) {
+    .main-heading {
+        margin-left: 1.5dvw;
+        margin-top: -2.8dvw;
+    }
+
+    .head {
+        font-size: 5dvw;
+        margin-top: -1.9dvw;
+    }
+
+    .sub-head {
+        font-size: 3.7dvw;
+        font-weight: 400;
+        line-height: 6dvw;
+    }
+
+    .body {
+        color: var(--secondary-color);
+        line-height: 3.5dvw;
+        font-size: 3dvw;
+    }
+
+    .year {
+        left: -5dvw;
+        width: 10dvw;
+        height: 5dvw;
+        font-size: 2dvw;
+    }
+
+}

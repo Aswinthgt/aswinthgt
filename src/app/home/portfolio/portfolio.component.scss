@@ -1,0 +1,82 @@
+.heading {
+    font-size: 3.8dvw;
+    font-weight: 500;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+// .image-container:hover img {
+//     filter: blur(8px);
+// }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scaley(0); /* Initially hidden */
+    transform-origin: bottom; /* Set the transform origin to the left edge */
+    transition: transform 0.3s; /* Smooth transition for the transform property */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container:hover .overlay {
+    // opacity: 1;
+    transform: scaleY(1); /* Show overlay on hover by scaling horizontally */
+}
+
+.content {
+    text-align: center;
+    color: var(--color);
+}
+
+.content button {
+    background-color: var(--yellow-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.6dvw 2dvw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.head{
+    font-size: 2dvw;
+}
+
+.body{
+    font-size: 1dvw;
+}
+
+
+@media screen and (max-width: 768px) {
+    .image-container {
+        height: 200px;
+    }
+
+    .head{
+        font-size: 3dvw;
+        line-height: 4dvw;
+    }
+
+    .body {
+        display: none;
+    }
+
+}

@@ -1,0 +1,31 @@
+.rounded-div {
+    width: 7dvw; /* Adjust the width of the div */
+    height: 7dvw; /* Adjust the height of the div */
+    background-color: var(--yellow-color); /* Adjust the background color of the div */
+    border-radius: 50px; /* Make the div rounded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4dvw;
+    margin-top: 0;
+    color: var(--background-color);
+}
+
+
+.list {
+    color: var(--secondary-color);
+    list-style: none;
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: large;
+}
+
+.menu{
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu:hover {
+    color: var(--color);
+}

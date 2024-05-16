@@ -1,0 +1,34 @@
+.profile-container {
+    background-color: var(--card-background-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.flat-container{
+    margin: 7dvw;
+}
+
+.experience-container{
+    background-color: var(--card-background-color);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    margin-top: 10dvw;
+}
+
+.thanks-for-scrooling{
+    color: var(--yellow-color);
+    font-size: 2dvw;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .flat-container{
+        margin: 90px 7dvw 7dvw 7dvw;
+    }
+    
+    .thanks-for-scrooling{
+        font-size: 4dvw;
+    }
+}

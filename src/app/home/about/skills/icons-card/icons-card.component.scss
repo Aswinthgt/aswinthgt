@@ -1,0 +1,37 @@
+.icon{
+    background-color: var(--card-background-color);
+    border-radius: 8px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 20px;  
+    transition: 0.3s all; 
+    cursor: pointer; 
+    user-select: none;
+}
+
+.icon:hover{
+    background-color: var(--icon-card-hover-background)
+}
+
+.container {
+    width: 100px; /* Set width of the container */
+    height: 100px; /* Set height of the container */
+    position: relative;
+    overflow: hidden; /* Ensure images don't overflow container */
+}
+
+.image, .svg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.iconName{
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 600;
+    font-size: large;
+}

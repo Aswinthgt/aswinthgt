@@ -1,0 +1,31 @@
+<div class="row">
+
+    <div class="col-12">
+        <div class="main-heading">
+            <span class="heading font-roboto-slab">Experience</span>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row experience-body">
+
+            @for(experience of experiences; track $index){
+            <div class="col-2 mt-5">
+                <div class="dot-container">
+                    <div class="d-flex">
+                        <div class="year">{{experience.year}}</div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="col-10 mt-5">
+                <div class="font-alegreya-sans head">{{experience.position}}</div>
+                <div class="font-alegreya-sans sub-head">{{experience.place}}</div>
+                <div class="font-alegreya-sans body">{{experience.about}}</div>
+            </div>
+            }
+
+        </div>
+    </div>
+
+</div>

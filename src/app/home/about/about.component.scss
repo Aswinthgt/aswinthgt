@@ -1,0 +1,46 @@
+.heading {
+    font-size: 3.8dvw;
+    font-weight: 500;
+}
+
+.yellow-line {
+    background-color: var(--yellow-color);
+    border-radius: 0.4dvw;
+    height: 0.2dvw;
+
+}
+
+.color {
+    color: var(--yellow-color);
+}
+
+.line {
+    width: 100%;
+    margin-top: 2.3dvw;
+}
+
+.content {
+    margin-top: 1.2dvw;
+    font-weight: 400;
+    font-size: 2dvw;
+    line-height: 2.5dvw;
+}
+
+.skills-section{
+    margin-top: 5dvw;
+}
+
+@media screen and (max-width: 768px) {
+    .about-heading {
+        font-size: 4.2dvw;
+    }
+    .line {
+        margin-top: 3dvw;
+    }
+    .content {
+        margin-top: 1.3dvw;
+        font-weight: 400;
+        font-size: 3dvw;
+        line-height: 4dvw;
+    }
+}
