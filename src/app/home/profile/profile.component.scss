@@ -23,3 +23,24 @@
     background-color: transparent;
     box-shadow: none;
 }
+
+@media screen and (max-width: 768px) {
+
+    .name-greeting{
+        font-size: 3dvw;
+        line-height: 0.1dvw;
+    }
+
+    .name {
+        font-size: 4dvw;
+    }
+
+    .position{
+        font-size: 2.4dvw;
+    }
+    
+   .contact-button{
+    font-size: 2.8dvw;
+    padding: 0.3dvw 3dvw;
+   }
+}
