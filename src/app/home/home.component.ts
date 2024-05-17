@@ -32,8 +32,16 @@ export class HomeComponent {
     this.commonService.events.about = this.about();
     this.commonService.events.portfolio = this.portfolio();
     this.commonService.events.contact = this.contact();
+    this.playAudio()
   }
 
  
-
+  playAudio(){
+    const audio = document.createElement("audio");
+    audio.id = "motivation"
+    audio.src = "assets/audio.mp3"
+  
+    document.body.appendChild(audio);
+    audio.play()
+  }
 }
