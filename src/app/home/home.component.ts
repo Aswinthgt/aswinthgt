@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, viewChild } from '@angular/core';
+import { Component, ElementRef, afterRender, inject, viewChild } from '@angular/core';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -14,34 +14,27 @@ import { ResumeComponent } from './resume/resume.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProfileComponent,TopBarComponent,AboutComponent,PortfolioComponent, ExperienceComponent, TestimonialComponent, ContactComponent, ResumeComponent],
+  imports: [ProfileComponent, TopBarComponent, AboutComponent, PortfolioComponent, ExperienceComponent, TestimonialComponent, ContactComponent, ResumeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
   commonService = inject(CommonService);
+
+
+  about = viewChild("about", { read: ElementRef });
+  portfolio = viewChild("portfolio", { read: ElementRef });
+  contact = viewChild("contact", { read: ElementRef });
+
   
-
-  about = viewChild("about",{read:ElementRef});
-  portfolio = viewChild("portfolio",{read:ElementRef});
-  contact = viewChild("contact",{read:ElementRef});
-
 
   ngAfterViewInit(): void {
     this.commonService.events.about = this.about();
     this.commonService.events.portfolio = this.portfolio();
     this.commonService.events.contact = this.contact();
-    this.playAudio()
   }
 
- 
-  playAudio(){
-    const audio = document.createElement("audio");
-    audio.id = "motivation"
-    audio.src = "assets/audio.mp3"
+
   
-    document.body.appendChild(audio);
-    audio.play()
-  }
 }
