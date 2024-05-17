@@ -3,8 +3,13 @@
     <div class="col-6 col-md-3 mt-4" matRipple>
         <div class="icon">
             <div class="container">
+                @if(icon.iconName === "Angular"){
+                    <div class="svg-image"><app-icons [icon]="icon.iconName"></app-icons></div>
+                }@else {
                 <!-- <img src="image.png" alt="Image" class="image"> -->
                 <img [src]="icon.iconUrl" alt="SVG Image" class="svg-image">
+                }
+
             </div>
             <div class="d-flex justify-content-center iconName">{{icon.iconName}}</div>
         </div>
