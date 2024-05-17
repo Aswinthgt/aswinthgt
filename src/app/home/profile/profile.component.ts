@@ -18,15 +18,7 @@ export class ProfileComponent{
   audio: any
 
   goTo(menu:"contact"){
-    this.audio.play()
     this.commonService.scrollTo(menu)
-  }
-
-  playAudio() {
-    this.audio = document.createElement("audio");
-    this.audio.id = "motivation"
-    this.audio.src = "assets/audio.mp3"
-    document.body.appendChild(this.audio);
   }
 
 }
