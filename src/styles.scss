@@ -8,20 +8,21 @@ body {
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 
     ::-webkit-scrollbar {
-        width: 5px;
+        width: 0px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background-color: var(--background-color);
+        background-color: var(--highlight-color);
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: var(--background-dark-color);
+        background: var(--icon-card-hover-background);
     }
 
     /* Handle on hover */
