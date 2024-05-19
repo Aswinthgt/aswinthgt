@@ -1,26 +1,32 @@
 import { ElementRef } from "@angular/core"
 
-export interface IconCard{
-    iconUrl:string,
-    iconName: string
-  }
+export interface IconCard {
+  iconUrl: string,
+  iconName: string
+}
 
-export interface PortfolioData{
+export interface PortfolioData {
   head: string,
   body: string,
   url: string,
   backGroundImage: string
 }
 
-export interface Experience{
-  year:string,
+export interface Experience {
+  year: string,
   position: String,
-  place:string,
-  about:string
+  place: string,
+  about: string
 }
 
-export interface Navigate{
+export interface Navigate {
   about: ElementRef;
   portfolio: ElementRef,
   contact: ElementRef
+}
+
+export interface ThemePallete {
+  value: string,
+  dark: string,
+  light: string
 }

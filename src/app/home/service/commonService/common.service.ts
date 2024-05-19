@@ -1,5 +1,5 @@
 import { ElementRef, Injectable } from '@angular/core';
-import { Navigate } from '../../../models/models';
+import { Navigate, ThemePallete } from '../../../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,13 @@ export class CommonService {
 
   events: Partial<Navigate> = {}
 
-  private _darkMode = true;
+  private _darkMode = false;
+
+  currentTheme: ThemePallete = {
+    value: "Primary",
+    dark: "dark",
+    light: "light"
+  }
 
   set isDarkMode(value: boolean) {
     this._darkMode = value
@@ -23,7 +29,8 @@ export class CommonService {
 
   rootElement: ElementRef<HTMLDivElement> | undefined
   setTheme() {
-    this.rootElement?.nativeElement.setAttribute("data-theme", this.isDarkMode ? "dark" : 'light')
+    this.rootElement?.nativeElement.setAttribute("data-theme",
+      this.isDarkMode ? this.currentTheme.dark : this.currentTheme.light)
   }
 
 

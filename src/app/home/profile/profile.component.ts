@@ -21,4 +21,12 @@ export class ProfileComponent{
     this.commonService.scrollTo(menu)
   }
 
+  getProfile(){
+    if(this.commonService.isDarkMode && this.commonService.currentTheme.value == 'Primary'){
+      return 'assets/images/profile-dark.png';
+    }else {
+      return 'assets/images/profile-light.png'
+    } 
+  }
+
 }

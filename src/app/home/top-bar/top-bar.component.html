@@ -11,7 +11,13 @@
             <li class="mx-3 menu" (click)="scrollTo('contact')">Contact</li>
         </ul>
      </div>
-     <div class="col-3 d-flex justify-content-center">
+     <div class="col-3 d-flex justify-content-evenly">
        <mat-icon (click)="changeMode()" matRipple class="mode" [fontIcon]=" this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
+       <mat-icon [matMenuTriggerFor]="menu" class="color-pallete-head" fontIcon="format_color_fill" matRipple ></mat-icon>
+       <mat-menu class="colors-pallete-body" #menu="matMenu" xPosition="before">
+        @for(pallete of colorGalaries; track $index){
+          <button mat-menu-item class="mat-menu-item" (click)="setColorPallete(pallete)">{{pallete.value}}</button>
+        }
+      </mat-menu>
      </div>
 </div>

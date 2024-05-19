@@ -5,7 +5,8 @@
    --background-color: #31333b;
    --color: #FFFFFF;
    --secondary-color: #a0a0a1;
-   --yellow-color: #ffc86b;
+   --highlight-color: #ffc86b;
+   --highlight-shadow : 0px 0px 18px 1px rgba(240, 191, 108, 1);
    --card-background-color: #3d3e42;
    --icon-card-hover-background: #f0bf6c;
    --year-card-background: #5d5d60;
@@ -17,8 +18,143 @@
    --background-color: #F8F9FA; /* Light, slightly off-white background */
    --color: #333333; /* Dark gray text for high readability */
    --secondary-color: #6c757d; /* Medium gray for secondary elements */
-   --yellow-color: #FFC107; /* Bright yellow for highlights */
+   --highlight-color: #FFC107; /* Bright yellow for highlights */
+   --highlight-shadow : 0px 0px 18px 1px rgba(240, 191, 108, 1);
    --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
    --icon-card-hover-background: #FFE082; /* Light yellow for icon card hover */
    --year-card-background: #E9ECEF; /* Light gray for year cards */
+}
+
+
+//Sapphire-Moonlit
+
+
+[data-theme="Sapphire-Moonlit-light"] {
+   --background-color: #def1f9; /* Light cyan background */
+   --color: #333333; /* Dark gray text for high readability */
+   --secondary-color: #6c757d; /* Medium gray for secondary elements */
+   --highlight-color: #1e3163; /* Sapphire blue for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(30, 49, 99, 0.8); /* Box shadow for highlights */
+   --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
+   --icon-card-hover-background: #cee5f2; /* Light blue for icon card hover */
+   --year-card-background: #e9f2ff; /* Light blue for year cards */
+}
+
+[data-theme="Sapphire-Moonlit-dark"] {
+   --background-color: #1e3163; /* Dark Sapphire background */
+   --color: #FFFFFF; /* White text for high readability */
+   --secondary-color: #a0a0a1; /* Light gray for secondary elements */
+   --highlight-color: #7fd1e8; /* Light blue for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(127, 209, 232, 0.8); /* Box shadow for highlights */
+   --card-background-color: #3d3e42; /* Dark gray for card backgrounds */
+   --icon-card-hover-background: #31333b; /* Dark background for icon card hover */
+   --year-card-background: #5d5d60; /* Medium gray for year cards */
+}
+
+
+// Emerald-Enchanted
+
+[data-theme="Emerald-Enchanted-light"] {
+   --background-color: #d7efd8; /* Light green background */
+   --color: #333333; /* Dark gray text for high readability */
+   --secondary-color: #6c757d; /* Medium gray for secondary elements */
+   --highlight-color: #006400; /* Dark green for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(0, 100, 0, 0.8); /* Box shadow for highlights */
+   --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
+   --icon-card-hover-background: #c2d4c6; /* Light green for icon card hover */
+   --year-card-background: #b5d8b1; /* Light green for year cards */
+}
+
+[data-theme="Emerald-Enchanted-dark"] {
+   --background-color: #003300; /* Dark green background */
+   --color: #FFFFFF; /* White text for high readability */
+   --secondary-color: #a0a0a1; /* Light gray for secondary elements */
+   --highlight-color: #66ff66; /* Light green for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(102, 255, 102, 0.8); /* Box shadow for highlights */
+   --card-background-color: #202b22; /* Dark green for card backgrounds */
+   --icon-card-hover-background: #1a1f18; /* Dark background for icon card hover */
+   --year-card-background: #454e42; /* Medium gray for year cards */
+}
+
+
+
+
+//Rose-Midnight 
+
+[data-theme="Rose-Midnight-light"] {
+   --background-color: #ffd1dc; /* Light rose background */
+   --color: #333333; /* Dark gray text for high readability */
+   --secondary-color: #6c757d; /* Medium gray for secondary elements */
+   --highlight-color: #e75480; /* Rose pink for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(231, 84, 128, 0.8); /* Box shadow for highlights */
+   --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
+   --icon-card-hover-background: #ffc3d7; /* Light rose for icon card hover */
+   --year-card-background: #ffbcd9; /* Light rose for year cards */
+}
+
+[data-theme="Rose-Midnight-dark"] {
+   --background-color: #2b2b2b; /* Dark gray background */
+   --color: #FFFFFF; /* White text for high readability */
+   --secondary-color: #a0a0a1; /* Light gray for secondary elements */
+   --highlight-color: #ff6f91; /* Light rose pink for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(255, 111, 145, 0.8); /* Box shadow for highlights */
+   --card-background-color: #3d3d3d; /* Dark gray for card backgrounds */
+   --icon-card-hover-background: #282828; /* Dark background for icon card hover */
+   --year-card-background: #565656; /* Medium gray for year cards */
+}
+
+
+
+
+
+//Amethyst-Velvet
+
+[data-theme="Amethyst-Velvet-light"] {
+   --background-color: #d1c1e0; /* Light lavender background */
+   --color: #333333; /* Dark gray text for high readability */
+   --secondary-color: #6c757d; /* Medium gray for secondary elements */
+   --highlight-color: #6a0572; /* Amethyst purple for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(106, 5, 114, 0.8); /* Box shadow for highlights */
+   --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
+   --icon-card-hover-background: #ad96d8; /* Light lavender for icon card hover */
+   --year-card-background: #c7b2e0; /* Light lavender for year cards */
+}
+
+[data-theme="Amethyst-Velvet-dark"] {
+   --background-color: #2e295e; /* Dark indigo background */
+   --color: #FFFFFF; /* White text for high readability */
+   --secondary-color: #a0a0a1; /* Light gray for secondary elements */
+   --highlight-color: #9b59b6; /* Soft purple for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(155, 89, 182, 0.8); /* Box shadow for highlights */
+   --card-background-color: #3d3e42; /* Dark gray for card backgrounds */
+   --icon-card-hover-background: #212033; /* Dark background for icon card hover */
+   --year-card-background: #5d5d60; /* Medium gray for year cards */
+}
+
+
+
+
+//Golden-Twilight
+
+[data-theme="Golden-Twilight-light"] {
+   --background-color: #ffdb58; /* Light goldenrod background */
+   --color: #333333; /* Dark gray text for high readability */
+   --secondary-color: #6c757d; /* Medium gray for secondary elements */
+   --highlight-color: #ff7f50; /* Coral for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(255, 127, 80, 0.8); /* Box shadow for highlights */
+   --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
+   --icon-card-hover-background: #ffe4b5; /* Light goldenrod for icon card hover */
+   --year-card-background: #ffefdb; /* Light goldenrod for year cards */
+}
+
+
+[data-theme="Golden-Twilight-dark"] {
+   --background-color: #4b2e83; /* Dark purple background */
+   --color: #FFFFFF; /* White text for high readability */
+   --secondary-color: #a0a0a1; /* Light gray for secondary elements */
+   --highlight-color: #ff6f61; /* Coral for highlights */
+   --highlight-shadow: 0px 0px 10px 2px rgba(255, 111, 97, 0.8); /* Box shadow for highlights */
+   --card-background-color: #3d3e42; /* Dark gray for card backgrounds */
+   --icon-card-hover-background: #36274b; /* Dark background for icon card hover */
+   --year-card-background: #5d5d60; /* Medium gray for year cards */
 }

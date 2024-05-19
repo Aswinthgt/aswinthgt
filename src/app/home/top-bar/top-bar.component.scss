@@ -1,8 +1,12 @@
 .rounded-div {
-    width: 7dvw; /* Adjust the width of the div */
-    height: 7dvw; /* Adjust the height of the div */
-    background-color: var(--yellow-color); /* Adjust the background color of the div */
-    border-radius: 50px; /* Make the div rounded */
+    width: 7dvw;
+    /* Adjust the width of the div */
+    height: 7dvw;
+    /* Adjust the height of the div */
+    background-color: var(--highlight-color);
+    /* Adjust the background color of the div */
+    border-radius: 50px;
+    /* Make the div rounded */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +25,7 @@
     font-size: large;
 }
 
-.menu{
+.menu {
     cursor: pointer;
     user-select: none;
 }
@@ -32,4 +36,22 @@
 
 .mode {
     cursor: pointer;
+}
+
+.color-pallete-head {
+    cursor: pointer;
+}
+
+::ng-deep .colors-pallete-body {
+    background-color: var(--background-color) !important;
+    & div {
+        & button {
+            color: var(--color) !important;
+        }
+    }
+   
+}
+
+::ng-deep .mat-menu-item {
+    color: var(--color) !important;
 }
