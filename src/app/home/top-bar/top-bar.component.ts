@@ -3,11 +3,12 @@ import { MatRippleModule } from '@angular/material/core';
 import dayjs from 'dayjs';
 import { CommonService } from '../service/commonService/common.service';
 import { Navigate } from '../../models/models';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [MatRippleModule],
+  imports: [MatRippleModule,MatIconModule],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.scss'
 })
@@ -24,6 +25,11 @@ export class TopBarComponent {
 
   scrollTo(menu: keyof Navigate ){
     this.commonService.scrollTo(menu) 
+  }
+
+  changeMode(){
+    this.commonService.isDarkMode = !this.commonService.isDarkMode
+    this.commonService.setTheme();
   }
 
 }

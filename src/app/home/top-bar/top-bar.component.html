@@ -5,13 +5,13 @@
         </div>
      </div>
      <div class="col-6">
-        <ul class="list d-flex justify-content-center align-items-center h-100 m-auto">
+        <ul class="list d-flex justify-content-center align-items-center h-100 m-0 p-0">
             <li class="mx-3 menu" (click)="scrollTo('about')">About</li>
             <li class="mx-3 menu" (click)="scrollTo('portfolio')">Portfolio</li>
             <li class="mx-3 menu" (click)="scrollTo('contact')">Contact</li>
         </ul>
      </div>
-     <div class="col-3">
-
+     <div class="col-3 d-flex justify-content-center">
+       <mat-icon (click)="changeMode()" matRipple class="mode" [fontIcon]=" this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
      </div>
 </div>

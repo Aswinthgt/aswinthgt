@@ -1,7 +1,7 @@
 <div class="row d-flex justify-content-center">
     @for(icon of iconDetails(); track $index){
-    <div class="col-6 col-md-3 mt-4" matRipple>
-        <div class="icon">
+    <div class="col-6 col-md-3 mt-4">
+        <div class="icon" matRipple>
             <div class="container">
                 @if(icon.iconName === "Angular"){
                     <div class="svg-image"><app-icons [icon]="icon.iconName"></app-icons></div>

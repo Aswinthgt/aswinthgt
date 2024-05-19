@@ -27,7 +27,7 @@
 
 .bottom-line-text {
     bottom: -10px; /* Adjust the distance from the bottom line */
-    background: linear-gradient(to bottom, var(--card-background-color) 50%, var(--background-color) 50%);
+    background: linear-gradient(to top, var(--background-color) 50%, var(--card-background-color) 50%);
     & div{
         & i{
             cursor: pointer;

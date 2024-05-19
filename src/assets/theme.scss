@@ -11,3 +11,14 @@
    --year-card-background: #5d5d60;
 
 }
+
+
+[data-theme="light"] {
+   --background-color: #F8F9FA; /* Light, slightly off-white background */
+   --color: #333333; /* Dark gray text for high readability */
+   --secondary-color: #6c757d; /* Medium gray for secondary elements */
+   --yellow-color: #FFC107; /* Bright yellow for highlights */
+   --card-background-color: #FFFFFF; /* Pure white for card backgrounds */
+   --icon-card-hover-background: #FFE082; /* Light yellow for icon card hover */
+   --year-card-background: #E9ECEF; /* Light gray for year cards */
+}
