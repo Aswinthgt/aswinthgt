@@ -44,14 +44,13 @@
 
 ::ng-deep .colors-pallete-body {
     background-color: var(--background-color) !important;
-    & div {
-        & button {
-            color: var(--color) !important;
-        }
-    }
-   
 }
 
-::ng-deep .mat-menu-item {
-    color: var(--color) !important;
+
+
+@media screen and (max-width: 768px) {
+    
+    .list{
+        font-size: 3.5dvw;
+    }
 }
