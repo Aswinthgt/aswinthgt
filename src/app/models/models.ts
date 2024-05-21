@@ -13,7 +13,8 @@ export interface PortfolioData {
 }
 
 export interface Experience {
-  year: string,
+  endYear: string,
+  startYear: string,
   position: String,
   place: string,
   about: string

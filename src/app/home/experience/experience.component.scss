@@ -29,6 +29,9 @@
     margin: 3dvw 12dvw 7dvw 12dvw;
 }
 
+.custom-margin{
+    margin-top: 10dvw;
+}
 
 .dot-container {
     position: relative;
@@ -38,7 +41,7 @@
     /* Adjust the height of the container */
 }
 
-.year {
+.year-end {
 
     position: absolute;
     top: 0;
@@ -60,7 +63,28 @@
     font-size: 1dvw;
 }
 
-.dot {
+.year-start{
+    position: absolute;
+    bottom: -2.3dvw;
+    left: -2dvw;
+    transform: translate(-50%, -50%);
+    width: 5dvw;
+    /* Adjust the size of the dot */
+    height: 2.3dvw;
+    /* Adjust the size of the dot */
+    background-color: var(--year-card-background);
+    /* Adjust the color of the dot */
+    clip-path: polygon(0 0, 82% 2%, 100% 50%, 82% 100%, 0 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    font-size: 1dvw;
+}
+
+.dot-end {
     position: absolute;
     top: 0;
     left: 4dvw;
@@ -115,7 +139,19 @@
         font-size: 3dvw;
     }
 
-    .year {
+    .custom-margin{
+        margin-top: 20dvw;
+    }
+    
+
+    .year-end {
+        left: -5dvw;
+        width: 11dvw;
+        height: 5dvw;
+        font-size: 2dvw;
+    }
+
+    .year-start {
         left: -5dvw;
         width: 10dvw;
         height: 5dvw;
