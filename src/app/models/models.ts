@@ -31,3 +31,12 @@ export interface ThemePallete {
   dark: string,
   light: string
 }
+
+
+export interface MetaContent {
+  title: string,
+  description: string,
+  image: string,
+  url: string,
+  keyWords: string
+}
