@@ -13,7 +13,7 @@ export class SeoService {
   updateSEO(content?: Partial<MetaContent>){
      
     const metaContent: MetaContent = {
-      title: 'portfolio',
+      title: 'Aswinth Portfolio',
       description: 'About Aswinth GT',
       image: 'https://aswinthgt.vercel.app/assets/images/profile-light.png',
       url: 'https://aswinthgt.vercel.app',
