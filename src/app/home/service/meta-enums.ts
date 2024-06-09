@@ -5,7 +5,8 @@ export const enum MetaTagName {
     IMAGE = "image",
     URL = "url",
     SITE_NAME = "site_name",
-    TYPE = "type"
+    TYPE = "type",
+    AUTHOR = "author"
 }
 
 export const enum MetaTagProperty {
@@ -15,5 +16,6 @@ export const enum MetaTagProperty {
     IMAGE = "og:image",
     URL = "og:url",
     SITE_NAME = "og:site_name",
-    TYPE = "og:type"
+    TYPE = "og:type",
+    AUTHOR = "author"
 }

@@ -38,5 +38,6 @@ export interface MetaContent {
   description: string,
   image: string,
   url: string,
-  keyWords: string
+  keyWords: string,
+  author: string
 }

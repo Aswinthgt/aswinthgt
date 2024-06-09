@@ -18,6 +18,7 @@ export class SeoService {
       image: 'https://aswinthgt.vercel.app/assets/images/profile-light.png',
       url: 'https://aswinthgt.vercel.app',
       keyWords: "Aswinth, Portfolio, Software Developer, SoftWare Engineer, Aswinth GT, Angular, MEAN, Full Stack Developer, Node.js, Express.js",
+      author: 'Aswinth',
       ...content
     }
     
@@ -31,6 +32,7 @@ export class SeoService {
     this.meta.updateTag({name: MetaTagName.IMAGE, content: metaContent.image })
     this.meta.updateTag({name: MetaTagName.URL, content: metaContent.url })
     this.meta.updateTag({name: MetaTagName.KEYWORDS, content: metaContent.keyWords })
+    this.meta.updateTag({name: MetaTagName.AUTHOR, content: metaContent.author })
   }
   
 
