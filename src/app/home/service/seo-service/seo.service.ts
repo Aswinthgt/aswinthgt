@@ -43,7 +43,7 @@ export class SeoService {
     this.meta.updateTag({property: MetaTagProperty.IMAGE, content: metaContent.image })
     this.meta.updateTag({property: MetaTagProperty.URL, content: metaContent.url })
     this.meta.updateTag({property: MetaTagProperty.SITE_NAME, content: 'Aswinth portfolio' })
-    this.meta.updateTag({property: MetaTagProperty.TYPE, content: "Portfolio" })
+    this.meta.updateTag({property: MetaTagProperty.TYPE, content: "WebPage" })
     this.meta.updateTag({property: MetaTagProperty.KEYWORDS, content: metaContent.keyWords })
   }
 }
