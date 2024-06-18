@@ -19,3 +19,9 @@ export const enum MetaTagProperty {
     TYPE = "og:type",
     AUTHOR = "author"
 }
+
+export const enum MetaTagLinkedIn {
+    TITLE = "linkedin:title",
+    DESCRIPTION = "linkedin:description",
+    IMAGE = "linkedin:image"
+}
