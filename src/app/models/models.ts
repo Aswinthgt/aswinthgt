@@ -2,7 +2,8 @@ import { ElementRef } from "@angular/core"
 
 export interface IconCard {
   iconUrl: string,
-  iconName: string
+  iconName: string,
+  percentage: number
 }
 
 export interface PortfolioData {

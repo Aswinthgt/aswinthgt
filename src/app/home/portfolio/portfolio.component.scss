@@ -76,7 +76,13 @@
     }
 
     .body {
-        display: none;
+        line-height: 100%;
+        font-size: 2dvw;
+        margin: 0 5% 5% 5%;
+    }
+
+    .overlay {
+        transform: scaleY(1)
     }
 
 }

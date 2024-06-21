@@ -1,37 +1,81 @@
-.icon{
+.icon {
     background-color: var(--card-background-color);
     border-radius: 8px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    padding: 20px;  
-    transition: 0.3s all; 
-    cursor: pointer; 
+    padding: 20px;
+    transition: 0.3s all;
+    cursor: pointer;
     user-select: none;
 }
 
-.icon:hover{
-    background-color: var(--icon-card-hover-background)
+.icon:hover {
+    background-color: var(--icon-card-hover-background);
+    transform: scale(1.05);
+    box-shadow: rgba(17, 12, 46, 0.30) 0px 48px 100px 0px;
+    
+    .progress{
+        background-color: var(--secondary-color);
+    }
+
+    .progress-bar {
+        transform: scaleX(1);
+    }
 }
 
 .container {
-    width: 100px; /* Set width of the container */
-    height: 100px; /* Set height of the container */
+    width: 100px;
+    /* Set width of the container */
+    height: 100px;
+    /* Set height of the container */
     position: relative;
-    overflow: hidden; /* Ensure images don't overflow container */
+    overflow: hidden;
+    /* Ensure images don't overflow container */
 }
 
-.image, .svg-image {
+.image,
+.svg-image {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the image */
+    transform: translate(-50%, -50%);
+    /* Center the image */
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
 }
 
-.iconName{
+.iconName {
     font-family: "Alegreya Sans", sans-serif;
     font-weight: 600;
     font-size: large;
 }
+
+.progress-bar-container {
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+    /* Adjust height as needed */
+    background-color: transparent;
+    /* Background color for the progress bar container */
+    position: relative;
+    /* Ensures the progress bar is contained within this element */
+    overflow: hidden;
+    /* Ensures that the progress bar doesn't overflow its container */
+}
+
+.progress{
+    background-color: transparent;
+}
+
+.progress-bar {
+    transform-origin: left center;
+    /* Set the transform origin to the right center */
+    transform: scaleX(0);
+    /* Initially scale the bar to 0 width */
+    transition: transform 1s;
+    /* Smooth transition effect */
+    background-color: var(--card-background-color);
+}
+
+

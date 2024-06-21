@@ -16,63 +16,78 @@ export class SkillsComponent implements OnInit {
   iconData: Array<IconCard> = [
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
-      iconName: 'Python'
+      iconName: 'Python',
+      percentage: 80
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg',
-      iconName: 'Angular'
+      iconName: 'Angular',
+      percentage: 100
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
-      iconName: 'Node.js'
+      iconName: 'Node.js',
+      percentage: 98
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
-      iconName: 'Mongo DB'
+      iconName: 'Mongo DB',
+      percentage: 90
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
-      iconName: 'Javascript'
+      iconName: 'Javascript',
+      percentage: 100
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
-      iconName: 'Git'
+      iconName: 'Git',
+      percentage: 90
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-      iconName: "React"
+      iconName: "React",
+      percentage: 90
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
-      iconName: "TypeScript"
+      iconName: "TypeScript",
+      percentage: 100
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',
-      iconName: "BootStrap"
+      iconName: "BootStrap",
+      percentage: 98
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
-      iconName: "Express.js"
+      iconName: "Express.js",
+      percentage: 95
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
-      iconName: "GitHub"
+      iconName: "GitHub",
+      percentage: 90
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
-      iconName: "Npm"
+      iconName: "Npm",
+      percentage: 95
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
-      iconName: "Docker"
+      iconName: "Docker",
+      percentage: 80
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
-      iconName: "HTML 5"
+      iconName: "HTML 5",
+      percentage: 100
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
-      iconName: "CSS 3"
+      iconName: "CSS 3",
+      percentage: 90
     }
     
   ]

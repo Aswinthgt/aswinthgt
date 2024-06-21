@@ -49,15 +49,21 @@ ngOnInit(): void{
       {
        head: "Creating Angular Libraries",
        body: "Creating an Angular library is a valuable skill that allows you to encapsulate and share reusable components, services, and other code across multiple Angular applications. In this article, we'll walk through the steps to create an Angular library from scratch.",
-       url: "https://www.c-sharpcorner.com/article/a-comprehensive-guide-to-creating-angular-libraries/",
+       url: "https://www.c-sharpcorner.com/article/a-comprehensive-guide-to-creating-angular-libraries",
        backGroundImage: "assets/images/angular.jpg",
       },
       {
        head: "Server-Sent Events",
        body: "Server-Sent Events (SSE) is a powerful technology that enables servers to push real-time updates to web clients over HTTP. When combined with Angular on the client side and Node.js on the server side, SSE offers a seamless and efficient way to build dynamic, data-driven web applications. In this article, we'll explore how to implement SSE in an Angular application with a Node.js backend.",
-       url: "https://www.c-sharpcorner.com/article/leveraging-server-sent-events-sse-with-angular-and-node-js/",
+       url: "https://www.c-sharpcorner.com/article/leveraging-server-sent-events-sse-with-angular-and-node-js",
        backGroundImage: "assets/images/web.jpg",
       },
+      {
+        head: "Angular SEO",
+        body: "Search Engine Optimization (SEO) is crucial for the success of any website. While Angular is a powerful framework for building dynamic single-page applications, it presents unique challenges for SEO due to its reliance on JavaScript for rendering content. In this guide, we’ll explore best practices for optimizing an Angular application for search engines, including how to implement meta tags for different pages dynamically.",
+        url: "https://dev.to/aswinthgt/mastering-seo-with-angular-v18-5166",
+        backGroundImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fldfe5p9s8t1p73gnsuls.png"
+      }
      ]
   }
   
