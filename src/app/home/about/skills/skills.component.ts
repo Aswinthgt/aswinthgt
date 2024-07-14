@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IconsCardComponent } from './icons-card/icons-card.component';
 import { IconCard } from '../../../models/models';
 import { MatRippleModule } from '@angular/material/core';
+import { CommonService } from '../../service/commonService/common.service';
 
 @Component({
   selector: 'app-skills',
@@ -11,8 +12,10 @@ import { MatRippleModule } from '@angular/material/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent implements OnInit {
-  
-  showData:Array<IconCard>= []
+
+  isMobile = inject(CommonService).isMobile();
+
+  showData: Array<IconCard> = []
   iconData: Array<IconCard> = [
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
@@ -89,7 +92,7 @@ export class SkillsComponent implements OnInit {
       iconName: "CSS 3",
       percentage: 90
     }
-    
+
   ]
 
 
@@ -97,8 +100,13 @@ export class SkillsComponent implements OnInit {
     this.showMore()
   }
 
-  showMore(){
-    this.showData.push(...this.iconData.splice(0,4))
+  showMore() {
+    if (!this.isMobile) {
+      this.showData = this.iconData
+    } else {
+      this.showData.push(...this.iconData.splice(0, 4))
+    }
+
   }
 
 }
