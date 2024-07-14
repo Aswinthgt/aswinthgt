@@ -19,7 +19,7 @@ export class TopBarComponent implements OnInit {
 
   commonService = inject(CommonService)
   colorGalaries = gallery
- 
+
 
   ngOnInit(): void {
     this.changeMode()
@@ -29,14 +29,15 @@ export class TopBarComponent implements OnInit {
     const date1 = dayjs();
     const date2 = dayjs("2022-10-03");
     const month = date1.diff(date2, 'months')
-    return ((month + 1) / 12).toFixed(1)
+    const exactExperience = (month + 1) / 12
+    return Math.ceil(exactExperience * 10) / 10
   }
 
   scrollTo(menu: keyof Navigate) {
     this.commonService.scrollTo(menu)
   }
 
-  setColorPallete(pallete: ThemePallete){
+  setColorPallete(pallete: ThemePallete) {
     this.commonService.currentTheme = pallete
     this.commonService.setTheme();
   }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, inject, viewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, RendererFactory2, inject, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonService } from './home/service/commonService/common.service';
 import { Meta } from '@angular/platform-browser';
@@ -15,17 +15,19 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   meta = inject(Meta)
 
+
   title = 'aswinthgt';
   rootElement = viewChild("root", {read: ElementRef});
   commonservice = inject(CommonService);
-  metaService = inject(SeoService)
+  metaService = inject(SeoService);
 
 
   ngOnInit(): void {
-    this.metaService.updateSEO({})
+    this.metaService.updateSEO({});
   }
 
   ngAfterViewInit(): void {
     this.commonservice.rootElement = this.rootElement()
   }
+
 }
