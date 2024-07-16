@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
-    { provide: APP_INITIALIZER, useFactory: injectSpeedInsights },
+    // { provide: APP_INITIALIZER, useFactory: injectSpeedInsights },
   ],
 };
