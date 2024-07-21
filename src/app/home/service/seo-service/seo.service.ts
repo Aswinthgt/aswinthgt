@@ -15,7 +15,7 @@ export class SeoService {
     const metaContent: MetaContent = {
       title: 'Aswinth - Professional Portfolio',
       description: 'Innovative MEAN stack Developer specializing in MongoDB, Express.js, Angular, and Node.js. Proven track record in optimizing project performance, creating scalable solutions, and contributing to dynamic web applications.',
-      image: 'https://aswinthgt.vercel.app/assets/images/profile-light.png',
+      image: 'https://aswinthgt.vercel.app/images/profile-light.png',
       url: 'https://aswinthgt.vercel.app',
       keyWords: "Aswinth, Portfolio, Software Developer, SoftWare Engineer, Aswinth GT, Angular, MEAN, Full Stack Developer, Node.js, Express.js",
       author: 'Aswinth',

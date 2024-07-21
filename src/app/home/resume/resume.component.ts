@@ -27,7 +27,7 @@ export class ResumeComponent {
   download(){
     if(this.isLoading) return;
     this.isLoading = true;
-    this.http.get("assets/aswinth.pdf", {responseType: "blob"}).subscribe({
+    this.http.get("aswinth.pdf", {responseType: "blob"}).subscribe({
       next:(data)=>{
         const blob = new Blob([data],{type: "application/pdf"})
         const uri = window.URL.createObjectURL(blob)

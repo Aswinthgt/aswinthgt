@@ -23,9 +23,9 @@ export class ProfileComponent{
 
   getProfile(){
     if(this.commonService.isDarkMode && this.commonService.currentTheme.value == 'Primary'){
-      return 'assets/images/profile-dark.png';
+      return 'images/profile-dark.png';
     }else {
-      return 'assets/images/profile-light.png'
+      return 'images/profile-light.png'
     } 
   }
 
