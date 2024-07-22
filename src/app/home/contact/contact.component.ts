@@ -21,7 +21,8 @@ links = {
   tel: "tel:+919025294492",
   linkedIn: "https://www.linkedin.com/in/aswinth37",
   location: "https://maps.app.goo.gl/EDSheYqdGMNeRhRJ8",
-  fb: "https://www.facebook.com/aswinth.aswinth.7399"
+  fb: "https://www.facebook.com/aswinth.aswinth.7399",
+  gitHub: 'https://github.com/Aswinthgt?tab=repositories'
 }
 
 }
