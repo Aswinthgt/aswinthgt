@@ -33,6 +33,26 @@ export class SkillsComponent implements OnInit {
       percentage: 98
     },
     {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
+      iconName: "Express.js",
+      percentage: 95
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularmaterial/angularmaterial-original.svg',
+      iconName: "Angular Material",
+      percentage: 90
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg',
+      iconName: 'FastAPI',
+      percentage: 80
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-line.svg',
+      iconName: 'Django REST framework',
+      percentage: 50
+    },
+    {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
       iconName: 'Mongo DB',
       percentage: 90
@@ -63,11 +83,6 @@ export class SkillsComponent implements OnInit {
       percentage: 98
     },
     {
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
-      iconName: "Express.js",
-      percentage: 95
-    },
-    {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
       iconName: "GitHub",
       percentage: 90
@@ -81,6 +96,11 @@ export class SkillsComponent implements OnInit {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
       iconName: "Docker",
       percentage: 80
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg',
+      iconName: "Kubernetes",
+      percentage: 55
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
