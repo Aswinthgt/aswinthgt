@@ -39,7 +39,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularmaterial/angularmaterial-original.svg',
-      iconName: "Angular Material",
+      iconName: "Material",
       percentage: 90
     },
     {
@@ -49,7 +49,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-line.svg',
-      iconName: 'Django REST framework',
+      iconName: 'Django REST',
       percentage: 50
     },
     {
