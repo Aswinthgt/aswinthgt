@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, RendererFactory2, inject, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonService } from './home/service/commonService/common.service';
 import { Meta } from '@angular/platform-browser';
-import { SeoService } from './home/service/seo-service/seo.service';
+
+import { CommonService } from '@shared/commonService/common.service';
+import { SeoService } from '@shared/seo-service/seo.service';
 
 @Component({
   selector: 'app-root',

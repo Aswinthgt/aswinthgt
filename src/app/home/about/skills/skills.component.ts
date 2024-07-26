@@ -1,8 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { MatRippleModule } from '@angular/material/core';
+
+import { CommonService } from '@shared/commonService/common.service';
 import { IconsCardComponent } from './icons-card/icons-card.component';
 import { IconCard } from '../../../models/models';
-import { MatRippleModule } from '@angular/material/core';
-import { CommonService } from '../../service/commonService/common.service';
 
 @Component({
   selector: 'app-skills',

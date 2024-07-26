@@ -1,12 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
-import dayjs from 'dayjs';
-import { CommonService } from '../service/commonService/common.service';
-import { Navigate, ThemePallete } from '../../models/models';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgStyle } from '@angular/common';
-import { gallery } from '../service/static';
+import dayjs from 'dayjs';
+
+
+import { CommonService } from '@shared/commonService/common.service';
+import { Navigate, ThemePallete } from '../../models/models';
+
+import { gallery } from '@shared/static';
 
 @Component({
   selector: 'app-top-bar',

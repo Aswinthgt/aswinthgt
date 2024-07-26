@@ -1,9 +1,11 @@
 import { Component, InputSignal, input } from '@angular/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { IconCard } from "../../../../models/models"
-import { MatRippleModule } from '@angular/material/core';
-import { IconsComponent } from '../../../../icons/icons.component';
 import { NgStyle } from '@angular/common';
+import { MatRippleModule } from '@angular/material/core';
+
+import { IconsComponent } from '@app/icons/icons.component';
+import { IconCard } from "../../../../models/models"
+
 
 
 

@@ -1,13 +1,14 @@
 import { Component, ElementRef, afterRender, inject, viewChild } from '@angular/core';
-import { ProfileComponent } from './profile/profile.component';
-import { AboutComponent } from './about/about.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { TestimonialComponent } from './testimonial/testimonial.component';
-import { ContactComponent } from './contact/contact.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { CommonService } from './service/commonService/common.service';
-import { ResumeComponent } from './resume/resume.component';
+
+import { ProfileComponent } from '@profile/profile.component';
+import { AboutComponent } from '@about/about.component';
+import { TopBarComponent } from '@top-bar/top-bar.component';
+import { ExperienceComponent } from '@experience/experience.component';
+import { TestimonialComponent } from '@testimonial/testimonial.component';
+import { ContactComponent } from '@contact/contact.component';
+import { PortfolioComponent } from '@portfolio/portfolio.component';
+import { CommonService } from '@shared/commonService/common.service';
+import { ResumeComponent } from '@resume/resume.component';
 
 
 

@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+
 import { MetaContent } from '../../../models/models';
-import { MetaTagLinkedIn, MetaTagName, MetaTagProperty } from '../meta-enums'
+import { MetaTagLinkedIn, MetaTagName, MetaTagProperty } from '@shared/meta-enums'
 
 @Injectable({
   providedIn: 'root'

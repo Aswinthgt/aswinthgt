@@ -2,7 +2,8 @@ import { Component, inject } from '@angular/core';
 import { UserDataComponent } from './user-data/user-data.component';
 import { NgOptimizedImage } from '@angular/common';
 import {MatRippleModule} from '@angular/material/core';
-import { CommonService } from '../service/commonService/common.service';
+
+import { CommonService } from '@shared/commonService/common.service';
 
 
 @Component({

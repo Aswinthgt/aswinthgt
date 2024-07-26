@@ -1,8 +1,9 @@
 import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
-import { PortfolioData } from '../../models/models';
 import { isPlatformBrowser } from '@angular/common';
+
+import { PortfolioData } from '../../models/models';
 
 @Component({
   selector: 'app-portfolio',

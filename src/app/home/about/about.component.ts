@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { SkillsComponent } from './skills/skills.component';
 import { NgOptimizedImage } from '@angular/common';
+
+import { SkillsComponent } from '@about/skills/skills.component';
 
 
 @Component({
