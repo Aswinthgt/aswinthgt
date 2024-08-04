@@ -3,12 +3,9 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgStyle } from '@angular/common';
-import dayjs from 'dayjs';
-
 
 import { CommonService } from '@shared/commonService/common.service';
 import { Navigate, ThemePallete } from '../../models/models';
-
 import { gallery } from '@shared/static';
 
 @Component({
@@ -28,12 +25,23 @@ export class TopBarComponent implements OnInit {
     this.changeMode()
   }
 
-  getDate() {
-    const date1 = dayjs();
-    const date2 = dayjs("2022-10-03");
-    const month = date1.diff(date2, 'months')
-    const exactExperience = (month + 1) / 12
-    return Math.ceil(exactExperience * 10) / 10
+  getDifferenceInYearsAndMonths(startDate = new Date('2022-10-03'), endDate = new Date()) {
+    // Ensure startDate is before endDate
+    if (startDate > endDate) {
+      [startDate, endDate] = [endDate, startDate];
+    }
+
+    // Calculate the differences
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    let months = endDate.getMonth() - startDate.getMonth();
+
+    // Adjust if the end month is earlier than the start month
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    return `${years}.${months}`
   }
 
   scrollTo(menu: keyof Navigate) {
