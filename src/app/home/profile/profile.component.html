@@ -16,7 +16,8 @@
   </div>
   <div class="col-6">
     <div>
-      <img class="image-back"
+      <img class="image-back blend-mode"
+        [ngClass]="{'blend-mode': commonService.isDarkMode}"
         [priority]="true"
         [ngSrc]="commonService.isDarkMode ? 
         'https://aswinthgt.vercel.app/images/profile-dark.png' : 
