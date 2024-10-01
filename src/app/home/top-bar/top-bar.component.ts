@@ -40,8 +40,8 @@ export class TopBarComponent implements OnInit {
       years--;
       months += 12;
     }
-
-    return `${years}.${months}`
+    const month = months ? `.${months}` : ""
+    return `${years}${month}`.trim()
   }
 
   scrollTo(menu: keyof Navigate) {
