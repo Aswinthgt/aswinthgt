@@ -1,15 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { UserDataComponent } from './user-data/user-data.component';
-import { NgClass, NgOptimizedImage } from '@angular/common';
+import { NgClass } from '@angular/common';
 import {MatRippleModule} from '@angular/material/core';
 
 import { CommonService } from '@shared/commonService/common.service';
+import { ProfileImageComponent } from "./profile-image/profile-image.component";
 
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [UserDataComponent,NgOptimizedImage,MatRippleModule, NgClass],
+  imports: [UserDataComponent, MatRippleModule, NgClass, ProfileImageComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })

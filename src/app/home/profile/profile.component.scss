@@ -1,49 +1,56 @@
 .name {
-    color: var(--highlight-color);
-}
-
-.image-back {
-    // mix-blend-mode: multiply;
-    max-width: 100%;
-    height: auto;
-}
-.blend-mode {
-    mix-blend-mode: soft-light;
+  color: var(--highlight-color);
 }
 
 .contact {
-    margin-top: 2dvw;
+  margin-top: 2dvw;
 }
 
 .contact-button {
-    border: 0.35dvw solid var(--highlight-color);
-    color: var(--highlight-color);
-    border-radius: 0.6dvw;
-    padding: 1dvw 3dvw;
-    font-size: 2dvw;
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-    box-shadow: none;
+  border: 0.35dvw solid var(--highlight-color);
+  color: var(--highlight-color);
+  border-radius: 0.6dvw;
+  padding: 1dvw 3dvw;
+  font-size: 2dvw;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 @media screen and (max-width: 768px) {
+  .name-greeting {
+    font-size: 4dvw;
+    line-height: 1;
+  }
 
-    .name-greeting{
-        font-size: 3dvw;
-        line-height: 0.1dvw;
-    }
+  .name {
+    font-size: 6dvw;
+  }
 
-    .name {
-        font-size: 4dvw;
-    }
+  .position {
+    font-size: 3dvw;
+  }
 
-    .position{
-        font-size: 2.4dvw;
-    }
-    
-   .contact-button{
-    font-size: 2.8dvw;
-    padding: 0.3dvw 3dvw;
+  .contact-button {
+    font-size: 4dvw;
+    padding: 1dvw 8dvw;
+    z-index: 1;
+  }
+
+   .profile-container{
+    position: relative;
    }
+
+  .profile-detail {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    order: 2;
+  }
+
+  .profile-image {
+    order: 1;
+  }
 }

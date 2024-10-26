@@ -31,16 +31,16 @@
 }
 
 @media screen and (max-width: 768px) {
-    .about-heading {
-        font-size: 4.2dvw;
+    .heading {
+        font-size: 6dvw;
     }
     .line {
         margin-top: 3dvw;
     }
     .content {
         margin-top: 1.3dvw;
-        font-weight: 400;
-        font-size: 3dvw;
-        line-height: 4dvw;
+        font-weight: 300;
+        font-size: 4dvw;
+        line-height: 5dvw;
     }
 }

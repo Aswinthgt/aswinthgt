@@ -1,0 +1,30 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-bg-light) 25%,
+    var(--skeleton-bg-mid-light) 50%,
+    var(--skeleton-bg-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.skeleton.text {
+  height: 16px;
+  border-radius: 4px;
+}
+
+.skeleton.circular {
+  border-radius: 50%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

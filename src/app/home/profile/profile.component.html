@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-5 d-flex justify-content-center align-items-center">
-    <div>
+<div class="row profile-container">
+  <div class="col-md-1"></div>
+  <div class="col-md-5 d-flex justify-content-center align-items-center profile-detail">
+     <div class="w-100 d-grid justify-content-center ms-5 ps-5">
       <div class="d-flex">
         <p class="font-mulish name-greeting">I'M&nbsp;&nbsp;<span class="font-roboto-slab mt-auto name">Aswinth
             GT</span></p>
@@ -14,15 +14,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6">
-    <div>
-      <img class="image-back blend-mode"
-        [ngClass]="{'blend-mode': commonService.isDarkMode}"
-        [priority]="true"
-        [ngSrc]="commonService.isDarkMode ? 
-        'https://aswinthgt.vercel.app/images/profile-dark.png' : 
-        'https://aswinthgt.vercel.app/images/profile-light.png'" alt="Aswinth G T"
-        width="500" height="450">
-    </div>
+  <div class="col-md-6 profile-image">
+    <app-profile-image/>
   </div>
 </div>
