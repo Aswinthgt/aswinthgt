@@ -6,3 +6,18 @@
 .blend-mode {
     mix-blend-mode: soft-light;
 }
+
+@media screen and (max-width: 768px) {
+    .image-container{
+      display: flex;
+      justify-content: center;
+      margin: 0 20px 0 20px;
+    }
+    .image-back {
+        // mix-blend-mode: multiply;
+        border: 0.35dvw solid var(--highlight-color);
+        border-radius: 0.6dvw;
+        max-width: calc(60% - 5px);
+        height: auto;
+    }
+}
