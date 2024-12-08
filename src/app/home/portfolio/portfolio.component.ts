@@ -6,11 +6,11 @@ import { isPlatformBrowser } from '@angular/common';
 import { PortfolioData } from '../../models/models';
 
 @Component({
-  selector: 'app-portfolio',
-  standalone: true,
-  imports: [MatRippleModule, MatIconModule],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+    selector: 'app-portfolio',
+    standalone: true,
+    imports: [MatRippleModule, MatIconModule],
+    templateUrl: './portfolio.component.html',
+    styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit {
 

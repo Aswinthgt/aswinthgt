@@ -10,11 +10,11 @@ import { IconCard } from "../../../../models/models"
 
 
 @Component({
-  selector: 'app-icons-card',
-  standalone: true,
-  imports: [MatRippleModule,IconsComponent, MatProgressBarModule, NgStyle],
-  templateUrl: './icons-card.component.html',
-  styleUrl: './icons-card.component.scss'
+    selector: 'app-icons-card',
+    imports: [MatRippleModule, IconsComponent, MatProgressBarModule, NgStyle],
+    standalone: true,
+    templateUrl: './icons-card.component.html',
+    styleUrl: './icons-card.component.scss'
 })
 export class IconsCardComponent {
   iconDetails:InputSignal<Array<IconCard>> = input.required()

@@ -13,11 +13,11 @@ import { ResumeComponent } from '@resume/resume.component';
 
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [ProfileComponent, TopBarComponent, AboutComponent, PortfolioComponent, ExperienceComponent, TestimonialComponent, ContactComponent, ResumeComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    standalone: true,
+    imports: [ProfileComponent, TopBarComponent, AboutComponent, PortfolioComponent, ExperienceComponent, TestimonialComponent, ContactComponent, ResumeComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 

@@ -2,11 +2,11 @@ import { NgClass, NgStyle } from '@angular/common';
 import { Component, input, InputSignal } from '@angular/core';
 
 @Component({
-  selector: 'app-skeleton-loader',
-  standalone: true,
-  imports: [NgStyle, NgClass],
-  templateUrl: './skeleton-loader.component.html',
-  styleUrl: './skeleton-loader.component.scss',
+    selector: 'app-skeleton-loader',
+    standalone: true,
+    imports: [NgStyle, NgClass],
+    templateUrl: './skeleton-loader.component.html',
+    styleUrl: './skeleton-loader.component.scss'
 })
 export class SkeletonLoaderComponent {
   width: InputSignal<string> = input<string>('100%');

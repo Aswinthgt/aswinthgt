@@ -8,11 +8,11 @@ import { ProfileImageComponent } from "./profile-image/profile-image.component";
 
 
 @Component({
-  selector: 'app-profile',
-  standalone: true,
-  imports: [UserDataComponent, MatRippleModule, NgClass, ProfileImageComponent],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+    selector: 'app-profile',
+    standalone: true,
+    imports: [UserDataComponent, MatRippleModule, NgClass, ProfileImageComponent],
+    templateUrl: './profile.component.html',
+    styleUrl: './profile.component.scss'
 })
 export class ProfileComponent{
 

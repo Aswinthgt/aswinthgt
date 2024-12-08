@@ -6,11 +6,11 @@ import { IconsCardComponent } from './icons-card/icons-card.component';
 import { IconCard } from '../../../models/models';
 
 @Component({
-  selector: 'app-skills',
-  standalone: true,
-  imports: [IconsCardComponent, MatRippleModule],
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+    selector: 'app-skills',
+    standalone: true,
+    imports: [IconsCardComponent, MatRippleModule],
+    templateUrl: './skills.component.html',
+    styleUrl: './skills.component.scss'
 })
 export class SkillsComponent implements OnInit {
 

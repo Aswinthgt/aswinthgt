@@ -3,11 +3,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [MatIconModule, MatRippleModule],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+    selector: 'app-contact',
+    standalone: true,
+    imports: [MatIconModule, MatRippleModule],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
