@@ -52,7 +52,7 @@ export class CommonService {
 
 
   isMobile() {
-    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    const userAgent = navigator?.userAgent ?? navigator?.vendor ?? (window as any)?.opera ?? "android";
 
     // Check if the user agent string indicates a mobile device
     return /android|iphone|ipad|iPod|opera mini|iemobile|wpdesktop|windows phone|blackberry/i.test(userAgent.toLowerCase());
