@@ -1,5 +1,6 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { Navigate, ThemePallete } from '../../../models/models';
+import { gallery } from "../static"
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,9 @@ export class CommonService {
 
   private _darkMode = false;
 
-  currentTheme: ThemePallete = {
-    value: "Primary",
-    dark: "dark",
-    light: "light"
-  }
+  private _randomNum = Math.floor(Math.random() * 6);
+
+  currentTheme: ThemePallete = gallery[this._randomNum]
 
   set isDarkMode(value: boolean) {
     this._darkMode = value

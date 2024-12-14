@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 
 import { SkillsComponent } from '@about/skills/skills.component';
 
@@ -7,7 +6,7 @@ import { SkillsComponent } from '@about/skills/skills.component';
 @Component({
     selector: 'app-about',
     standalone: true,
-    imports: [SkillsComponent, NgOptimizedImage],
+    imports: [SkillsComponent],
     templateUrl: './about.component.html',
     styleUrl: './about.component.scss'
 })

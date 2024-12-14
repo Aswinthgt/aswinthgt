@@ -1,4 +1,4 @@
-import { Component, ElementRef, afterRender, inject, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, viewChild } from '@angular/core';
 
 import { ProfileComponent } from '@profile/profile.component';
 import { AboutComponent } from '@about/about.component';
@@ -8,14 +8,12 @@ import { TestimonialComponent } from '@testimonial/testimonial.component';
 import { ContactComponent } from '@contact/contact.component';
 import { PortfolioComponent } from '@portfolio/portfolio.component';
 import { CommonService } from '@shared/commonService/common.service';
-import { ResumeComponent } from '@resume/resume.component';
-
-
+// import { ResumeComponent } from '@resume/resume.component';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [ProfileComponent, TopBarComponent, AboutComponent, PortfolioComponent, ExperienceComponent, TestimonialComponent, ContactComponent, ResumeComponent],
+    imports: [ProfileComponent, TopBarComponent, AboutComponent, PortfolioComponent, ExperienceComponent, TestimonialComponent, ContactComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
 })

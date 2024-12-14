@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { NgStyle } from '@angular/common';
 
 import { CommonService } from '@shared/commonService/common.service';
 import { Navigate, ThemePallete } from '../../models/models';
@@ -11,7 +10,7 @@ import { gallery } from '@shared/static';
 @Component({
     selector: 'app-top-bar',
     standalone: true,
-    imports: [MatRippleModule, MatIconModule, MatMenuModule, NgStyle],
+    imports: [MatRippleModule, MatIconModule, MatMenuModule],
     templateUrl: './top-bar.component.html',
     styleUrl: './top-bar.component.scss'
 })

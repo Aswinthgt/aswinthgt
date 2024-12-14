@@ -11,13 +11,14 @@
     .image-container{
       display: flex;
       justify-content: center;
-      margin: 0 20px 0 20px;
+    //   margin: 0 20px 0 20px;
     }
     .image-back {
         // mix-blend-mode: multiply;
-        border: 0.35dvw solid var(--highlight-color);
-        border-radius: 0.6dvw;
-        max-width: calc(60% - 5px);
+        border: 6dvw solid var(--highlight-color);
+        box-shadow:  var(--highlight-color) 0px 48px 100px 0px;
+        border-radius: 10px;
+        max-width: calc(90% - 5px);
         height: auto;
     }
 }
