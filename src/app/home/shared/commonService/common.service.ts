@@ -6,15 +6,19 @@ import { gallery } from '../static';
   providedIn: 'root',
 })
 export class CommonService {
-  constructor() {}
+  constructor() { }
 
   events: Partial<Navigate> = {};
 
   private _darkMode = false;
 
-  private _randomNum = Math.floor(Math.random() * 6);
+  private _getRotationalIndex = () => {
+    const day = new Date().getDay();
+    if (day < 6) return day;
+    return 0;
+  };
 
-  currentTheme: ThemePallete = gallery[this._randomNum];
+  currentTheme: ThemePallete = gallery[this._getRotationalIndex()];
 
   set isDarkMode(value: boolean) {
     this._darkMode = value;
