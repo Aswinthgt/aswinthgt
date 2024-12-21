@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, RendererFactory2, inject, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
+import {MatRippleModule} from '@angular/material/core';
 
 import { CommonService } from '@shared/commonService/common.service';
 import { SeoService } from '@shared/seo-service/seo.service';
@@ -8,7 +9,7 @@ import { SeoService } from '@shared/seo-service/seo.service';
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet],
+    imports: [RouterOutlet, MatRippleModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

@@ -7,3 +7,11 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
+
+
+.no-select {
+    -ms-user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    user-select: none; /* For older versions of Internet Explorer */
+  }
