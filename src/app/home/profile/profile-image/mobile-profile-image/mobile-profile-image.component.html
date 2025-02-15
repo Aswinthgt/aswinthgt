@@ -1,0 +1,16 @@
+<div class="image-container">
+    <img
+      class="image-back blend-mode animate__animated animate__bounceInRight"
+      [priority]="true"
+      [ngClass]="{ 'blend-mode': commonService.isDarkMode }"
+      [ngSrc]="
+        commonService.isDarkMode
+          ? 'https://aswinthgt.vercel.app/images/profile-dark.png'
+          : 'https://aswinthgt.vercel.app/images/profile-light.png'
+      "
+      alt="Aswinth G T"
+      width="500"
+      height="450"
+      (load)="isImageLoading()"
+    />
+  </div>

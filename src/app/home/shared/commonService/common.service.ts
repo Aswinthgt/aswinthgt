@@ -1,12 +1,13 @@
-import { ElementRef, Injectable } from '@angular/core';
+import { ElementRef, Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Navigate, ThemePallete } from '../../../models/models';
 import { gallery } from '../static';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommonService {
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private plateformid: Object) {}
 
   events: Partial<Navigate> = {};
 
@@ -41,7 +42,6 @@ export class CommonService {
     nativeElement.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
-      inline: 'nearest',
     });
   }
 
@@ -67,5 +67,12 @@ export class CommonService {
     }
 
     return true;
+  }
+
+  isMobileUsingResolution() {
+    if (isPlatformBrowser(this.plateformid)) {
+      return window.innerWidth <= 768;
+    }
+    return false;
   }
 }
