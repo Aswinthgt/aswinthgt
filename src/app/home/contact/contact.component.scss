@@ -1,69 +1,76 @@
 .contact-container {
-    position: relative;
-    display: block;
-    height: 210px; /* Adjust the height of the container */
-    border-top: 2px solid var(--highlight-color); /* Yellow line at the top */
-    border-bottom: 2px solid var(--highlight-color); /* Yellow line at the bottom */
-    padding: 20px; /* Adjust padding if necessary */
-    box-sizing: border-box; /* Include border width in the total width and height */
-    background-color: var(--card-background-color);
+  position: relative;
+  display: block;
+  height: 210px; /* Adjust the height of the container */
+  border-top: 2px solid var(--highlight-color); /* Yellow line at the top */
+  border-bottom: 2px solid var(--highlight-color); /* Yellow line at the bottom */
+  padding: 20px; /* Adjust padding if necessary */
+  box-sizing: border-box; /* Include border width in the total width and height */
+  background-color: var(--card-background-color);
 }
 
-.top-line-text, .bottom-line-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent;
-    padding: 0 10px;
-    color: var(--color); /* Adjust text color */
+.top-line-text,
+.bottom-line-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  padding: 0 10px;
+  color: var(--color); /* Adjust text color */
 }
 
 .top-line-text {
-    top: -10px; /* Adjust the distance from the top line */
-    background: linear-gradient(to bottom, var(--background-color) 50%, var(--card-background-color) 50%);
-    font-size: 3.8dvw;
-    font-weight: 500;
+  top: -10px; /* Adjust the distance from the top line */
+  background: linear-gradient(
+    to bottom,
+    var(--background-color) 50%,
+    var(--card-background-color) 50%
+  );
+  font-size: 3.8dvw;
+  font-weight: 500;
 }
 
 .bottom-line-text {
-    bottom: -10px; /* Adjust the distance from the bottom line */
-    background: linear-gradient(to top, var(--background-color) 50%, var(--card-background-color) 50%);
-    & div{
-        & i{
-            cursor: pointer;
-        }
+  bottom: -10px; /* Adjust the distance from the bottom line */
+  background: linear-gradient(
+    to top,
+    var(--background-color) 50%,
+    var(--card-background-color) 50%
+  );
+  & div {
+    & i {
+      cursor: url("/set143_chrome/Chrome Cursor Set/cur1049.cur"), auto;
     }
+  }
 }
 
-.button{
-    color: var(--highlight-color);
-    background-color: var(--background-color);
-    display:flex;
-    align-items: center;
-    border: none;
-    padding: 0.3dvw 4dvw 0.3dvw 2dvw;
-    border-radius: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    text-wrap: nowrap;
-    font-size: 120%;
-    
-    & mat-icon{
-        color: var(--color);
-        margin:10px
-    }
-    
+.button {
+  color: var(--highlight-color);
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0.3dvw 4dvw 0.3dvw 2dvw;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  text-wrap: nowrap;
+  font-size: 120%;
+  cursor: url("/set143_chrome/Chrome Cursor Set/cur1049.cur"), auto;
+
+  & mat-icon {
+    color: var(--color);
+    margin: 10px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    
-    .top-line-text{
-        font-size: 6dvw;
-    }
-
-    .button{
-      font-size: 3.4dvw;
-      padding: 0.3dvw 4dvw 0.3dvw 2dvw;
-
-    }
-  
+  .top-line-text {
+    font-size: 6dvw;
   }
+
+  .button {
+    font-size: 3.4dvw;
+    padding: 0.3dvw 4dvw 0.3dvw 2dvw;
+  }
+}

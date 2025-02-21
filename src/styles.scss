@@ -30,4 +30,12 @@ body {
     ::-webkit-scrollbar-thumb:hover {
         background: var(--background-dark-color);
     }
+
+    cursor: url("/set143_chrome/Chrome Cursor Set/cur1054.cur"), auto;
+
+    user-select: none; /* Prevents selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+
 }
