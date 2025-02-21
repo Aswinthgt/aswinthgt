@@ -1,13 +1,28 @@
 <div class="row mt-3">
-    <div class="col-12">
-        <app-icons-card [iconDetails]="showData"></app-icons-card>
+  <div class="d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center menu-container">
+      <div class="active-bar" [ngStyle]="activeBar()"></div>
+      <div class="menu-item" (click)="menuChange($event, 0)">All</div>
+      <div class="menu-item" (click)="menuChange($event, 1)">MEAN</div>
+      <div class="menu-item" (click)="menuChange($event, 2)">MERN</div>
+      <div class="menu-item" (click)="menuChange($event, 3)">Node.js</div>
     </div>
+  </div>
 
-    @if(iconData.length && isMobile){
-    <div class="col-12 mt-5 d-flex justify-content-center">
-        <button (click)="showMore()" matRipple class="button">
-            View More ({{ iconData.length >= 4 ? 4 : iconData.length }})
-        </button>
+  <div class="col-12 wrapper" [ngStyle]="wrapper()">
+    <div class="wrapper-container" [ngStyle]="wrapperSkills()">
+      <div class="wrapper-section" #wrapperSection>
+            <app-icons-card [iconDetails]="showData"></app-icons-card>
+      </div>
+      <div class="wrapper-section" #wrapperSection>
+        <app-icons-card [iconDetails]="getSkills('mean')"></app-icons-card>
+      </div>
+      <div class="wrapper-section" #wrapperSection>
+        <app-icons-card [iconDetails]="getSkills('mern')"></app-icons-card>
+      </div>
+      <div class="wrapper-section" #wrapperSection>
+        <app-icons-card [iconDetails]="getSkills('node.js')"></app-icons-card>
+      </div>
     </div>
-    }
+  </div>
 </div>

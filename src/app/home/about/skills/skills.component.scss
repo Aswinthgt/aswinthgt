@@ -10,3 +10,50 @@
     font-size: large;
     font-weight: 500;
 }
+
+.menu-container {
+    width: fit-content;
+    position: relative;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: 0.35dvw solid var(--highlight-color);
+
+    & .active-bar{
+        position: absolute;
+        left: 0;
+        background-color: var(--card-background-color);
+        height: 30px;
+        border-radius: 4px;
+        transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    }
+
+    & .menu-item{
+        padding: 5px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 1;
+        text-align: center;
+        color: var(--highlight-color);
+        font-weight: bold;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 110%;
+    transition: height 0.5s ease-in-out;
+
+    & .wrapper-container {
+        display: flex;
+        justify-content: space-between;
+        transition: transform 0.5s ease-in-out;
+        width: 400%; /* 4 sections */
+    }
+
+    & .wrapper-section {
+        width: 25%;
+        padding: 0 1%;
+        height: fit-content;
+        box-sizing: border-box;
+    }
+}

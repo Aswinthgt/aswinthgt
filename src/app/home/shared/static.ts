@@ -32,3 +32,10 @@ export const gallery: Array<ThemePallete> = [
         light: "Golden-Twilight-light"
     }
 ]
+
+
+export const SKILLS_CATEGOTIES = {
+    mean: ["Mongo DB", "Express.js", "Angular", "Node.js"],
+    mern: ["Mongo DB", "Express.js", "React", "Node.js"],
+    "node.js": ["Express.js", "Node.js"]
+}
