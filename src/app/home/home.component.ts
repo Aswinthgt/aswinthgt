@@ -19,8 +19,6 @@ import { CommonService } from '@shared/commonService/common.service';
 import { MobileProfileComponent } from './profile/mobile-profile/mobile-profile.component';
 // import { ResumeComponent } from '@resume/resume.component';
 
-import { gsap } from 'gsap';
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -51,12 +49,6 @@ export class HomeComponent {
   }
 
   ngAfterViewInit(): void {
-    gsap.from('.col-12', {
-      scrollTrigger: '.col-12',
-      y: 100,
-      opacity: 0,
-      duration: 1
-    });
     this.loadProfile(this.commonService.isMobileUsingResolution());
     this.commonService.events = {
       about: this.about(),
