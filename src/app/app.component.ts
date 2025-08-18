@@ -6,6 +6,10 @@ import {MatRippleModule} from '@angular/material/core';
 import { CommonService } from '@shared/commonService/common.service';
 import { SeoService } from '@shared/seo-service/seo.service';
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
 @Component({
     selector: 'app-root',
     standalone: true,
@@ -26,6 +30,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.metaService.updateSEO({});
+    gsap.registerPlugin(ScrollTrigger);
   }
 
   ngAfterViewInit(): void {

@@ -3,17 +3,39 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@app/*": ["./src/app/*"],
-      "@home/*": ["./src/app/home/*"],
-      "@about/*": ["./src/app/home/about/*"],
-      "@contact/*": ["./src/app/home/contact/*"],
-      "@experience/*": ["./src/app/home/experience/*"],
-      "@portfolio/*": ["./src/app/home/portfolio/*"],
-      "@profile/*": ["./src/app/home/profile/*"],
-      "@resume/*": ["./src/app/home/resume/*"],
-      "@testimonial/*": ["./src/app/home/testimonial/*"],
-      "@top-bar/*": ["./src/app/home/top-bar/*"],
-      "@shared/*": ["./src/app/home/shared/*"]
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@home/*": [
+        "./src/app/home/*"
+      ],
+      "@about/*": [
+        "./src/app/home/about/*"
+      ],
+      "@contact/*": [
+        "./src/app/home/contact/*"
+      ],
+      "@experience/*": [
+        "./src/app/home/experience/*"
+      ],
+      "@portfolio/*": [
+        "./src/app/home/portfolio/*"
+      ],
+      "@profile/*": [
+        "./src/app/home/profile/*"
+      ],
+      "@resume/*": [
+        "./src/app/home/resume/*"
+      ],
+      "@testimonial/*": [
+        "./src/app/home/testimonial/*"
+      ],
+      "@top-bar/*": [
+        "./src/app/home/top-bar/*"
+      ],
+      "@shared/*": [
+        "./src/app/home/shared/*"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
@@ -26,12 +48,15 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
