@@ -8,22 +8,22 @@ import { NgStyle } from '@angular/common';
 import { SKILLS_CATEGOTIES } from '@app/home/shared/static';
 
 @Component({
-    selector: 'app-skills',
-    standalone: true,
-    imports: [IconsCardComponent, MatRippleModule, NgStyle],
-    templateUrl: './skills.component.html',
-    styleUrl: './skills.component.scss'
+  selector: 'app-skills',
+  standalone: true,
+  imports: [IconsCardComponent, MatRippleModule, NgStyle],
+  templateUrl: './skills.component.html',
+  styleUrl: './skills.component.scss'
 })
 export class SkillsComponent implements OnInit, AfterViewInit {
 
-   
-  wrapperSection = viewChildren("wrapperSection", {read: ElementRef})
+
+  wrapperSection = viewChildren("wrapperSection", { read: ElementRef })
   isMobile = inject(CommonService).isMobile();
   activeBar = signal({
     transform: `translateX(5px)`,
     width: "47px"
   })
-  wrapper = signal<Partial<{height: string}>>({})
+  wrapper = signal<Partial<{ height: string }>>({})
   wrapperSkills = signal({
     transform: `translateX(0)`,
   })
@@ -46,19 +46,34 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       percentage: 98
     },
     {
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
-      iconName: "Express.js",
-      percentage: 95
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      iconName: "React",
+      percentage: 90
     },
     {
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularmaterial/angularmaterial-original.svg',
-      iconName: "Material",
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
+      iconName: "Docker",
       percentage: 90
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg',
+      iconName: "Kubernetes",
+      percentage: 90
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg',
+      iconName: "Azure DevOps",
+      percentage: 80
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg',
       iconName: 'FastAPI',
       percentage: 80
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
+      iconName: "Express.js",
+      percentage: 95
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-line.svg',
@@ -81,14 +96,14 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       percentage: 90
     },
     {
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-      iconName: "React",
-      percentage: 90
-    },
-    {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
       iconName: "TypeScript",
       percentage: 100
+    },
+    {
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularmaterial/angularmaterial-original.svg',
+      iconName: "Material",
+      percentage: 90
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',
@@ -104,16 +119,6 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
       iconName: "Npm",
       percentage: 95
-    },
-    {
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
-      iconName: "Docker",
-      percentage: 80
-    },
-    {
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg',
-      iconName: "Kubernetes",
-      percentage: 55
     },
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
@@ -134,34 +139,34 @@ export class SkillsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-      this.wrapper.set({
-        height: this.wrapperSection()[0].nativeElement.offsetHeight + "px"
-      })
+    this.wrapper.set({
+      height: this.wrapperSection()[0].nativeElement.offsetHeight + "px"
+    })
   }
 
   showMore() {
-      this.showData = this.iconData
+    this.showData = this.iconData
   }
 
-  menuChange(event: Event, index: number){
-      this.activeBar.set({
-        transform: `translateX(${(event.target as HTMLElement).offsetLeft}px)`,
-        width: `${(event.target as HTMLElement).offsetWidth}px`
-      })
+  menuChange(event: Event, index: number) {
+    this.activeBar.set({
+      transform: `translateX(${(event.target as HTMLElement).offsetLeft}px)`,
+      width: `${(event.target as HTMLElement).offsetWidth}px`
+    })
 
-      const totalSections = 4; // Number of sections
-      const moveValue = -(index * (100 / totalSections)) + "%";
+    const totalSections = 4; // Number of sections
+    const moveValue = -(index * (100 / totalSections)) + "%";
 
-      this.wrapperSkills.set({
-        transform: `translateX(${moveValue})`
-      })
-      this.wrapper.set({
-        height: this.wrapperSection()[index].nativeElement.offsetHeight + "px"
-      })
+    this.wrapperSkills.set({
+      transform: `translateX(${moveValue})`
+    })
+    this.wrapper.set({
+      height: this.wrapperSection()[index].nativeElement.offsetHeight + "px"
+    })
   }
-  getSkills(categories: "mean" | "mern" | "node.js"){
+  getSkills(categories: "mean" | "mern" | "node.js") {
     const catSkill = SKILLS_CATEGOTIES[categories]
-    return this.iconData.filter((item: IconCard) => catSkill.find(s=> s == item.iconName))
+    return this.iconData.filter((item: IconCard) => catSkill.find(s => s == item.iconName))
   }
 
 }
