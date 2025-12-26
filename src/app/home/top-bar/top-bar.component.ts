@@ -3,16 +3,16 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { CommonService } from '@shared/commonService/common.service';
+import { CommonService } from '../shared/commonService/common.service';
 import { Navigate, ThemePallete } from '../../models/models';
-import { gallery } from '@shared/static';
+import { gallery } from '../shared/static';
 
 @Component({
-    selector: 'app-top-bar',
-    standalone: true,
-    imports: [MatRippleModule, MatIconModule, MatMenuModule],
-    templateUrl: './top-bar.component.html',
-    styleUrl: './top-bar.component.scss'
+  selector: 'app-top-bar',
+  standalone: true,
+  imports: [MatRippleModule, MatIconModule, MatMenuModule],
+  templateUrl: './top-bar.component.html',
+  styleUrl: './top-bar.component.scss'
 })
 export class TopBarComponent implements OnInit {
 
@@ -21,7 +21,7 @@ export class TopBarComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.changeMode()
+    // Theme is handled by CommonService default and AppComponent init
   }
 
   getDifferenceInYearsAndMonths(startDate = new Date('2022-10-03'), endDate = new Date()) {

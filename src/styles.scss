@@ -1,42 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
 @use "theme";
-@import "atropos/css";
+
+:root {
+    --font-primary: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --transition-speed: 0.3s;
+}
 
 html,
 body {
-    height: 100%;
-}
-
-body {
+    min-height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-
-    ::-webkit-scrollbar {
-        width: 0px;
-        display: none;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-        background-color: var(--highlight-color);
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: var(--icon-card-hover-background);
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--background-dark-color);
-    }
-
-    cursor: url("/set143_chrome/Chrome Cursor Set/cur1054.cur"), auto;
-
-    user-select: none; /* Prevents selection */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer */
-
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--color);
+    transition: background-color 0.5s ease, color 0.3s ease;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+}
+
+/* Typography Defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Utility Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cursor style */
+body {
+    cursor: default;
+    /* Reverting to default for better UX, or keep custom if preferred */
+    // cursor: url("/set143_chrome/Chrome Cursor Set/cur1054.cur"), auto; 
+}
+
+/* Selection */
+::selection {
+    background-color: var(--highlight-color);
+    color: var(--background-color);
+}
+
+/* Global Scroll Animation - DEPRECATED (Replaced by AOS) */
+/* .scroll-reveal-item removed */

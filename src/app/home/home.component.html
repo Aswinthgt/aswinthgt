@@ -1,53 +1,24 @@
-<div class="row profile-container">
-  <div class="col-12">
-    <app-top-bar></app-top-bar>
-  </div>
-  <div class="col-12">
-    <ng-container #profilecontainer></ng-container>
-  </div>
-</div>
+<div class="main-content">
+  <!-- Unified Profile Component (Desktop & Mobile) -->
+  <app-profile></app-profile>
 
-<div class="row flat-container animate__animated animate__fadeInUpBig" #about>
-  <div class="col-12">
+  <div #about>
     <app-about></app-about>
   </div>
-</div>
 
-<div
-  class="row flat-container animate__animated animate__bounceInUp"
-  #portfolio
->
-  <div class="col-12">
+  <div #portfolio>
     <app-portfolio></app-portfolio>
   </div>
-</div>
 
-<div class="row experience-container animate__animated animate__bounceInUp">
-  <div class="col-12">
+  <div>
     <app-experience></app-experience>
   </div>
-</div>
 
-<div class="row mt-5 animate__animated animate__bounceInUp">
-  <div class="col-12">
+  <div>
     <app-testimonial></app-testimonial>
   </div>
-</div>
 
-<div class="row mt-5 animate__animated animate__bounceInUp" #contact>
-  <div class="col-12">
+  <div #contact>
     <app-contact></app-contact>
-  </div>
-</div>
-
-<!-- <div class="row my-5">
-    <div class="col-12">
-        <app-resume></app-resume>
-    </div>
-</div> -->
-
-<div class="row m-5 animate__animated animate__bounceInUp">
-  <div class="col-12 text-center font-roboto-slab thanks-for-scrooling">
-    "Thanks For Scrolling"
   </div>
 </div>

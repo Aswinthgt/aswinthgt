@@ -1,5 +1,5 @@
 import { Directive, inject, signal } from '@angular/core';
-import { CommonService } from '@app/home/shared/commonService/common.service';
+import { CommonService } from '../../../shared/commonService/common.service';
 
 @Directive({
   selector: '[appProfileImageHelper]'
@@ -7,10 +7,10 @@ import { CommonService } from '@app/home/shared/commonService/common.service';
 export class ProfileImageHelperDirective {
 
   commonService = inject(CommonService);
-    isImageLoaded = signal(false);
-  
-    isImageLoading() {
-      this.isImageLoaded.set(true);
-    }
+  isImageLoaded = signal(false);
+
+  isImageLoading() {
+    this.isImageLoaded.set(true);
+  }
 
 }

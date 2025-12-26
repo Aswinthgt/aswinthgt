@@ -1,34 +1,15 @@
-.profile-container {
-    background-color: var(--card-background-color);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+.main-content {
+    /* Ensure content is below the fixed top bar */
+    padding-top: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.flat-container{
-    margin: 3dvw;
-}
-
-.experience-container{
-    background-color: var(--card-background-color);
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
-    margin-top: 10dvw;
-}
-
-.thanks-for-scrooling{
-    color: var(--highlight-color);
-    font-size: 2dvw;
-    font-weight: 500;
-    text-wrap: nowrap;
-}
-
-
-
+/* Add any global layout adjustments for sections here if needed */
 @media screen and (max-width: 768px) {
-    
-    .flat-container{
-        margin: 90px auto auto auto;
-    }
-    
-    .thanks-for-scrooling{
-        font-size: 4dvw;
+    .main-content {
+        gap: 1rem;
     }
 }

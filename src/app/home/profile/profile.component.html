@@ -1,29 +1,35 @@
-<div class="row profile-container">
-  <div class="col-md-1"></div>
-  <div
-    class="col-5 d-flex justify-content-center align-items-center profile-detail"
-  >
-    <div class="w-100 d-grid justify-content-center">
-      <div class="d-flex justify-content-center animate__animated animate__bounceInLeft">
-        <p class="font-mulish name-greeting">
-          I'M&nbsp;&nbsp;<span class="font-roboto-slab mt-auto name"
-            >Aswinth GT</span
-          >
-        </p>
+<div class="hero-container">
+  <div class="background-decor-left"></div>
+  <div class="background-decor-right"></div>
+
+  <div class="hero-center" data-aos="fade-up">
+    <div class="profile-image-wrapper">
+      <app-profile-image class="main-image"></app-profile-image>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="main-title font-roboto-slab">Aswinth GT</h1>
+
+      <div class="role-container font-noto-sans">
+        <div class="static-line">I am a</div>
+
+        <div class="dynamic-line zero-jitter-container">
+          <!-- Ghost Element for Stability (Max Width Role) -->
+          <span class="ghost-text"><span class="highlighted-role">MERN Stack Developer</span><span
+              class="cursor"></span></span>
+
+          <!-- Visible Typing Text -->
+          <span class="visible-text">
+            <span class="highlighted-role">{{ currentText }}</span><span class="cursor"></span>
+          </span>
+        </div>
       </div>
-      <div class="font-noto-sans position d-flex justify-content-center animate__animated animate__bounceInLeft">
-        <!-- <div class="typing-container"> -->
-          <span>{{ currentText }}</span><span class="cursor">|</span>
-        <!-- </div> -->
-      </div>
-      <div class="font-alegreya-sans contact d-flex justify-content-center animate__animated animate__bounceInLeft">
-        <button matRipple class="contact-button" (click)="goTo('contact')">
-          Contact Me
+
+      <div class="action-barrier">
+        <button matRipple class="primary-cta font-alegreya-sans" (click)="goTo('contact')">
+          Let's Connect <mat-icon>arrow_forward</mat-icon>
         </button>
       </div>
     </div>
-  </div>
-  <div class="col-6 profile-image">
-    <app-profile-image />
   </div>
 </div>

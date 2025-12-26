@@ -1,46 +1,138 @@
-.heading {
-    font-size: 3.8dvw;
-    font-weight: 500;
+/* About Redesign - Focusing on Cleanliness */
+
+.section-container {
+    padding: 2rem 20px 6rem 20px;
+    /* Reduced top padding significantly */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.yellow-line {
-    background-color: var(--highlight-color);
-    border-radius: 0.4dvw;
-    height: 0.2dvw;
-
+.about-column {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Add subtle side borders for focus */
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0 4rem;
 }
 
-.color {
+/* Creative Heading: Clean Sans */
+.section-heading {
+    font-size: 2.2rem;
     color: var(--highlight-color);
-}
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    /* Wide tracking */
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    font-family: 'Noto Sans', sans-serif;
+    /* Clean Sans */
 
-.line {
-    width: 100%;
-    margin-top: 2.3dvw;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary-color);
+        opacity: 0.5;
+        /* Minimalist underline */
+    }
 }
 
 .content {
-    margin-top: 1.2dvw;
-    font-weight: 400;
-    font-size: 2dvw;
-    line-height: 2.5dvw;
+    font-size: 1.6rem;
+    /* Larger, more readable */
+    line-height: 1.8;
+    color: var(--color);
+    font-weight: 300;
 }
 
-.skills-section{
-    margin-top: 5dvw;
+.highlight-text {
+    color: var(--color);
+    position: relative;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        /* Thick underline */
+        background-color: var(--highlight-color);
+        opacity: 0.3;
+        z-index: -1;
+        transition: height 0.3s ease;
+    }
+
+    &:hover::after {
+        height: 100%;
+    }
 }
 
-@media screen and (max-width: 768px) {
-    .heading {
-        font-size: 6dvw;
+.experience-separator {
+    display: none;
+    /* Remove generic separator line */
+}
+
+.skills-column {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1100px) {
+    .section-container {
+        padding: 1rem 5% 4rem 5%;
+        /* Minimized top padding */
+        gap: 2rem;
     }
-    .line {
-        margin-top: 3dvw;
+
+    .about-column {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        border: none;
     }
+
     .content {
-        margin-top: 1.3dvw;
-        font-weight: 300;
-        font-size: 4dvw;
-        line-height: 5dvw;
+        font-size: 1.2rem;
+        /* Readable mobile font */
+        white-space: normal;
+        word-wrap: break-word;
+        /* Ensure wrapping */
+        overflow-wrap: break-word;
+        max-width: 95vw;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .highlight-text {
+        white-space: normal !important;
+        display: inline;
+        word-wrap: break-word;
     }
 }

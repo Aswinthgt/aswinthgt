@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { SkillsComponent } from '@about/skills/skills.component';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { SkillsComponent } from '@about/skills/skills.component';
     standalone: true,
     imports: [SkillsComponent],
     templateUrl: './about.component.html',
-    styleUrl: './about.component.scss'
+    styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
 

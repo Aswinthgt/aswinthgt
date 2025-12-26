@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'app-testimonial',
-    standalone: true,
-    imports: [],
-    templateUrl: './testimonial.component.html',
-    styleUrl: './testimonial.component.scss'
+  selector: 'app-testimonial',
+  standalone: true,
+  imports: [MatIconModule],
+  templateUrl: './testimonial.component.html',
+  styleUrl: './testimonial.component.scss'
 })
 export class TestimonialComponent {
   testimonial = {

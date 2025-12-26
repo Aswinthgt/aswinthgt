@@ -1,34 +1,17 @@
 import { AfterViewInit, Component, ElementRef, OnInit, inject, signal, viewChild, viewChildren } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
 
-import { CommonService } from '@shared/commonService/common.service';
+import { CommonService } from '../../shared/commonService/common.service';
 import { IconsCardComponent } from './icons-card/icons-card.component';
 import { IconCard } from '../../../models/models';
-import { NgStyle } from '@angular/common';
-import { SKILLS_CATEGOTIES } from '@app/home/shared/static';
-
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [IconsCardComponent, MatRippleModule, NgStyle],
+  imports: [IconsCardComponent, MatRippleModule],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+  styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit, AfterViewInit {
-
-
-  wrapperSection = viewChildren("wrapperSection", { read: ElementRef })
-  isMobile = inject(CommonService).isMobile();
-  activeBar = signal({
-    transform: `translateX(5px)`,
-    width: "47px"
-  })
-  wrapper = signal<Partial<{ height: string }>>({})
-  wrapperSkills = signal({
-    transform: `translateX(0)`,
-  })
-
-  showData: Array<IconCard> = []
+export class SkillsComponent {
   iconData: Array<IconCard> = [
     {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
@@ -130,43 +113,5 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       iconName: "CSS 3",
       percentage: 90
     }
-
   ]
-
-
-  ngOnInit(): void {
-    this.showMore()
-  }
-
-  ngAfterViewInit(): void {
-    this.wrapper.set({
-      height: this.wrapperSection()[0].nativeElement.offsetHeight + "px"
-    })
-  }
-
-  showMore() {
-    this.showData = this.iconData
-  }
-
-  menuChange(event: Event, index: number) {
-    this.activeBar.set({
-      transform: `translateX(${(event.target as HTMLElement).offsetLeft}px)`,
-      width: `${(event.target as HTMLElement).offsetWidth}px`
-    })
-
-    const totalSections = 4; // Number of sections
-    const moveValue = -(index * (100 / totalSections)) + "%";
-
-    this.wrapperSkills.set({
-      transform: `translateX(${moveValue})`
-    })
-    this.wrapper.set({
-      height: this.wrapperSection()[index].nativeElement.offsetHeight + "px"
-    })
-  }
-  getSkills(categories: "mean" | "mern" | "node.js") {
-    const catSkill = SKILLS_CATEGOTIES[categories]
-    return this.iconData.filter((item: IconCard) => catSkill.find(s => s == item.iconName))
-  }
-
 }

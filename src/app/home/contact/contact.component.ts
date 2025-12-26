@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-contact',
@@ -19,15 +20,15 @@ export class ContactComponent {
   subject = encodeURIComponent('Interested in Discussing Your Profile');
   body = encodeURIComponent(
     `Hi Aswinth,\n\n` +
-      `I came across your profile and would like to discuss an opportunity with you. Here are the details:\n\n` +
-      `- Job Role:\n` +
-      `- Location:\n` +
-      `- Company Name:\n` +
-      `- Job Description:\n\n` +
-      `Please let me know if you're interested, and we can schedule a call to discuss further.\n\n` +
-      `Looking forward to your response.\n\n` +
-      `Best regards,\n` +
-      `Your Name`
+    `I came across your profile and would like to discuss an opportunity with you. Here are the details:\n\n` +
+    `- Job Role:\n` +
+    `- Location:\n` +
+    `- Company Name:\n` +
+    `- Job Description:\n\n` +
+    `Please let me know if you're interested, and we can schedule a call to discuss further.\n\n` +
+    `Looking forward to your response.\n\n` +
+    `Best regards,\n` +
+    `Your Name`
   );
 
   links = {

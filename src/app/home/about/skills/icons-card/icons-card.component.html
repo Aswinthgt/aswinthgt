@@ -1,42 +1,25 @@
-<div class="row d-flex justify-content-center mt-5 mb-5">
+<div class="icons-grid">
   @for(icon of iconDetails(); track $index){
-  <div class="col-6 col-md-3 mt-4">
-    <div #atroposEl class="atropos my-atropos">
-      <div class="atropos-scale">
-        <div class="atropos-rotate">
-          <div class="atropos-inner">
-            <div class="icon" matRipple>
-              <div class="container">
-                @if(icon.iconName === "Angular"){
-                <div class="svg-image">
-                  <app-icons [icon]="icon.iconName"></app-icons>
-                </div>
-                }@else {
-                <!-- <img src="image.png" alt="Image" class="image"> -->
-                <img [src]="icon.iconUrl" alt="SVG Image" class="svg-image" />
-                }
-              </div>
-              <div class="d-flex justify-content-center iconName">
-                {{ icon.iconName }}
-              </div>
-              <div class="progress-bar-container">
-                <div
-                  class="progress"
-                  role="progressbar"
-                  aria-label="Example with label"
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="progress-bar"
-                    [ngStyle]="{ width: icon.percentage + '%' }"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="skill-card-container">
+    <div class="icon" matRipple [matRippleRadius]="10" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0"
+      data-aos-anchor-placement="top-bottom">
+      <div class="container">
+        @if(icon.iconName === "Angular"){
+        <div class="svg-image">
+          <app-icons [icon]="icon.iconName"></app-icons>
         </div>
+        }@else {
+        <img [src]="icon.iconUrl" alt="SVG Image" class="svg-image" />
+        }
+      </div>
+      <div class="iconName">
+        {{ icon.iconName }}
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress">
+          <div class="progress-bar" [ngStyle]="{ width: icon.percentage + '%' }"></div>
+        </div>
+        <span class="pct-text">{{ icon.percentage }}%</span>
       </div>
     </div>
   </div>

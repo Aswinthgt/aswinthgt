@@ -7,11 +7,11 @@ import { isPlatformBrowser } from '@angular/common';
   providedIn: 'root',
 })
 export class CommonService {
-  constructor(@Inject(PLATFORM_ID) private plateformid: Object) {}
+  constructor(@Inject(PLATFORM_ID) private plateformid: Object) { }
 
   events: Partial<Navigate> = {};
 
-  private _darkMode = false;
+  private _darkMode = true;
 
   private _getRotationalIndex = () => {
     const day = new Date().getDay();
@@ -31,10 +31,12 @@ export class CommonService {
 
   rootElement: ElementRef<HTMLDivElement> | undefined;
   setTheme() {
-    this.rootElement?.nativeElement.setAttribute(
-      'data-theme',
-      this.isDarkMode ? this.currentTheme.dark : this.currentTheme.light
-    );
+    if (isPlatformBrowser(this.plateformid)) {
+      document.body.setAttribute(
+        'data-theme',
+        this.isDarkMode ? this.currentTheme.dark : this.currentTheme.light
+      );
+    }
   }
 
   scrollTo(menu: keyof Navigate) {

@@ -1,30 +1,39 @@
-<div class="row">
-
-    <div class="col-12 contact-container">
-        <div class="top-line-text font-roboto-slab">Contact Me</div>
-         
-
-
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center mt-4">
-                <button matRipple (click)="goTo(links.mail)" class="button me-2 font-alegreya-sans"><mat-icon fontIcon="mail"></mat-icon> aswinthgt&#64;gmail.com  </button>
-                <button matRipple (click)="goTo(links.tel)" class="button ms-2 font-alegreya-sans"><mat-icon fontIcon="call"></mat-icon>+91 9025294492</button>
-            </div>
-            <div class="col-12 d-flex justify-content-center mt-4 mb-5">
-                <button matRipple (click)="goTo(links.location)" class="button mx-2 font-alegreya-sans"><mat-icon fontIcon="location_on"></mat-icon> Kochi, Kerala, India  </button>
+<div class="section-container" id="contact">
+    <div class="footer-split">
+        <div class="cta-side" data-aos="fade-up">
+            <h2 class="cta-heading font-roboto-slab">Let's Talk</h2>
+            <p class="cta-sub font-alegreya-sans">Have a project in mind?</p>
+            <div class="social-row">
+                <i (click)="goTo(links.linkedIn)" class="bi bi-linkedin social-icon"></i>
+                <i (click)="goTo(links.wa)" class="bi bi-whatsapp social-icon"></i>
+                <i (click)="goTo(links.fb)" class="bi bi-facebook social-icon"></i>
+                <i (click)="goTo(links.gitHub)" class="bi bi-github social-icon"></i>
             </div>
         </div>
 
-
-        <div class="bottom-line-text">
-            <div class="d-flex">
-                <i (click)="goTo(links.linkedIn)" class="bi bi-linkedin mx-2"></i>
-                <i (click)="goTo(links.wa)" class="bi bi-whatsapp mx-2"></i>
-                <i (click)="goTo(links.fb)" class="bi bi-facebook mx-2"></i>
-                <i (click)="goTo(links.gitHub)" class="bi bi-github mx-2"></i>
-            </div>
+        <div class="links-side">
+            <button matRipple (click)="goTo(links.mail)" class="contact-link scroll-reveal-item font-alegreya-sans"
+                appScrollReveal style="transition-delay: 100ms">
+                <span class="label">Email</span>
+                <span class="value">aswinthgt&#64;gmail.com</span>
+                <mat-icon>north_east</mat-icon>
+            </button>
+            <button matRipple (click)="goTo(links.tel)" class="contact-link scroll-reveal-item font-alegreya-sans"
+                appScrollReveal style="transition-delay: 200ms">
+                <span class="label">Phone</span>
+                <span class="value">+91 9025294492</span>
+                <mat-icon>north_east</mat-icon>
+            </button>
+            <button matRipple (click)="goTo(links.location)" class="contact-link scroll-reveal-item font-alegreya-sans"
+                appScrollReveal style="transition-delay: 300ms">
+                <span class="label">Location</span>
+                <span class="value">Kochi, Kerala, India</span>
+                <mat-icon>north_east</mat-icon>
+            </button>
         </div>
-        <!-- Your content here -->
     </div>
 
+    <div class="copyright font-roboto-slab">
+        thanks for scrolling
+    </div>
 </div>

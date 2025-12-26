@@ -2,9 +2,20 @@
     // mix-blend-mode: multiply;
     max-width: 100%;
     height: auto;
+    object-position: center 40%;
+    /* Zoom in (1.25) and move DOWN (50px) to create top space */
+    transform: scale(1.25) translateY(50px);
 }
+
 .blend-mode {
     mix-blend-mode: soft-light;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .image-back {
+        transform: scale(1.25) translateY(30px);
+    }
 }
 
 // @media screen and (max-width: 768px) {

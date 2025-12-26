@@ -1,59 +1,58 @@
-.button {
-    background-color: var(--highlight-color);
-    color: var(--background-color);
-    border: none;
-    border-radius: 5px;
-    padding: 1dvw 2dvw;
-    cursor: url("/set143_chrome/Chrome Cursor Set/cur1049.cur"), auto;
-    text-align: center;
-    font-family: "Alegreya Sans", sans-serif;
-    font-size: large;
-    font-weight: 500;
-}
+/* Remove pill/tab styles, go for simple grid of icons */
 
 .menu-container {
-    width: fit-content;
-    position: relative;
-    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.menu-item {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
     border-radius: 8px;
-    border: 0.35dvw solid var(--highlight-color);
+    transition: all 0.3s ease;
 
-    & .active-bar{
-        position: absolute;
-        left: 0;
-        background-color: var(--card-background-color);
-        height: 30px;
-        border-radius: 4px;
-        transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
-    }
-
-    & .menu-item{
-        padding: 5px 15px;
-        border-radius: 4px;
-        cursor: url("/set143_chrome/Chrome Cursor Set/cur1049.cur"), auto;
-        z-index: 1;
-        text-align: center;
-        color: var(--highlight-color);
-        font-weight: bold;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--color);
     }
 }
+
+/* We need to handle the active state logic which was previously DOM-based active-bar. 
+   Simplifying to just text style for this iteration or keeping it simple. 
+   The component TS handles 'wrapper' sliding, so we must keep the wrapper structure mostly intact 
+   but can style it invisibly. */
+
+.active-bar {
+    display: none;
+    /* Hide the old slider bar */
+}
+
+/* Force active item styling if possible, but TS controls it via DOM position usually. 
+   Let's just style the content wrapper to be clean. */
 
 .wrapper {
+    width: 100%;
     overflow: hidden;
-    width: 110%;
-    transition: height 0.5s ease-in-out;
-
-    & .wrapper-container {
-        display: flex;
-        justify-content: space-between;
-        transition: transform 0.5s ease-in-out;
-        width: 400%; /* 4 sections */
-    }
-
-    & .wrapper-section {
-        width: 25%;
-        padding: 0 1%;
-        height: fit-content;
-        box-sizing: border-box;
-    }
 }
+
+.wrapper-container {
+    display: flex;
+    width: 400%;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrapper-section {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Adjust the IconsCard to be minimal. 
+   We need to target the child component's styles too or rely on its own simplicity. */

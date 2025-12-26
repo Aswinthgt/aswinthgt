@@ -1,6 +1,6 @@
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
-import { CommonService } from '@app/home/shared/commonService/common.service';
+import { CommonService } from '../../shared/commonService/common.service';
 import { ProfileImageHelperDirective } from './profile-image-helper/profile-image-helper.directive';
 
 @Component({
@@ -10,4 +10,4 @@ import { ProfileImageHelperDirective } from './profile-image-helper/profile-imag
     templateUrl: './profile-image.component.html',
     styleUrl: './profile-image.component.scss'
 })
-export class ProfileImageComponent extends ProfileImageHelperDirective {}
+export class ProfileImageComponent extends ProfileImageHelperDirective { }

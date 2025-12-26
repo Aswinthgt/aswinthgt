@@ -1,93 +1,180 @@
-.heading {
-    font-size: 3.8dvw;
-    font-weight: 500;
+.section-container {
+    padding: 6rem 15%;
 }
 
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
+.header-area {
+
+    /* Creative Heading: Elegant Serif */
+    .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+        font-size: 3.5rem;
+        font-family: 'Playfair Display', serif;
+        /* Elegant */
+        color: var(--highlight-color);
+        font-style: italic;
+        position: relative;
+        z-index: 10;
+
+        span {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            color: var(--color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-
-// .image-container:hover img {
-//     filter: blur(8px);
-// }
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    transform: scaley(0); /* Initially hidden */
-    transform-origin: bottom; /* Set the transform origin to the left edge */
-    transition: transform 0.3s; /* Smooth transition for the transform property */
+.portfolio-list {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.portfolio-item {
+    display: flex;
     align-items: center;
+    gap: 5%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.image-container:hover .overlay {
-    // opacity: 1;
-    transform: scaleY(1); /* Show overlay on hover by scaling horizontally */
+.portfolio-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.content {
-    text-align: center;
-    color: #FFFFFF;
+.portfolio-item.reverse-layout {
+    flex-direction: row-reverse;
 }
 
-.content button {
-    background-color: var(--highlight-color);
-    color: var(--background-color);
+.visual-side {
+    flex: 1.2;
+    position: relative;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.text-side {
+    flex: 0.8;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    color: var(--color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    /* Fix for text wrapping/overlay */
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+}
+
+.project-desc {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    /* Limit width for readability */
+    max-width: 90%;
+}
+
+
+.view-btn {
+    background: transparent;
     border: none;
-    border-radius: 5px;
-    padding: 0.6dvw 2dvw;
-        cursor: url("/set143_chrome/Chrome Cursor Set/cur1049.cur"), auto;
-    text-align: center;
+    color: var(--highlight-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+
+    mat-icon {
+        font-size: 1.1rem;
+        height: 1.1rem;
+        width: 1.1rem;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover mat-icon {
+        transform: translate(3px, -3px);
+    }
 }
 
-.head{
-    font-size: 2dvw;
-}
-
-.body{
-    font-size: 1dvw;
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .heading {
-        font-size: 6dvw;
+@media screen and (max-width: 1024px) {
+    .section-container {
+        padding: 6rem 5%;
+        /* Reduced side padding */
     }
 
-    .image-container {
-        height: 200px;
+    .header-area .section-title {
+        font-size: 2.5rem;
+        /* Scaled down heading */
     }
 
-    .head{
-        font-size: 3dvw;
-        line-height: 4dvw;
+    .portfolio-item {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
     }
 
-    .body {
-        line-height: 100%;
-        font-size: 2dvw;
-        margin: 0 5% 5% 5%;
+    /* Force normal stack even for reverse items */
+    .portfolio-item.reverse-layout {
+        flex-direction: column;
     }
 
-    .overlay {
-        transform: scaleY(1)
+    .img-wrapper {
+        height: 250px;
+        /* Resize images */
+        width: 100%;
     }
 
+    .project-title {
+        font-size: 2rem;
+        word-wrap: break-word;
+        /* Ensure wrapping */
+        line-height: 1.3;
+    }
+
+    .project-desc {
+        max-width: 100%;
+    }
+
+    .portfolio-list {
+        gap: 6rem;
+        /* Less vertical gap */
+    }
 }

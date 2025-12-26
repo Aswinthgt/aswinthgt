@@ -1,29 +1,25 @@
-<div class="row">
-
-    <div class="col-12">
-        <div class="d-flex justify-content-center">
-            <span class="heading font-roboto-slab">Portfolio</span>
-        </div>
+<div class="section-container" id="portfolio">
+    <div class="header-area">
+        <h2 class="section-title font-roboto-slab">Selected Work</h2>
     </div>
 
-    <div class="col-12">
-        <div class="row d-flex justify-content-center">
-            @for (content of portfolioData; track $index) {
-            <div class="col-6 col-md-4 mt-5">
-                <div class="image-container rounded">
-                    <img [src]="content.backGroundImage" alt="Image">
-                    <div class="overlay">
-                        <div class="content">
-                            <h2 class="head">{{content.head}}</h2>
-                            <p class="body">{{textShort(content.body)}}</p>
-                            <button (click)="goTo(content.url)" matRipple class="d-inline-flex align-items-center">See More&nbsp;&nbsp; <mat-icon
-                                    fontIcon="east"></mat-icon> </button>
-                        </div>
-                    </div>
+    <div class="portfolio-list">
+        @for (content of portfolioData; track $index; let i = $index) {
+        <div class="portfolio-item" [class.reverse-layout]="i % 2 !== 0" data-aos="fade-up">
+            <div class="visual-side">
+                <div class="img-wrapper">
+                    <img [src]="content.backGroundImage" alt="Project Image">
                 </div>
             </div>
-            }
 
+            <div class="text-side">
+                <h3 class="project-title font-roboto-slab">{{content.head}}</h3>
+                <p class="project-desc font-alegreya-sans">{{content.body}}</p>
+                <button matRipple (click)="goTo(content.url)" class="view-btn font-alegreya-sans">
+                    View Project <mat-icon>north_east</mat-icon>
+                </button>
+            </div>
         </div>
+        }
     </div>
 </div>

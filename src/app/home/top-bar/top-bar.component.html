@@ -1,23 +1,31 @@
-<div class="row mt-5 mb-5 d-flex justify-content-center align-items-center animate__animated animate__bounceIn">
-     <div class="col-3">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="rounded-div font-noto-sans">{{getDifferenceInYearsAndMonths()}} yr's</div>
-        </div>
-     </div>
-     <div class="col-6">
-        <ul class="list d-flex justify-content-center align-items-center h-100 m-0 p-0">
-            <li class="mx-3 menu" (click)="scrollTo('about')">About</li>
-            <li class="mx-3 menu" (click)="scrollTo('portfolio')">Portfolio</li>
-            <li class="mx-3 menu" (click)="scrollTo('contact')">Contact</li>
-        </ul>
-     </div>
-     <div class="col-3 d-flex justify-content-evenly">
-       <mat-icon (click)="changeMode()" matRipple class="mode" [fontIcon]=" this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
-       <mat-icon [matMenuTriggerFor]="menu" class="color-pallete-head" fontIcon="format_color_fill" matRipple ></mat-icon>
-       <mat-menu class="colors-pallete-body" #menu="matMenu" xPosition="before">
+<div class="navbar-wrapper animate__animated animate__fadeInDown">
+  <div class="floating-nav">
+    <div class="brand">
+      <span class="logo-text font-roboto-slab">AGT</span>
+    </div>
+
+    <nav class="nav-items font-alegreya-sans">
+      <a (click)="scrollTo('about')" class="nav-link">About</a>
+      <a (click)="scrollTo('portfolio')" class="nav-link">Work</a>
+      <a (click)="scrollTo('contact')" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="controls">
+      <div class="year-pill font-noto-sans">{{getDifferenceInYearsAndMonths()}} exp</div>
+      <button mat-icon-button (click)="changeMode()" class="icon-btn">
+        <mat-icon [fontIcon]="this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-btn">
+        <mat-icon fontIcon="palette"></mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu" xPosition="before" class="theme-menu">
         @for(pallete of colorGalaries; track $index){
-          <button mat-menu-item class="mat-menu-item" (click)="setColorPallete(pallete)">{{pallete.value}}</button>
+        <button mat-menu-item (click)="setColorPallete(pallete)">
+          <span [style.color]="pallete.value === 'Dark' ? '#000' : pallete.value">{{pallete.value}}</span>
+        </button>
         }
       </mat-menu>
-     </div>
+    </div>
+  </div>
 </div>

@@ -5,14 +5,14 @@ import { MatRippleModule } from '@angular/material/core';
 import { NgClass } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { CommonService } from '@shared/commonService/common.service';
+import { CommonService } from '../shared/commonService/common.service';
 
 @Component({
-    selector: 'app-resume',
-    standalone: true,
-    imports: [MatIconModule, MatRippleModule, NgClass, MatProgressSpinnerModule],
-    templateUrl: './resume.component.html',
-    styleUrl: './resume.component.scss'
+  selector: 'app-resume',
+  standalone: true,
+  imports: [MatIconModule, MatRippleModule, NgClass, MatProgressSpinnerModule],
+  templateUrl: './resume.component.html',
+  styleUrl: './resume.component.scss'
 })
 export class ResumeComponent {
 

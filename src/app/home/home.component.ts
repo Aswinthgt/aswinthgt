@@ -1,74 +1,52 @@
 import {
   Component,
   ElementRef,
-  HostListener,
   inject,
-  signal,
   viewChild,
-  ViewContainerRef,
+  OnInit,
+  AfterViewInit
 } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Fix missing import
 
-import { ProfileComponent } from '@profile/profile.component';
-import { AboutComponent } from '@about/about.component';
-import { TopBarComponent } from '@top-bar/top-bar.component';
-import { ExperienceComponent } from '@experience/experience.component';
-import { TestimonialComponent } from '@testimonial/testimonial.component';
-import { ContactComponent } from '@contact/contact.component';
-import { PortfolioComponent } from '@portfolio/portfolio.component';
-import { CommonService } from '@shared/commonService/common.service';
-import { MobileProfileComponent } from './profile/mobile-profile/mobile-profile.component';
-// import { ResumeComponent } from '@resume/resume.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AboutComponent } from './about/about.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ContactComponent } from './contact/contact.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { CommonService } from './shared/commonService/common.service'; // Correct relative path
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    TopBarComponent,
+    CommonModule,
+    ProfileComponent,
     AboutComponent,
-    PortfolioComponent,
     ExperienceComponent,
-    TestimonialComponent,
+    PortfolioComponent,
     ContactComponent,
+    TestimonialComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterViewInit {
   commonService = inject(CommonService);
 
-  about = viewChild('about', { read: ElementRef });
-  portfolio = viewChild('portfolio', { read: ElementRef });
-  contact = viewChild('contact', { read: ElementRef });
-  profileContainer = viewChild('profilecontainer', { read: ViewContainerRef });
-
-  isMobile = signal<boolean | null>(null);
+  about = viewChild<ElementRef>('about');
+  portfolio = viewChild<ElementRef>('portfolio');
+  contact = viewChild<ElementRef>('contact');
 
   ngOnInit(): void {
-    // for SSR
-    this.profileContainer()?.createComponent(ProfileComponent);
+    // Initialization
   }
 
   ngAfterViewInit(): void {
-    this.loadProfile(this.commonService.isMobileUsingResolution());
     this.commonService.events = {
       about: this.about(),
       portfolio: this.portfolio(),
       contact: this.contact(),
-    }
-  }
-
-  loadProfile(isMobile: boolean): void {
-    this.profileContainer()?.clear();
-    const componentRef = isMobile ? MobileProfileComponent : ProfileComponent;
-    this.profileContainer()?.createComponent(componentRef);
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    const result = event.target.innerWidth <= 768;
-    if (this.isMobile() !== result) {
-      this.isMobile.set(result);
-      this.loadProfile(result);
-    }
+    };
   }
 }

@@ -2,16 +2,20 @@
     background-color: var(--background-color);
     color: var(--color);
     width: 100%;
-    height: 100dvh;
-    overflow: auto;
-    scroll-behavior: smooth;
+    min-height: 100vh;
+    /* Allow grow */
+    /* Removed height: 100dvh and overflow: auto to fix fixed positioning context */
     box-sizing: border-box;
 }
 
 
 .no-select {
-    -ms-user-select: none; /* Disable text selection */
-    -webkit-user-select: none; /* For Safari */
-    -moz-user-select: none; /* For Firefox */
-    user-select: none; /* For older versions of Internet Explorer */
-  }
+    -ms-user-select: none;
+    /* Disable text selection */
+    -webkit-user-select: none;
+    /* For Safari */
+    -moz-user-select: none;
+    /* For Firefox */
+    user-select: none;
+    /* For older versions of Internet Explorer */
+}
