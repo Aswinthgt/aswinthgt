@@ -1,7 +1,7 @@
 <div class="navbar-wrapper animate__animated animate__fadeInDown">
   <div class="floating-nav">
     <div class="brand">
-      <span class="logo-text font-roboto-slab">AGT</span>
+      <span class="logo-text font-roboto-slab cursor-pointer" (click)="scrollTo(null)">AGT</span>
     </div>
 
     <nav class="nav-items font-alegreya-sans">
@@ -11,7 +11,7 @@
     </nav>
 
     <div class="controls">
-      <div class="year-pill font-noto-sans">{{getDifferenceInYearsAndMonths()}} exp</div>
+      <div class="year-pill font-noto-sans cursor-pointer" (click)="scrollTo('experience')">{{getDifferenceInYearsAndMonths()}} exp</div>
       <button mat-icon-button (click)="changeMode()" class="icon-btn">
         <mat-icon [fontIcon]="this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
       </button>

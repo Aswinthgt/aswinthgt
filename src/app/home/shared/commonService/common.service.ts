@@ -39,8 +39,12 @@ export class CommonService {
     }
   }
 
-  scrollTo(menu: keyof Navigate) {
-    const nativeElement = this.events[menu]?.nativeElement;
+  scrollTo(menu: keyof Navigate | null) {
+    if (!menu) {
+      window.scrollTo({top:0, behavior: 'smooth'});
+      return;
+    }
+    const nativeElement = this.events[menu as keyof Navigate]?.nativeElement;
     nativeElement.scrollIntoView({
       behavior: 'smooth',
       block: 'start',

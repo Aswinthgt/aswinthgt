@@ -43,7 +43,7 @@ export class TopBarComponent implements OnInit {
     return `${years}${month}`.trim()
   }
 
-  scrollTo(menu: keyof Navigate) {
+  scrollTo(menu: keyof Navigate | null) {
     this.commonService.scrollTo(menu)
   }
 

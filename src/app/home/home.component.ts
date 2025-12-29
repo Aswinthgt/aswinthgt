@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   about = viewChild<ElementRef>('about');
   portfolio = viewChild<ElementRef>('portfolio');
   contact = viewChild<ElementRef>('contact');
+  experience = viewChild<ElementRef>('experience');
 
   ngOnInit(): void {
     // Initialization
@@ -46,6 +47,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       about: this.about(),
       portfolio: this.portfolio(),
       contact: this.contact(),
+      experience: this.experience(),
     };
   }
 }

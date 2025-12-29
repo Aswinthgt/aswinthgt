@@ -24,7 +24,8 @@ export interface Experience {
 export interface Navigate {
   about: ElementRef;
   portfolio: ElementRef,
-  contact: ElementRef
+  contact: ElementRef,
+  experience: ElementRef
 }
 
 export interface ThemePallete {
