@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Directive, inject, Inject, PLATFORM_ID } from '@angular/core';
+import { Directive, inject, Inject, PLATFORM_ID, signal, WritableSignal } from '@angular/core';
 import { CommonService } from '../../shared/commonService/common.service';
 import { Subscription, interval } from 'rxjs';
 
@@ -11,7 +11,7 @@ export class ProfileHelperDirective {
   commonService = inject(CommonService)
 
   words: string[] = ['MEAN Stack Developer', 'PYTHON Developer', 'Web Technologies', 'Full Stack Developer', 'MERN Stack Developer'];
-  currentText: string = '';
+  currentText: WritableSignal<string> = signal('');
   private currentWordIndex = 0;
   private charIndex = 0;
   private typingSpeed = 150; // in ms
@@ -31,7 +31,7 @@ export class ProfileHelperDirective {
 
     this.subscription = typingInterval.subscribe(() => {
       if (this.charIndex < wordLength) {
-        this.currentText += this.words[this.currentWordIndex][this.charIndex];
+        this.currentText.update((pre: string)=> pre + this.words[this.currentWordIndex][this.charIndex])
         this.charIndex++;
       } else {
         this.subscription?.unsubscribe();
@@ -45,7 +45,7 @@ export class ProfileHelperDirective {
 
     this.subscription = deletingInterval.subscribe(() => {
       if (this.charIndex > 0) {
-        this.currentText = this.currentText.slice(0, -1);
+        this.currentText.update((pre: string)=> pre.slice(0, -1))
         this.charIndex--;
       } else {
         this.subscription?.unsubscribe();

@@ -6,7 +6,7 @@ import {
   OnInit,
   AfterViewInit
 } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Fix missing import
+ // Fix missing import
 
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
@@ -20,14 +20,13 @@ import { CommonService } from './shared/commonService/common.service'; // Correc
   selector: 'app-home',
   standalone: true,
   imports: [
-    CommonModule,
     ProfileComponent,
     AboutComponent,
     ExperienceComponent,
     PortfolioComponent,
     ContactComponent,
     TestimonialComponent
-  ],
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

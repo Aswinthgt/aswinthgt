@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { MatRippleModule } from '@angular/material/core';
 
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CommonService } from './home/shared/commonService/common.service';
 import { SeoService } from './home/shared/seo-service/seo.service';
 
@@ -17,7 +17,7 @@ import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatRippleModule, TopBarComponent, CommonModule],
+  imports: [RouterOutlet, MatRippleModule, TopBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
