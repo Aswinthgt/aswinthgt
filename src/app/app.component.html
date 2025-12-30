@@ -3,4 +3,7 @@
   <div class="container-fluid" matRipple [matRippleRadius]="20">
     <router-outlet></router-outlet>
   </div>
+  @defer (on idle) {
+  <app-chat></app-chat>
+  }
 </div>

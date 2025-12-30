@@ -10,6 +10,7 @@ import { SeoService } from './home/shared/seo-service/seo.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TopBarComponent } from './home/top-bar/top-bar.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 import * as AOS from 'aos';
@@ -17,7 +18,7 @@ import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatRippleModule, TopBarComponent],
+  imports: [RouterOutlet, MatRippleModule, TopBarComponent, ChatComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

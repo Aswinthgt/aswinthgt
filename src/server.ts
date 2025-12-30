@@ -6,10 +6,13 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { expressHandler } from '@genkit-ai/express';
+import { aboutFlow } from "./flow"
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
+app.use(express.json());
 const angularApp = new AngularNodeAppEngine();
 
 /**
@@ -27,6 +30,8 @@ const angularApp = new AngularNodeAppEngine();
 app.get('/api/servertest', (req, res) => {
   res.send('Server test');
 });
+app.post('/api/aboutFlow', expressHandler(aboutFlow));
+
 
 /**
  * Serve static files from /browser
