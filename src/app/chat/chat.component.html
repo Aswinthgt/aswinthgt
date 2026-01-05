@@ -28,8 +28,7 @@
                 </div>
                 <div>
                     <h3>AI Assistant</h3>
-                    <!-- <span class="status-dot"></span> <small>Online</small> -->
-                    <span class="status-dot"></span> <small>Offline</small>
+                    <span class="status-dot"></span> <small>Online</small>
                 </div>
             </div>
             <button class="close-btn" (click)="toggleChat()">
@@ -50,17 +49,21 @@
                 </div>
             </div>
 
-            <div class="message-group assistant" *ngIf="isLoading()">
+            @if(this.premiseResource.isLoading()){
+            <div class="message-group assistant">
                 <div class="message assistant typing-indicator">
                     <span></span><span></span><span></span>
                 </div>
             </div>
+            }
+
         </div>
 
         <div class="chat-input">
             <input type="text" [ngModel]="userMessage()" (ngModelChange)="userMessage.set($event)"
-                (keyup.enter)="sendMessage()" placeholder="Message..." [disabled]="isLoading()" />
-            <button (click)="sendMessage()" [disabled]="!userMessage() || isLoading()" class="send-btn">
+                (keyup.enter)="sendMessage()" placeholder="Message..." [disabled]="this.premiseResource.isLoading()" />
+            <button (click)="sendMessage()" [disabled]="!userMessage() || this.premiseResource.isLoading()"
+                class="send-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-arrow-up">

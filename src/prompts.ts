@@ -54,7 +54,7 @@ RESPONSE FORMAT CONSTRAINT (STRICT):
 You MUST respond with ONLY a valid JSON object in the following format:
 
 {
-  "answer": "response in text here"
+  "replay": "response in text here"
 }
 
 RULES (NON-NEGOTIABLE):
@@ -63,10 +63,10 @@ RULES (NON-NEGOTIABLE):
 - Do NOT include newlines before or after the JSON.
 - Do NOT include trailing commas.
 - Do NOT include additional keys.
-- The value of "answer" MUST be a plain string.
+- The value of "replay" MUST be a plain string.
 - Escape quotes properly if needed.
-- If you cannot answer, return:
-  { "answer": "This information is not publicly available." }
+- If you cannot replay, return:
+  { "replay": "This information is not publicly available." }
 
 VALIDATION REQUIREMENT:
 - The output must be directly parseable by JSON.parse() without modification.

@@ -1,96 +1,35 @@
-import { Chat, genkit, SessionData, SessionStore } from "genkit/beta";
-import { z, ZodType } from "zod";
-import { googleAI } from "@genkit-ai/google-genai";
-import { openAI } from '@genkit-ai/compat-oai/openai';
-import { preamblePrompt, responsePrompt } from "./prompts";
-import { parse } from 'partial-json';
+import express from "express";
+import OpenAI from "openai";
+import { preamblePrompt } from "./prompts";
 
-const model = openAI.model('gpt-5-nano')
-
-const ai = genkit({
-    plugins: [openAI({ apiKey: "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" })],
-    model,
+const client = new OpenAI({
+  baseURL: "https://router.huggingface.co/v1",
+  apiKey: (process.env as any)?.HF_API_KEY,
 });
 
 
-const preamble = ai.definePrompt(
-    { name: 'preamble' },
-    preamblePrompt
-);
+export const chat = async (req: any, res: any) => {
+  try {
+    const { message } = req.body;
 
-interface MyState {
-    primaryObjective?: string;
-    milestones?: string[];
-    currentMilestone?: string;
-}
-
-const AboutOutput = z.object({
-    answer: z.string(),
-});
-
-export const aboutFlow = ai.defineFlow(
-    {
-        name: 'aboutFlow',
-        inputSchema: z.object({
-            userInput: z.optional(z.string()),
-            sessionId: z.string(),
-            clearSession: z.boolean()
-        }) as any,
-        outputSchema: AboutOutput as any
-    },
-    async ({ userInput, sessionId, clearSession }) => {
-        let chat: Chat;
-        console.log(userInput, sessionId, clearSession);
-        if (clearSession) {
-            const session = ai.createSession<MyState>({
-                store: new JsonSessionStore(),
-                sessionId,
-                initialState: {}
-            });
-            session.updateState({});
-            chat = session.chat(preamble, { sessionId, model });
-            await session.updateMessages(sessionId, []);
-        } else {
-            const session = await ai.loadSession(sessionId, {
-                store: new JsonSessionStore(),
-            });
-            chat = session.chat({ sessionId, model });
-        }
-        try {
-            console.log("try block");
-            const { text } = await chat.send(responsePrompt(userInput || ''));
-            console.log("try block 2");
-            return parse(maybeStripMarkdown(text));
-        } catch(err) {
-            console.log("catch block", err);
-            return {
-                answer: 'This information is not publicly available.'
-            }
-        }
+    if (!message || typeof message !== "string") {
+      return res.status(400).json({ error: "Message is required" });
     }
-);
 
-const markdownRegex = /^\s*(```json)?((.|\n)*?)(```)?\s*$/i;
-function maybeStripMarkdown(withMarkdown: string) {
-  const mdMatch = markdownRegex.exec(withMarkdown);
-  if (!mdMatch) {
-    return withMarkdown;
+    const completion = await client.chat.completions.create({
+      model: "moonshotai/Kimi-K2-Instruct-0905",
+      messages: [
+        { role: "system", content: preamblePrompt },
+        { role: "user", content: message },
+      ],
+    });
+    console.log("AI Completion:", completion.choices);
+    const output = completion.choices[0].message.content;
+    res.json({
+      reply: {content: output, role: "assistant"},
+    });
+  } catch (error) {
+    console.error("AI Error:", error);
+    res.status(500).json({ error: "AI request failed" });
   }
-  return mdMatch[2];
-}
-
-
-const sessionStore: { [key: string]: SessionData } = {};
-class JsonSessionStore<S = any> implements SessionStore<S> {
-    async get(sessionId: string): Promise<SessionData<S> | undefined> {
-        if (sessionId in sessionStore)
-            return sessionStore[sessionId];
-        else {
-            return undefined;
-        }
-    }
-
-    async save(sessionId: string, sessionData: SessionData<S>): Promise<void> {
-        sessionStore[sessionId] = sessionData;
-    }
 }

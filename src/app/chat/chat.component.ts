@@ -10,10 +10,6 @@ interface ChatMessage {
     content: string;
 }
 
-function randomId(): string {
-    return Date.now() + '' + Math.floor(Math.random() * 1000000000);
-}
-
 @Component({
     selector: 'app-chat',
     standalone: true,
@@ -26,7 +22,6 @@ export class ChatComponent {
     @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
 
     isOpen = signal(false);
-    isLoading = signal(false);
     userMessage = signal('');
     testMessage = signal('');
     messages = signal<ChatMessage[]>([
@@ -38,10 +33,10 @@ export class ChatComponent {
         effect(() => {
             // Depend on messages or loading state changes to trigger scroll
             this.messages();
-            this.isLoading();
             // Use setTimeout to allow DOM to update before scrolling
             setTimeout(() => this.scrollToBottom(), 100);
-            console.log(this?.premiseResource?.value());
+
+            console.log(this.premiseResource.isLoading());
         });
     }
 
@@ -64,45 +59,42 @@ export class ChatComponent {
     sendMessage() {
         const content = this.userMessage();
         this.testMessage.set(content);
-        if (!content.trim() || this.isLoading()) return;
-
-        // Add user message
-        this.messages.update(msgs => [...msgs, { role: 'user', content }]);
-        this.userMessage.set('');
-        this.isLoading.set(true);
-
-        this.http.post<any>('/api/chat', {
-            messages: this.messages()
-        }).subscribe({
-            next: (response) => {
-                const assistantMessage = response.choices[0].message;
-                this.messages.update(msgs => [...msgs, assistantMessage]);
-                this.isLoading.set(false);
-            },
-            error: (err) => {
-                console.error('Chat error:', err);
-                this.messages.update(msgs => [...msgs, { role: 'assistant', content: 'Sorry, I realized I cannot help with that right now.' }]);
-                this.isLoading.set(false);
-            }
-        });
+         this.userMessage.set('');
     }
-
-    getSessionId() {
-        if(this.sessionId()) return { sessionId: this.sessionId(), clearSession: false };
-        this.sessionId.set(randomId());
-        return { sessionId: this.sessionId(), clearSession: true };
-    }   
 
     premiseResource = resource({
         defaultValue: "Hi, Aswinth GT",
         params: () => this.testMessage(),
-        loader: ({ params }): Promise<string> => runFlow({
-            url: '/api/aboutFlow',
-            input: {
-                userInput: params,
-                sessionId: this.getSessionId().sessionId,
-                clearSession: this.getSessionId().clearSession
+        loader: async ({ params }): Promise<string> => {
+            if (!params || params.trim() === "") {
+                return "Please enter a message.";
             }
-        })
+            this.messages.update(msgs => [...msgs, { role: 'user', content: params }]);
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: params // send the user input directly
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    console.error('AI API Error:', data.error);
+                    this.messages.update(msgs => [...msgs,{ role: 'assistant', content: "Sorry, I realized I cannot help with that right now." }]);
+                    return "Sorry, I realized I cannot help with that right now.";
+                }
+                this.messages.update(msgs => [...msgs, data?.reply]);
+                return data.reply
+            } catch (err) {
+                console.error('Network / API Error:', err);
+                this.messages.update(msgs => [...msgs,{ role: 'assistant', content: "Sorry, I realized I cannot help with that right now." }]);
+                return "Something went wrong while contacting AI.";
+            }
+        }
     });
 }

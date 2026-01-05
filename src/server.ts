@@ -7,7 +7,7 @@ import {
 import express from 'express';
 import { join } from 'node:path';
 import { expressHandler } from '@genkit-ai/express';
-import { aboutFlow } from "./flow"
+import { chat } from "./flow"
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -30,7 +30,7 @@ const angularApp = new AngularNodeAppEngine();
 app.get('/api/servertest', (req, res) => {
   res.send('Server test');
 });
-app.post('/api/aboutFlow', expressHandler(aboutFlow));
+app.post('/api/chat', chat);
 
 
 /**
