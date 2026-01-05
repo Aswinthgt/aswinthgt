@@ -5,7 +5,7 @@ import { preamblePrompt } from "./prompts";
 const client = new OpenAI({
   baseURL: "https://router.huggingface.co/v1",
   // apiKey: (process.env as any)?.HF_API_KEY,
-  apiKey: "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"
+  apiKey: "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",
 });
 
 
