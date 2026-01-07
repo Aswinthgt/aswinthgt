@@ -7,8 +7,8 @@ export default async function handler(req, res) {
     
     if (typeof server === 'function') {
       return server(req, res);
-    } else if (server && typeof server.handle === 'function') {
-      return server.handle(req, res);
+    } else if (server && typeof server.reqHandler === 'function') {
+      return server.reqHandler(req, res);
     } else {
       throw new Error('Server module does not export a valid handler');
     }
