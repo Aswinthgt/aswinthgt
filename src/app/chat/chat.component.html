@@ -45,7 +45,7 @@
             <div class="message-group" *ngFor="let msg of messages()" [class.user-group]="msg.role === 'user'"
                 [class.assistant-group]="msg.role === 'assistant'">
                 <div class="message" [class.user]="msg.role === 'user'" [class.assistant]="msg.role === 'assistant'">
-                    <div class="message-content">{{ msg.content }}</div>
+                    <div class="message-content"><markdown [data]="msg.content"></markdown></div>
                 </div>
             </div>
 

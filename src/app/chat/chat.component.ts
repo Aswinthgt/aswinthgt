@@ -3,6 +3,7 @@ import { Component, signal, inject, ViewChild, ElementRef, effect, AfterViewChec
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 
 interface ChatMessage {
     role: 'system' | 'user' | 'assistant';
@@ -12,7 +13,7 @@ interface ChatMessage {
 @Component({
     selector: 'app-chat',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, MarkdownModule],
     templateUrl: './chat.component.html',
     styleUrl: './chat.component.scss'
 })
