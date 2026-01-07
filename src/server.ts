@@ -6,7 +6,6 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
-import { expressHandler } from '@genkit-ai/express';
 import { chat } from "./flow"
 
 const browserDistFolder = join(import.meta.dirname, '../browser');

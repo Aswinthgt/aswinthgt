@@ -12,9 +12,9 @@ export const chat = async (req: any, res: any) => {
   try {
     const { message } = req.body;
 
-    if (!message || typeof message !== "string") {
-      return res.status(400).json({ error: "Message is required" });
-    }
+    // if (!message || typeof message !== "string") {
+    //   return res.status(400).json({ error: "Message is required" });
+    // }
 
     const completion = await client.chat.completions.create({
       model: "moonshotai/Kimi-K2-Instruct-0905",

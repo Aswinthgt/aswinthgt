@@ -3,7 +3,6 @@ import { Component, signal, inject, ViewChild, ElementRef, effect, AfterViewChec
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { runFlow } from 'genkit/beta/client';
 
 interface ChatMessage {
     role: 'system' | 'user' | 'assistant';
@@ -24,9 +23,7 @@ export class ChatComponent {
     isOpen = signal(false);
     userMessage = signal('');
     testMessage = signal('');
-    messages = signal<ChatMessage[]>([
-        { role: 'assistant', content: 'Hello! How can I help you today?' }
-    ]);
+    messages = signal<ChatMessage[]>([]);
     sessionId = signal<string | null>(null);
 
     constructor() {
@@ -59,17 +56,20 @@ export class ChatComponent {
     sendMessage() {
         const content = this.userMessage();
         this.testMessage.set(content);
-         this.userMessage.set('');
+        this.userMessage.set('');
     }
 
     premiseResource = resource({
         defaultValue: "Hi, Aswinth GT",
         params: () => this.testMessage(),
         loader: async ({ params }): Promise<string> => {
-            if (!params || params.trim() === "") {
-                return "Please enter a message.";
+            // if (!params || params.trim() === "") {
+            //     return "Please enter a message.";
+            // }
+            if (params.trim()) {
+                this.messages.update(msgs => [...msgs, { role: 'user', content: params }]);
             }
-            this.messages.update(msgs => [...msgs, { role: 'user', content: params }]);
+
             try {
                 const response = await fetch('/api/chat', {
                     method: 'POST',
@@ -85,14 +85,14 @@ export class ChatComponent {
 
                 if (!response.ok) {
                     console.error('AI API Error:', data.error);
-                    this.messages.update(msgs => [...msgs,{ role: 'assistant', content: "Sorry, I realized I cannot help with that right now." }]);
+                    this.messages.update(msgs => [...msgs, { role: 'assistant', content: "Sorry, I realized I cannot help with that right now." }]);
                     return "Sorry, I realized I cannot help with that right now.";
                 }
                 this.messages.update(msgs => [...msgs, data?.reply]);
                 return data.reply
             } catch (err) {
                 console.error('Network / API Error:', err);
-                this.messages.update(msgs => [...msgs,{ role: 'assistant', content: "Sorry, I realized I cannot help with that right now." }]);
+                this.messages.update(msgs => [...msgs, { role: 'assistant', content: "Sorry, I realized I cannot help with that right now." }]);
                 return "Something went wrong while contacting AI.";
             }
         }
