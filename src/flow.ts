@@ -1,12 +1,14 @@
-import express from "express";
-import OpenAI from "openai";
-import { preamblePrompt } from "./prompts";
+import { Client } from "@gradio/client";
 
-const client = new OpenAI({
-  baseURL: "https://router.huggingface.co/v1",
-  apiKey: "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",
-});
+let gradioClient: any;
 
+// Lazy init (important for performance)
+async function getClient() {
+  if (!gradioClient) {
+    gradioClient = await Client.connect("aswinth37/testing_model");
+  }
+  return gradioClient;
+}
 
 export const chat = async (req: any, res: any) => {
   try {
@@ -16,20 +18,24 @@ export const chat = async (req: any, res: any) => {
     //   return res.status(400).json({ error: "Message is required" });
     // }
 
-    const completion = await client.chat.completions.create({
-      model: "moonshotai/Kimi-K2-Instruct-0905",
-      messages: [
-        { role: "system", content: preamblePrompt },
-        { role: "user", content: message },
-      ],
+    const client = await getClient();
+
+    const result = await client.predict("/ask", {
+      prompt: message
     });
-    console.log("AI Completion:", completion.choices);
-    const output = completion.choices[0].message.content;
+
+    // Gradio always returns array-like data
+    const output = result.data[0];
+
     res.json({
-      reply: {content: output, role: "assistant"},
+      reply: {
+        role: "assistant",
+        content: output
+      }
     });
+
   } catch (error) {
     console.error("AI Error:", error);
     res.status(500).json({ error: "AI request failed" });
   }
-}
+};
