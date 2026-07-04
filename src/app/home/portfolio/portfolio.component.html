@@ -1,5 +1,54 @@
 <div class="section-container" id="portfolio">
     <div class="header-area">
+        <h2 class="section-title font-roboto-slab">Fine-Tuned AI Models</h2>
+    </div>
+
+    <div class="ai-models-list" style="margin-bottom: 8rem;">
+        @for (content of aiModelsData; track $index; let i = $index) {
+        <div class="ai-model-card" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+            <div class="ai-model-glow"></div>
+            <div class="ai-model-content">
+                <div class="ai-model-header">
+                    <div class="icon-container">
+                        <img [src]="content.backGroundImage" alt="AI Model Icon" class="ai-model-icon">
+                    </div>
+                    <div>
+                        @if (i === 0) {
+                            <span class="ai-badge">Personal Assistant</span>
+                        }
+                        @if (i === 1) {
+                            <span class="ai-badge private-badge">Private Model</span>
+                        }
+                        <h3 class="ai-model-title font-roboto-slab">{{content.head}}</h3>
+                    </div>
+                </div>
+                <p class="ai-model-body font-alegreya-sans">{{content.body}}</p>
+                
+                @if (i === 0) {
+                <div class="ai-tech-stack">
+                    <span>Phi-3.5 Mini</span>
+                    <span>Resume Dataset</span>
+                    <span>Fine-Tuned</span>
+                </div>
+                }
+                @if (i === 1) {
+                <div class="ai-tech-stack">
+                    <span>98K Custom Dataset</span>
+                    <span>Web Crawled</span>
+                    <span>Fintech Domain</span>
+                </div>
+                }
+            </div>
+            <div class="ai-model-footer">
+                <button matRipple (click)="goTo(content.url)" class="view-btn ai-view-btn font-alegreya-sans">
+                    Explore Model <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="header-area">
         <h2 class="section-title font-roboto-slab">Selected Work</h2>
     </div>
 

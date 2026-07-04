@@ -31,9 +31,25 @@ export class PortfolioComponent implements OnInit {
   }
 
   portfolioData: Array<PortfolioData> | undefined;
+  aiModelsData: Array<PortfolioData> | undefined;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      this.aiModelsData = [
+        {
+          head: "Phi-3.5 Mini Personal Assistant",
+          body: "Fine-tuned model based on 'aswinth37/aswinth-phi3.5-mini-personal-assistant-v1'. Trained specifically using my personal resume data to act as a personalized AI assistant.",
+          url: "https://huggingface.co/aswinth37/aswinth-phi3.5-mini-personal-assistant-v1",
+          backGroundImage: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+        },
+        {
+          head: "Fintech AI Model",
+          body: "A private fine-tuned model ('aswinth37/fintech-ai-model'). Created by crawling all pages of fintech.com to build a 98K dataset, ensuring the model possesses deep domain knowledge about the website.",
+          url: "https://huggingface.co/aswinth37/fintech-ai-model",
+          backGroundImage: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+        }
+      ];
+
       this.portfolioData = [
         {
           head: "Smoky AI Agent",
