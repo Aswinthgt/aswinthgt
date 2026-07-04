@@ -36,16 +36,22 @@ export class PortfolioComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       this.portfolioData = [
         {
-          head: "agt360image-view",
-          body: "An Angular component for displaying and interacting with 360-degree images.",
-          url: "https://www.npmjs.com/package/agt360image-view",
-          backGroundImage: "images/npm.jpg",
+          head: "Smoky AI Agent",
+          body: "AI-powered coding assistant for VS Code with Copilot SDK, local LLM, and MCP tool support.",
+          url: "https://marketplace.visualstudio.com/items?itemName=aswinth.smoky",
+          backGroundImage: "https://aswinth.gallerycdn.vsassets.io/extensions/aswinth/smoky/0.0.16/1781892668437/Microsoft.VisualStudio.Services.Icons.Default"
         },
         {
           head: "Replace Env Variables Task",
           body: "Replace Env in File is an Azure DevOps custom task that replaces placeholders in a file with values from pipeline variables or environment variables.",
           url: "https://marketplace.visualstudio.com/items?itemName=aswinth.replace-env-extension",
           backGroundImage: "images/replace_env.png",
+        },
+        {
+          head: "agt360image-view",
+          body: "An Angular component for displaying and interacting with 360-degree images.",
+          url: "https://www.npmjs.com/package/agt360image-view",
+          backGroundImage: "images/npm.jpg",
         },
         {
           head: "agtcalendar",
