@@ -1,18 +1,36 @@
-<div class="section-container" id="about">
-    <div class="about-column" data-aos="fade-up">
-        <h2 class="section-heading font-roboto-slab">About</h2>
-        <p class="content font-alegreya-sans">
-            Skilled software developer proficient in Angular, React, MongoDB, Node.js, and Express.js. Capable of
-            building robust web applications and collaborating effectively within teams. Committed to staying updated
-            with <span class="highlight-text">emerging technologies and continuously enhancing skills</span> to drive
-            innovation
-            and excellence in software development.
-        </p>
+<div class="neo-section" id="about">
+    <div class="neo-heading-wrapper" data-aos="fade-up">
+        <h2 class="neo-gradient-text">The Architect Behind the Code</h2>
     </div>
 
-    <div class="experience-separator"></div>
-    <div class="skills-column" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="sub-heading font-roboto-slab">Tech Stack</h3>
-        <app-skills></app-skills>
+    <div class="bento-grid">
+        <!-- Main Intro Card -->
+        <div class="neo-glass-card bento-card intro-card" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="bento-title font-roboto-slab">Who I Am</h3>
+            <p class="content font-alegreya-sans">
+                Skilled software developer proficient in Angular, React, MongoDB, Node.js, and Express.js. Capable of
+                building robust web applications and collaborating effectively within teams. Committed to staying updated
+                with <span class="highlight-text">emerging technologies and continuously enhancing skills</span> to drive
+                innovation and excellence in software development.
+            </p>
+        </div>
+
+        <!-- Experience Stat Card -->
+        <div class="neo-glass-card bento-card stat-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number">{{getDifferenceInYearsAndMonths()}}+</div>
+            <div class="stat-label">Years of<br>Experience</div>
+        </div>
+
+        <!-- Projects Stat Card -->
+        <div class="neo-glass-card bento-card stat-card highlight-stat" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Successful<br>Projects</div>
+        </div>
+
+        <!-- Tech Stack Card -->
+        <div class="neo-glass-card bento-card tech-card" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="bento-title font-roboto-slab" style="text-align: center;">Tech Stack</h3>
+            <app-skills></app-skills>
+        </div>
     </div>
 </div>

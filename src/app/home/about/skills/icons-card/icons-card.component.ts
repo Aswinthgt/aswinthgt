@@ -1,6 +1,5 @@
 import { Component, ElementRef, InputSignal, input, viewChild, viewChildren } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { NgStyle } from '@angular/common';
 import { MatRippleModule } from '@angular/material/core';
 
 import { IconsComponent } from '../../../../icons/icons.component';
@@ -14,7 +13,7 @@ import { ScrollRevealDirective } from '../../../../directives/scroll-reveal.dire
 
 @Component({
   selector: 'app-icons-card',
-  imports: [MatRippleModule, IconsComponent, MatProgressBarModule, NgStyle],
+  imports: [MatRippleModule, IconsComponent, MatProgressBarModule],
   standalone: true,
   templateUrl: './icons-card.component.html',
   styleUrls: ['./icons-card.component.scss']

@@ -1,11 +1,16 @@
-<div class="section-container" id="portfolio">
-    <div class="header-area">
-        <h2 class="section-title font-roboto-slab">Fine-Tuned AI Models</h2>
+<div class="neo-section" id="portfolio">
+    <div class="neo-heading-wrapper" data-aos="fade-up">
+        <h2 class="neo-gradient-text">Innovations & Projects</h2>
     </div>
 
-    <div class="ai-models-list" style="margin-bottom: 8rem;">
+    <!-- AI Models Sub-section -->
+    <div class="neo-subheading-wrapper" data-aos="fade-up">
+        <h3 class="portfolio-subheading font-roboto-slab">Fine-Tuned AI Models</h3>
+    </div>
+
+    <div class="ai-models-list" style="margin-bottom: 6rem;">
         @for (content of aiModelsData; track $index; let i = $index) {
-        <div class="ai-model-card" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+        <div class="neo-glass-card ai-model-card" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
             <div class="ai-model-glow"></div>
             <div class="ai-model-content">
                 <div class="ai-model-header">
@@ -48,13 +53,14 @@
         }
     </div>
 
-    <div class="header-area">
-        <h2 class="section-title font-roboto-slab">Selected Work</h2>
+    <!-- Selected Work Sub-section -->
+    <div class="neo-subheading-wrapper" data-aos="fade-up">
+        <h3 class="portfolio-subheading font-roboto-slab">Selected Work</h3>
     </div>
 
     <div class="portfolio-list">
         @for (content of portfolioData; track $index; let i = $index) {
-        <div class="portfolio-item" [class.reverse-layout]="i % 2 !== 0" data-aos="fade-up">
+        <div class="neo-glass-card portfolio-item" [class.reverse-layout]="i % 2 !== 0" data-aos="fade-up">
             <div class="visual-side">
                 <div class="img-wrapper">
                     <img [src]="content.backGroundImage" alt="Project Image">

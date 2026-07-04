@@ -260,19 +260,14 @@
 
   .hero-container {
     padding-top: 120px;
-    /* Reduced Top Bar Clearance */
-    padding-bottom: 2rem;
-    /* Tight bottom padding */
+    padding-bottom: 4rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    height: auto !important;
-    /* Force auto height */
-    min-height: auto !important;
-    /* Remove vh constraint */
+    min-height: 100vh !important;
     display: flex !important;
     visibility: visible !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     /* Stack from top */
     gap: 1rem;
     /* explicit gap control */

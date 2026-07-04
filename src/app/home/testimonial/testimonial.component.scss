@@ -1,19 +1,10 @@
-.section-container {
-    padding: 6rem 10%;
-    display: flex;
-    justify-content: center;
-}
+/* Testimonial Redesign - Neo Glass Theme */
 
 .testimonial-card {
-    background-color: var(--card-background-color);
-    padding: 4rem;
-    border-radius: 20px;
     max-width: 900px;
     width: 100%;
-    position: relative;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 4rem;
 }
 
 .quote-icon {
@@ -75,10 +66,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .section-container {
-        padding: 4rem 5%;
-    }
-
     .testimonial-card {
         padding: 2rem;
     }

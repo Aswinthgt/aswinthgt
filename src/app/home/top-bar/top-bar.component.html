@@ -5,13 +5,12 @@
     </div>
 
     <nav class="nav-items font-alegreya-sans">
-      <a (click)="scrollTo('about')" class="nav-link">About</a>
-      <a (click)="scrollTo('portfolio')" class="nav-link">Work</a>
-      <a (click)="scrollTo('contact')" class="nav-link">Contact</a>
+      <a (click)="scrollTo('about')" class="nav-link">Architect</a>
+      <a (click)="scrollTo('portfolio')" class="nav-link">Projects</a>
+      <a (click)="scrollTo('contact')" class="nav-link">Connect</a>
     </nav>
 
     <div class="controls">
-      <div class="year-pill font-noto-sans cursor-pointer" (click)="scrollTo('experience')">{{getDifferenceInYearsAndMonths()}} exp</div>
       <button mat-icon-button (click)="changeMode()" class="icon-btn">
         <mat-icon [fontIcon]="this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
       </button>
