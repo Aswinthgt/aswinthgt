@@ -43,11 +43,11 @@
 }
 
 .icon-wrapper {
-    width: 42px;
+    width: auto;
     height: 42px;
     min-width: 42px;
     min-height: 42px;
-    max-width: 42px;
+    max-width: 80px;
     max-height: 42px;
     flex-shrink: 0;
     display: flex;
@@ -57,9 +57,9 @@
 }
 
 .svg-image {
-    width: 100% !important;
+    width: auto !important;
     height: 100% !important;
-    max-width: 42px !important;
+    max-width: 80px !important;
     max-height: 42px !important;
     object-fit: contain;
     filter: grayscale(100%);

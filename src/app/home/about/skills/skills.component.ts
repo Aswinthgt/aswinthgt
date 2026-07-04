@@ -26,6 +26,15 @@ export class SkillsComponent {
       ]
     },
     {
+      title: 'AI Agents & Frameworks',
+      icons: [
+        { iconUrl: 'https://avatars.githubusercontent.com/u/126733545?s=200&v=4', iconName: 'LangChain', percentage: 85 },
+        { iconUrl: 'https://github.com/genkit-ai/genkit/raw/main/docs/resources/genkit-logo-dark.png', iconName: 'Firebase Genkit', percentage: 80 },
+        { iconUrl: 'https://opencode.ai/_build/assets/preview-opencode-wordmark-simple-light-JrIbT-1j.png', iconName: 'OpenCode', percentage: 90 },
+        { iconUrl: 'https://github.com/github/copilot-sdk/raw/main/assets/RepoHeader_01.png', iconName: 'GitHub Copilot', percentage: 95 }
+      ]
+    },
+    {
       title: 'Frontend Mastery',
       icons: [
         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg', iconName: 'Angular', percentage: 100 },
