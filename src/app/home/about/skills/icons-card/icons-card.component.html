@@ -1,26 +1,17 @@
-<div class="icons-grid">
+<div class="icons-bento-grid">
   @for(icon of iconDetails(); track $index){
-  <div class="skill-card-container">
-    <div class="icon" matRipple [matRippleRadius]="10" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0"
-      data-aos-anchor-placement="top-bottom">
-      <div class="container">
-        @if(icon.iconName === "Angular"){
-        <div class="svg-image">
-          <app-icons [icon]="icon.iconName"></app-icons>
-        </div>
-        }@else {
-        <img [src]="icon.iconUrl" alt="SVG Image" class="svg-image" />
-        }
+  <div class="skill-item" matRipple [matRippleRadius]="20" data-aos="zoom-in" data-aos-delay="50" data-aos-offset="0">
+    <div class="icon-wrapper">
+      @if(icon.iconName === "Angular"){
+      <div class="svg-image">
+        <app-icons [icon]="icon.iconName"></app-icons>
       </div>
-      <div class="iconName">
-        {{ icon.iconName }}
-      </div>
-      <div class="progress-bar-container">
-        <div class="progress">
-          <div class="progress-bar" [ngStyle]="{ width: icon.percentage + '%' }"></div>
-        </div>
-        <span class="pct-text">{{ icon.percentage }}%</span>
-      </div>
+      }@else {
+      <img [src]="icon.iconUrl" [alt]="icon.iconName" class="svg-image" />
+      }
+    </div>
+    <div class="skill-name">
+      {{ icon.iconName }}
     </div>
   </div>
   }

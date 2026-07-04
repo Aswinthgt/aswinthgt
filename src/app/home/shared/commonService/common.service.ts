@@ -44,11 +44,17 @@ export class CommonService {
       window.scrollTo({top:0, behavior: 'smooth'});
       return;
     }
-    const nativeElement = this.events[menu as keyof Navigate]?.nativeElement;
-    nativeElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    
+    // Always query the live DOM to prevent issues with detached elements after Angular hydration
+    const nativeElement = document.querySelector(`app-${menu}`);
+    
+    if (nativeElement) {
+      const top = nativeElement.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({
+        top: top,
+        behavior: 'smooth'
+      });
+    }
   }
 
   download(uri: string, fileName: string) {

@@ -1,104 +1,27 @@
-/* Experience Overhaul - Tech Card Structure */
-
-.section-container {
-    padding: 8rem 15% 8rem 15%;
-}
-
-.header-area {
-    margin-bottom: 5rem;
-    text-align: left;
-    padding-left: 20px;
-    border-left: 4px solid var(--highlight-color);
-}
-
-/* Creative Heading: Tech Bold */
-.section-heading {
-    font-size: 4.5rem;
-    color: var(--color);
-    letter-spacing: -3px;
-    font-weight: 900;
-    position: relative;
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    line-height: 0.9;
-
-    &::before {
-        content: '// ';
-        color: var(--highlight-color);
-        font-family: monospace;
-        font-size: 0.5em;
-        /* Smaller code decoration */
-        vertical-align: middle;
-        letter-spacing: 0;
-    }
-
-    &::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 8px;
-        background: linear-gradient(90deg, var(--highlight-color), transparent);
-        margin-top: 15px;
-    }
-}
+/* Experience Redesign - Neo Glass Theme */
 
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 4rem 3rem;
-    /* Larger vertical gap */
     position: relative;
-    /* Optional timeline line if desired, but sticking to cards for now */
-}
-
-@media screen and (max-width: 768px) {
-    .experience-grid {
-        grid-template-columns: 1fr;
-        /* Force stack */
-        gap: 2rem;
-    }
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .experience-card {
-    background-color: var(--card-background-color);
-    padding: 3rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-
-    /* Decoration: Code-like tag overlay? */
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(135deg, transparent 50%, rgba(var(--highlight-color-rgb), 0.1) 50%);
-        background: linear-gradient(135deg, transparent 50%, var(--highlight-color) 50%);
-        /* Fallback */
-        opacity: 0.1;
-    }
+    display: flex;
+    flex-direction: column;
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        border-color: var(--highlight-color);
-
-        &::after {
-            opacity: 0.2;
-        }
-
         .position {
             color: var(--highlight-color);
         }
 
         .period {
-            background-color: var(--highlight-color);
-            color: var(--background-color);
+            background-color: rgba(0, 212, 255, 0.1);
+            color: #00d2ff;
+            border-color: rgba(0, 212, 255, 0.2);
         }
     }
 }
@@ -115,11 +38,13 @@
 .period {
     font-size: 0.9rem;
     font-weight: 700;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
     color: var(--secondary-color);
-    padding: 8px 16px;
+    padding: 6px 16px;
     border-radius: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.15);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .position {
@@ -133,33 +58,30 @@
 
 .company {
     font-size: 1.4rem;
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-top: 0.5rem;
+    color: var(--highlight-color);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
     display: block;
 }
 
 .card-body {
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    flex-grow: 1;
 }
 
 .description {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--secondary-color);
     line-height: 1.8;
-    opacity: 0.9;
-    max-width: 900px;
+    margin: 0;
 }
 
-@media screen and (max-width: 1024px) {
-    .section-container {
-        padding: 6rem 5%;
-    }
-
-    .section-heading {
-        font-size: 2.5rem;
-        /* Scaled down from 4.5rem */
+@media screen and (max-width: 768px) {
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .card-header {
@@ -167,25 +89,7 @@
         align-items: flex-start;
     }
 
-    .experience-card {
-        padding: 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        /* Mobile shadow */
-        background: linear-gradient(145deg, var(--card-background-color) 0%, rgba(255, 255, 255, 0.02) 100%);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-
-        &:active {
-            transform: scale(0.98);
-        }
-    }
-
     .position {
         font-size: 1.8rem;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-        /* Force stack */
-        gap: 3rem;
     }
 }

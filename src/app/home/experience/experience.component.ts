@@ -14,9 +14,9 @@ export class ExperienceComponent {
     {
       endYear: "Present",
       startYear: "2023",
-      position: "MEAN and MERN Stack Developer",
+      position: "AI Developer & Software Developer",
       place: "Zero Pixels, Info Park, India",
-      about: "Led the optimization of Auth0 authentication workflows and scalable MongoDB integration within MEAN stack applications, fostering heightened security, reduced login times, and seamless performance for a growing user base, utilizing Angular, React, Node.js, Express.js, MongoDB, Git, and GitHub."
+      about: "Led the optimization of Auth0 authentication workflows and scalable MongoDB integration within MEAN stack applications. Fine-tuned AI models using PEFT LoRA adapters, fostering heightened security, reduced login times, and seamless performance for a growing user base, utilizing Angular, React, Node.js, Express.js, Python, MongoDB, Git, and GitHub."
     },
     {
       endYear: "2023",

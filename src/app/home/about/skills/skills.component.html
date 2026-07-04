@@ -1,3 +1,8 @@
-<div class="skills-container-flat">
-  <app-icons-card [iconDetails]="iconData"></app-icons-card>
+<div class="skills-categories-grid">
+  @for(category of skillCategories; track category.title){
+    <div class="category-card" data-aos="fade-up">
+      <h3 class="category-title">{{ category.title }}</h3>
+      <app-icons-card [iconDetails]="category.icons"></app-icons-card>
+    </div>
+  }
 </div>

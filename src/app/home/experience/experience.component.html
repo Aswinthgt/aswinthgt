@@ -1,11 +1,11 @@
-<div class="section-container" id="experience">
-    <div class="header-area">
-        <h2 class="section-heading font-roboto-slab">Experience</h2>
+<div class="neo-section" id="experience">
+    <div class="neo-heading-wrapper" data-aos="fade-up">
+        <h2 class="neo-gradient-text">Career Journey</h2>
     </div>
 
     <div class="experience-grid">
         @for(experience of experiences; track $index) {
-        <div class="experience-card" data-aos="fade-up" [attr.data-aos-delay]="$index * 100">
+        <div class="neo-glass-card experience-card" data-aos="fade-up" [attr.data-aos-delay]="$index * 100">
             <div class="card-header">
                 <span class="period font-noto-sans">{{experience.endYear}} — {{experience.startYear}}</span>
                 <h3 class="position font-alegreya-sans">{{experience.position}}</h3>

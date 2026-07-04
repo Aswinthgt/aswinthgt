@@ -10,7 +10,7 @@ export class ProfileHelperDirective {
 
   commonService = inject(CommonService)
 
-  words: string[] = ['MEAN Stack Developer', 'PYTHON Developer', 'Web Technologies', 'Full Stack Developer', 'MERN Stack Developer'];
+  words: string[] = ['AI & Machine Learning', 'MEAN Stack Developer', 'PYTHON Developer', 'Web Technologies', 'Full Stack Developer', 'MERN Stack Developer'];
   currentText: WritableSignal<string> = signal('');
   private currentWordIndex = 0;
   private charIndex = 0;
