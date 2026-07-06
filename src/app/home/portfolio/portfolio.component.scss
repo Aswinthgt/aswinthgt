@@ -127,23 +127,30 @@
     .project-title {
         font-size: 1.8rem;
     }
+
+    .ai-model-card {
+        padding: 2rem;
+    }
 }
 
 /* --- AI Models Premium Styles --- */
 .ai-models-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    justify-content: center;
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 .ai-model-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    padding: 2.5rem;
+    position: relative;
     
     &:hover {
         .ai-model-glow {
