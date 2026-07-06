@@ -3,8 +3,11 @@
   <div class="background-decor-right"></div>
 
   <div class="hero-center" data-aos="fade-up">
-    <div class="profile-image-wrapper">
-      <app-profile-image class="main-image"></app-profile-image>
+    <div class="profile-video-wrapper">
+      <video #introVideo class="main-video" playsinline (ended)="onVideoEnd()">
+        <source src="Aswinth_intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <div class="hero-content">
@@ -15,8 +18,7 @@
 
         <div class="dynamic-line zero-jitter-container">
           <!-- Ghost Element for Stability (Max Width Role) -->
-          <span class="ghost-text"><span class="highlighted-role">MERN Stack Developer</span><span
-              class="cursor"></span></span>
+          <span class="ghost-text"><span class="highlighted-role">MERN Stack Developer</span><span class="cursor"></span></span>
 
           <!-- Visible Typing Text -->
           <span class="visible-text">
@@ -26,6 +28,19 @@
       </div>
 
       <div class="action-barrier">
+        <button matRipple class="secondary-cta font-alegreya-sans" [class.playing]="isPlaying" (click)="startExperience()">
+          @if (isPlaying) {
+            <div class="wave-loader">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            Playing Intro...
+          } @else {
+            <mat-icon>play_arrow</mat-icon> Play Intro
+          }
+        </button>
         <button matRipple class="primary-cta font-alegreya-sans" (click)="goTo('contact')">
           Let's Connect <mat-icon>arrow_forward</mat-icon>
         </button>

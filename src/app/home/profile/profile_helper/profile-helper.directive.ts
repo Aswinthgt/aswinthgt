@@ -1,14 +1,13 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Directive, inject, Inject, PLATFORM_ID, signal, WritableSignal } from '@angular/core';
+import { Directive, inject, Inject, PLATFORM_ID, signal, WritableSignal, OnInit, OnDestroy } from '@angular/core';
 import { CommonService } from '../../shared/commonService/common.service';
-import { Subscription, interval } from 'rxjs';
 
 @Directive({
   selector: '[appProfileHelper]'
 })
-export class ProfileHelperDirective {
+export class ProfileHelperDirective implements OnInit, OnDestroy {
 
-  commonService = inject(CommonService)
+  commonService = inject(CommonService);
 
   words: string[] = ['AI & Machine Learning', 'MEAN Stack Developer', 'PYTHON Developer', 'Web Technologies', 'Full Stack Developer', 'MERN Stack Developer'];
   currentText: WritableSignal<string> = signal('');
@@ -16,9 +15,11 @@ export class ProfileHelperDirective {
   private charIndex = 0;
   private typingSpeed = 150; // in ms
   private pauseBetweenWords = 1000; // in ms
-  private subscription: Subscription | null = null;
-
-  constructor(@Inject(PLATFORM_ID) private plateformid: string) { }
+  
+  private intervalId: any;
+  private timeoutId: any;
+  
+  private plateformid = inject(PLATFORM_ID);
 
   ngOnInit() {
     if (isPlatformBrowser(this.plateformid))
@@ -26,50 +27,38 @@ export class ProfileHelperDirective {
   }
 
   startTypingAnimation() {
-    const typingInterval = interval(this.typingSpeed);
     const wordLength = this.words[this.currentWordIndex].length;
 
-    this.subscription = typingInterval.subscribe(() => {
+    this.intervalId = setInterval(() => {
       if (this.charIndex < wordLength) {
         this.currentText.update((pre: string)=> pre + this.words[this.currentWordIndex][this.charIndex])
         this.charIndex++;
       } else {
-        this.subscription?.unsubscribe();
-        setTimeout(() => this.deleteWord(), this.pauseBetweenWords);
+        clearInterval(this.intervalId);
+        this.timeoutId = setTimeout(() => this.deleteWord(), this.pauseBetweenWords);
       }
-    });
+    }, this.typingSpeed);
   }
 
   deleteWord() {
-    const deletingInterval = interval(this.typingSpeed / 2);
-
-    this.subscription = deletingInterval.subscribe(() => {
+    this.intervalId = setInterval(() => {
       if (this.charIndex > 0) {
         this.currentText.update((pre: string)=> pre.slice(0, -1))
         this.charIndex--;
       } else {
-        this.subscription?.unsubscribe();
+        clearInterval(this.intervalId);
         this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
         this.startTypingAnimation();
       }
-    });
+    }, this.typingSpeed / 2);
   }
 
   goTo(menu: "contact") {
     this.commonService.scrollTo(menu)
   }
 
-  getProfile() {
-    if (this.commonService.isDarkMode && this.commonService.currentTheme.value == 'Primary') {
-      return 'images/profile-dark.png';
-    } else {
-      return 'images/profile-light.png'
-    }
-  }
-
   ngOnDestroy() {
-    this.subscription?.unsubscribe();
+    if (this.intervalId) clearInterval(this.intervalId);
+    if (this.timeoutId) clearTimeout(this.timeoutId);
   }
-
-
 }
