@@ -77,11 +77,28 @@ import { websiteContent } from './website_content';
 
 export const chat = async (req: any, res: any) => {
   try {
-    const { message } = req.body;
+    const { message, messages } = req.body;
+
+    let history: any[] = [];
+    let promptString = "";
+
+    if (messages && Array.isArray(messages) && messages.length > 0) {
+      // The frontend passed the full message history
+      // We take the last message as the prompt, and the rest as history
+      const lastMessage = messages[messages.length - 1];
+      promptString = lastMessage.content;
+      history = messages.slice(0, -1).map(m => ({
+        role: m.role === 'assistant' ? 'model' : m.role,
+        content: [{ text: m.content }]
+      }));
+    } else {
+      promptString = message || "";
+    }
 
     const response = await ai.generate({
       model: openRouterModel,
-      prompt: responsePrompt(message),
+      messages: history,
+      prompt: responsePrompt(promptString),
       system: `${preamblePrompt}\n\n--------------------------------\nWEBSITE CONTEXT\n--------------------------------\n${websiteContent}`
     });
 
