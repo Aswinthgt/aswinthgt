@@ -49,6 +49,8 @@ const openRouterModel = ai.defineModel({
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
+      'HTTP-Referer': 'https://aswinthgt.vercel.app',
+      'X-Title': 'Aswinth Portfolio AI'
     },
     body: JSON.stringify({
       model: 'tencent/hy3:free',
