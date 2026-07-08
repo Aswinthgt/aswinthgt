@@ -40,7 +40,7 @@ const openRouterModel = ai.defineModel({
   }
 
   const messages = request.messages.map(m => ({
-    role: m.role,
+    role: m.role === 'model' ? 'assistant' : m.role,
     content: typeof m.content === 'string' ? m.content : m.content.map((c: any) => c.text).join('')
   }));
 
@@ -84,21 +84,34 @@ export const chat = async (req: any, res: any) => {
 
     if (messages && Array.isArray(messages) && messages.length > 0) {
       // The frontend passed the full message history
-      // We take the last message as the prompt, and the rest as history
+      // We take the last message, wrap it in responsePrompt, and put it back
       const lastMessage = messages[messages.length - 1];
       promptString = lastMessage.content;
+      
       history = messages.slice(0, -1).map(m => ({
         role: m.role === 'assistant' ? 'model' : m.role,
         content: [{ text: m.content }]
       }));
+      
+      // Push the final formatted prompt into history
+      history.push({
+        role: 'user',
+        content: [{ text: responsePrompt(promptString) }]
+      });
+      
     } else {
       promptString = message || "";
+      history = [
+        {
+          role: 'user',
+          content: [{ text: responsePrompt(promptString) }]
+        }
+      ];
     }
 
     const response = await ai.generate({
       model: openRouterModel,
       messages: history,
-      prompt: responsePrompt(promptString),
       system: `${preamblePrompt}\n\n--------------------------------\nWEBSITE CONTEXT\n--------------------------------\n${websiteContent}`
     });
 
