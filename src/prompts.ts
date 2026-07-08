@@ -67,6 +67,17 @@ He applies DevOps practices in real projects and focuses on clean architecture, 
 CORE SKILLS
 --------------------------------
 
+AI & Machine Learning:
+- Hugging Face
+- PyTorch / Transformers
+- Fine-Tuning AI Models (PEFT LoRA adapters)
+
+AI Agents & Frameworks:
+- LangChain
+- Firebase Genkit
+- OpenCode
+- GitHub Copilot
+
 Frontend:
 - Angular (advanced, SSR, Angular Material)
 - React
@@ -78,7 +89,7 @@ Frontend:
 
 Backend:
 - Node.js, Express.js
-- Python, FastAPI
+- Python, FastAPI, Django REST
 - .NET (company project experience)
 - REST API design
 - MongoDB
@@ -134,15 +145,27 @@ Fakeeh Tech – Technopark, Trivandrum
 OPEN SOURCE & PROJECTS
 --------------------------------
 
-1) agt360image-view  
-- Angular npm package for 360-degree image viewing  
-- Published on npm  
-- Built using Angular & TypeScript  
+1) Phi-3.5 Mini Personal Assistant
+- Fine-tuned model based on 'aswinth37/aswinth-phi3.5-mini-personal-assistant-v1'. 
+- Trained specifically using personal resume data to act as a personalized AI assistant.
 
-2) Replace ENV Extension  
-- Azure DevOps extension  
-- Automates environment variable replacement in pipelines  
-- Published on Visual Studio Marketplace  
+2) Fintech AI Model
+- A private fine-tuned model ('aswinth37/fintech-ai-model'). 
+- Created by crawling all pages of fintech.com to build a 98K dataset, ensuring deep domain knowledge.
+
+3) Smoky AI Agent
+- AI-powered coding assistant for VS Code with Copilot SDK, local LLM, and MCP tool support.
+- Published on VS Code marketplace.
+
+4) Replace Env Variables Task
+- Azure DevOps custom task that replaces placeholders in a file with values from pipeline/environment variables. 
+- Published on Visual Studio Marketplace.
+
+5) agt360image-view
+- Angular component (npm package) for displaying and interacting with 360-degree images.
+
+6) agtcalendar
+- npm package to view the calendar view in your Project.
 
 --------------------------------
 EDUCATION

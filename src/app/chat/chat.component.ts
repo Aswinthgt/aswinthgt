@@ -64,9 +64,13 @@ export class ChatComponent {
         defaultValue: "Hi, Aswinth GT",
         params: () => this.testMessage(),
         loader: async ({ params }): Promise<string> => {
-            // if (!params || params.trim() === "") {
-            //     return "Please enter a message.";
-            // }
+            if (!params || params.trim() === "") {
+                const welcomeMsg = "Hi! I am Aswinth's AI assistant. How can I help you today?";
+                if (this.messages().length === 0) {
+                    this.messages.update(msgs => [...msgs, { role: 'assistant', content: welcomeMsg }]);
+                }
+                return welcomeMsg;
+            }
             if (params.trim()) {
                 this.messages.update(msgs => [...msgs, { role: 'user', content: params }]);
             }
