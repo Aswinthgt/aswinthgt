@@ -82,7 +82,7 @@ export class ChatComponent {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        message: params // send the user input directly
+                        messages: this.messages() // send the full history
                     }),
                 });
 
