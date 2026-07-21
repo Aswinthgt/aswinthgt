@@ -53,7 +53,7 @@ const openRouterModel = ai.defineModel({
       'X-Title': 'Aswinth Portfolio AI'
     },
     body: JSON.stringify({
-      model: 'tencent/hy3:free',
+      model: 'cohere/north-mini-code:free',
       messages,
     }),
   });
