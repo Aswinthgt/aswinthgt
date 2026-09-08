@@ -1,30 +1,58 @@
 <div class="navbar-wrapper animate__animated animate__fadeInDown">
-  <div class="floating-nav">
-    <div class="brand">
-      <span class="logo-text font-roboto-slab cursor-pointer" (click)="scrollTo(null)">AGT</span>
+  <div class="nav-shell">
+    <div class="floating-nav" [class.drawer-active]="isPaletteOpen">
+      <div class="brand">
+        <span class="logo-text font-roboto-slab cursor-pointer" (click)="scrollTo(null)">AGT</span>
+      </div>
+
+      <nav class="nav-items font-alegreya-sans">
+        <a (click)="scrollTo('about')" class="nav-link">Architect</a>
+        <a (click)="scrollTo('portfolio')" class="nav-link">Projects</a>
+        <a (click)="scrollTo('contact')" class="nav-link">Connect</a>
+      </nav>
+
+      <div class="controls">
+        <button mat-icon-button (click)="changeMode($event)" class="icon-btn" title="Toggle dark/light mode">
+          <mat-icon [fontIcon]="this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
+        </button>
+        <button mat-icon-button (click)="togglePaletteDrawer($event)" class="icon-btn" [class.active-btn]="isPaletteOpen" title="Theme palettes">
+          <mat-icon fontIcon="palette"></mat-icon>
+        </button>
+      </div>
     </div>
 
-    <nav class="nav-items font-alegreya-sans">
-      <a (click)="scrollTo('about')" class="nav-link">Architect</a>
-      <a (click)="scrollTo('portfolio')" class="nav-link">Projects</a>
-      <a (click)="scrollTo('contact')" class="nav-link">Connect</a>
-    </nav>
+    <!-- Custom Accordion Drawer emerging directly from topbar -->
+    <div class="palette-drawer-accordion" [class.open]="isPaletteOpen">
+      <div class="drawer-inner">
+        <div class="drawer-header">
+          <div class="drawer-title">
+            <mat-icon class="header-icon">palette</mat-icon>
+            <span>Catppuccin Palettes</span>
+          </div>
+          <span class="active-badge" [style.color]="commonService.currentTheme.previewColor">
+            {{commonService.currentTheme.value}} Active
+          </span>
+        </div>
 
-    <div class="controls">
-      <button mat-icon-button (click)="changeMode()" class="icon-btn">
-        <mat-icon [fontIcon]="this.commonService.isDarkMode ? 'light_mode' : 'dark_mode'"></mat-icon>
-      </button>
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-btn">
-        <mat-icon fontIcon="palette"></mat-icon>
-      </button>
-
-      <mat-menu #menu="matMenu" xPosition="before" class="theme-menu">
-        @for(pallete of colorGalaries; track $index){
-        <button mat-menu-item (click)="setColorPallete(pallete)">
-          <span [style.color]="pallete.value === 'Dark' ? '#000' : pallete.value">{{pallete.value}}</span>
-        </button>
-        }
-      </mat-menu>
+        <div class="palette-grid">
+          @for(pallete of colorGalaries; track $index){
+          <div class="palette-card"
+               [class.selected]="commonService.currentTheme.value === pallete.value"
+               (click)="setColorPallete(pallete, $event)">
+            <span class="swatch-bubble" [style.background-color]="pallete.previewColor" [style.box-shadow]="'0 0 10px ' + pallete.previewColor"></span>
+            <div class="palette-info">
+              <span class="palette-name">{{pallete.value}}</span>
+              @if(pallete.badge) {
+                <span class="palette-tag" [style.color]="pallete.previewColor">{{pallete.badge}}</span>
+              }
+            </div>
+            @if(commonService.currentTheme.value === pallete.value) {
+              <mat-icon class="check-icon">check_circle</mat-icon>
+            }
+          </div>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </div>

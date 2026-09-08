@@ -1,5 +1,10 @@
 @import "fonts";
 
+/* ==========================================================================
+   LEGACY THEMES (Commented out, not deleted)
+   ========================================================================== */
+
+/*
 [data-theme="dark"] {
   --background-color: #31333b;
   --color: #ffffff;
@@ -14,14 +19,14 @@
 }
 
 [data-theme="light"] {
-  --background-color: #f8f9fa; /* Light, slightly off-white background */
-  --color: #333333; /* Dark gray text for high readability */
-  --secondary-color: #6c757d; /* Medium gray for secondary elements */
-  --highlight-color: #ffc107; /* Bright yellow for highlights */
+  --background-color: #f8f9fa;
+  --color: #333333;
+  --secondary-color: #6c757d;
+  --highlight-color: #ffc107;
   --highlight-shadow: 0px 0px 18px 1px rgba(240, 191, 108, 1);
-  --card-background-color: #ffffff; /* Pure white for card backgrounds */
-  --icon-card-hover-background: #ffe082; /* Light yellow for icon card hover */
-  --year-card-background: #e9ecef; /* Light gray for year cards */
+  --card-background-color: #ffffff;
+  --icon-card-hover-background: #ffe082;
+  --year-card-background: #e9ecef;
   --skeleton-bg-light: #f0f0f0;
   --skeleton-bg-mid-light: #e0e0e0;
 }
@@ -29,27 +34,27 @@
 //Sapphire-Moonlit
 
 [data-theme="Sapphire-Moonlit-light"] {
-  --background-color: #def1f9; /* Light cyan background */
-  --color: #333333; /* Dark gray text for high readability */
-  --secondary-color: #6c757d; /* Medium gray for secondary elements */
-  --highlight-color: #1e3163; /* Sapphire blue for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(30, 49, 99, 0.8); /* Box shadow for highlights */
-  --card-background-color: #ffffff; /* Pure white for card backgrounds */
-  --icon-card-hover-background: #cee5f2; /* Light blue for icon card hover */
-  --year-card-background: #e9f2ff; /* Light blue for year cards */
+  --background-color: #def1f9;
+  --color: #333333;
+  --secondary-color: #6c757d;
+  --highlight-color: #1e3163;
+  --highlight-shadow: 0px 0px 10px 2px rgba(30, 49, 99, 0.8);
+  --card-background-color: #ffffff;
+  --icon-card-hover-background: #cee5f2;
+  --year-card-background: #e9f2ff;
   --skeleton-bg-light: #f0f0f0;
   --skeleton-bg-mid-light: #e0e0e0;
 }
 
 [data-theme="Sapphire-Moonlit-dark"] {
-  --background-color: #1e3163; /* Dark Sapphire background */
-  --color: #ffffff; /* White text for high readability */
-  --secondary-color: #a0a0a1; /* Light gray for secondary elements */
-  --highlight-color: #7fd1e8; /* Light blue for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(127, 209, 232, 0.8); /* Box shadow for highlights */
-  --card-background-color: #3d3e42; /* Dark gray for card backgrounds */
-  --icon-card-hover-background: #31333b; /* Dark background for icon card hover */
-  --year-card-background: #5d5d60; /* Medium gray for year cards */
+  --background-color: #1e3163;
+  --color: #ffffff;
+  --secondary-color: #a0a0a1;
+  --highlight-color: #7fd1e8;
+  --highlight-shadow: 0px 0px 10px 2px rgba(127, 209, 232, 0.8);
+  --card-background-color: #3d3e42;
+  --icon-card-hover-background: #31333b;
+  --year-card-background: #5d5d60;
   --skeleton-bg-light: #444;
   --skeleton-bg-mid-light: #555;
 }
@@ -57,27 +62,27 @@
 // Emerald-Enchanted
 
 [data-theme="Emerald-Enchanted-light"] {
-  --background-color: #d7efd8; /* Light green background */
-  --color: #333333; /* Dark gray text for high readability */
-  --secondary-color: #6c757d; /* Medium gray for secondary elements */
-  --highlight-color: #006400; /* Dark green for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(0, 100, 0, 0.8); /* Box shadow for highlights */
-  --card-background-color: #ffffff; /* Pure white for card backgrounds */
-  --icon-card-hover-background: #c2d4c6; /* Light green for icon card hover */
-  --year-card-background: #b5d8b1; /* Light green for year cards */
+  --background-color: #d7efd8;
+  --color: #333333;
+  --secondary-color: #6c757d;
+  --highlight-color: #006400;
+  --highlight-shadow: 0px 0px 10px 2px rgba(0, 100, 0, 0.8);
+  --card-background-color: #ffffff;
+  --icon-card-hover-background: #c2d4c6;
+  --year-card-background: #b5d8b1;
   --skeleton-bg-light: #f0f0f0;
   --skeleton-bg-mid-light: #e0e0e0;
 }
 
 [data-theme="Emerald-Enchanted-dark"] {
-  --background-color: #003300; /* Dark green background */
-  --color: #ffffff; /* White text for high readability */
-  --secondary-color: #a0a0a1; /* Light gray for secondary elements */
-  --highlight-color: #66ff66; /* Light green for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(102, 255, 102, 0.8); /* Box shadow for highlights */
-  --card-background-color: #202b22; /* Dark green for card backgrounds */
-  --icon-card-hover-background: #1a1f18; /* Dark background for icon card hover */
-  --year-card-background: #454e42; /* Medium gray for year cards */
+  --background-color: #003300;
+  --color: #ffffff;
+  --secondary-color: #a0a0a1;
+  --highlight-color: #66ff66;
+  --highlight-shadow: 0px 0px 10px 2px rgba(102, 255, 102, 0.8);
+  --card-background-color: #202b22;
+  --icon-card-hover-background: #1a1f18;
+  --year-card-background: #454e42;
   --skeleton-bg-light: #444;
   --skeleton-bg-mid-light: #555;
 }
@@ -85,27 +90,27 @@
 //Rose-Midnight
 
 [data-theme="Rose-Midnight-light"] {
-  --background-color: #ffd1dc; /* Light rose background */
-  --color: #333333; /* Dark gray text for high readability */
-  --secondary-color: #6c757d; /* Medium gray for secondary elements */
-  --highlight-color: #e75480; /* Rose pink for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(231, 84, 128, 0.8); /* Box shadow for highlights */
-  --card-background-color: #ffffff; /* Pure white for card backgrounds */
-  --icon-card-hover-background: #ffc3d7; /* Light rose for icon card hover */
-  --year-card-background: #ffbcd9; /* Light rose for year cards */
+  --background-color: #ffd1dc;
+  --color: #333333;
+  --secondary-color: #6c757d;
+  --highlight-color: #e75480;
+  --highlight-shadow: 0px 0px 10px 2px rgba(231, 84, 128, 0.8);
+  --card-background-color: #ffffff;
+  --icon-card-hover-background: #ffc3d7;
+  --year-card-background: #ffbcd9;
   --skeleton-bg-light: #f0f0f0;
   --skeleton-bg-mid-light: #e0e0e0;
 }
 
 [data-theme="Rose-Midnight-dark"] {
-  --background-color: #2b2b2b; /* Dark gray background */
-  --color: #ffffff; /* White text for high readability */
-  --secondary-color: #a0a0a1; /* Light gray for secondary elements */
-  --highlight-color: #ff6f91; /* Light rose pink for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(255, 111, 145, 0.8); /* Box shadow for highlights */
-  --card-background-color: #3d3d3d; /* Dark gray for card backgrounds */
-  --icon-card-hover-background: #282828; /* Dark background for icon card hover */
-  --year-card-background: #565656; /* Medium gray for year cards */
+  --background-color: #2b2b2b;
+  --color: #ffffff;
+  --secondary-color: #a0a0a1;
+  --highlight-color: #ff6f91;
+  --highlight-shadow: 0px 0px 10px 2px rgba(255, 111, 145, 0.8);
+  --card-background-color: #3d3d3d;
+  --icon-card-hover-background: #282828;
+  --year-card-background: #565656;
   --skeleton-bg-light: #444;
   --skeleton-bg-mid-light: #555;
 }
@@ -113,27 +118,27 @@
 //Amethyst-Velvet
 
 [data-theme="Amethyst-Velvet-light"] {
-  --background-color: #d1c1e0; /* Light lavender background */
-  --color: #333333; /* Dark gray text for high readability */
-  --secondary-color: #6c757d; /* Medium gray for secondary elements */
-  --highlight-color: #6a0572; /* Amethyst purple for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(106, 5, 114, 0.8); /* Box shadow for highlights */
-  --card-background-color: #ffffff; /* Pure white for card backgrounds */
-  --icon-card-hover-background: #ad96d8; /* Light lavender for icon card hover */
-  --year-card-background: #c7b2e0; /* Light lavender for year cards */
+  --background-color: #d1c1e0;
+  --color: #333333;
+  --secondary-color: #6c757d;
+  --highlight-color: #6a0572;
+  --highlight-shadow: 0px 0px 10px 2px rgba(106, 5, 114, 0.8);
+  --card-background-color: #ffffff;
+  --icon-card-hover-background: #ad96d8;
+  --year-card-background: #c7b2e0;
   --skeleton-bg-light: #f0f0f0;
   --skeleton-bg-mid-light: #e0e0e0;
 }
 
 [data-theme="Amethyst-Velvet-dark"] {
-  --background-color: #2e295e; /* Dark indigo background */
-  --color: #ffffff; /* White text for high readability */
-  --secondary-color: #a0a0a1; /* Light gray for secondary elements */
-  --highlight-color: #9b59b6; /* Soft purple for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(155, 89, 182, 0.8); /* Box shadow for highlights */
-  --card-background-color: #3d3e42; /* Dark gray for card backgrounds */
-  --icon-card-hover-background: #212033; /* Dark background for icon card hover */
-  --year-card-background: #5d5d60; /* Medium gray for year cards */
+  --background-color: #2e295e;
+  --color: #ffffff;
+  --secondary-color: #a0a0a1;
+  --highlight-color: #9b59b6;
+  --highlight-shadow: 0px 0px 10px 2px rgba(155, 89, 182, 0.8);
+  --card-background-color: #3d3e42;
+  --icon-card-hover-background: #212033;
+  --year-card-background: #5d5d60;
   --skeleton-bg-light: #444;
   --skeleton-bg-mid-light: #555;
 }
@@ -141,27 +146,259 @@
 //Golden-Twilight
 
 [data-theme="Golden-Twilight-light"] {
-  --background-color: #ffdb58; /* Light goldenrod background */
-  --color: #333333; /* Dark gray text for high readability */
-  --secondary-color: #6c757d; /* Medium gray for secondary elements */
-  --highlight-color: #ff7f50; /* Coral for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(255, 127, 80, 0.8); /* Box shadow for highlights */
-  --card-background-color: #ffffff; /* Pure white for card backgrounds */
-  --icon-card-hover-background: #ffe4b5; /* Light goldenrod for icon card hover */
-  --year-card-background: #ffefdb; /* Light goldenrod for year cards */
+  --background-color: #ffdb58;
+  --color: #333333;
+  --secondary-color: #6c757d;
+  --highlight-color: #ff7f50;
+  --highlight-shadow: 0px 0px 10px 2px rgba(255, 127, 80, 0.8);
+  --card-background-color: #ffffff;
+  --icon-card-hover-background: #ffe4b5;
+  --year-card-background: #ffefdb;
   --skeleton-bg-light: #f0f0f0;
   --skeleton-bg-mid-light: #e0e0e0;
 }
 
 [data-theme="Golden-Twilight-dark"] {
-  --background-color: #4b2e83; /* Dark purple background */
-  --color: #ffffff; /* White text for high readability */
-  --secondary-color: #a0a0a1; /* Light gray for secondary elements */
-  --highlight-color: #ff6f61; /* Coral for highlights */
-  --highlight-shadow: 0px 0px 10px 2px rgba(255, 111, 97, 0.8); /* Box shadow for highlights */
-  --card-background-color: #3d3e42; /* Dark gray for card backgrounds */
-  --icon-card-hover-background: #36274b; /* Dark background for icon card hover */
-  --year-card-background: #5d5d60; /* Medium gray for year cards */
+  --background-color: #4b2e83;
+  --color: #ffffff;
+  --secondary-color: #a0a0a1;
+  --highlight-color: #ff6f61;
+  --highlight-shadow: 0px 0px 10px 2px rgba(255, 111, 97, 0.8);
+  --card-background-color: #3d3e42;
+  --icon-card-hover-background: #36274b;
+  --year-card-background: #5d5d60;
   --skeleton-bg-light: #444;
   --skeleton-bg-mid-light: #555;
+}
+*/
+
+/* ==========================================================================
+   CATPPUCCIN THEMES (https://github.com/catppuccin/catppuccin)
+   ========================================================================== */
+
+/* --- Catppuccin Mocha (Default Dark) --- */
+[data-theme="mocha"],
+[data-theme="catppuccin-mocha"],
+[data-theme="dark"] {
+  --background-color: #1e1e2e; /* Mocha Base */
+  --color: #cdd6f4;            /* Mocha Text */
+  --secondary-color: #a6adc8;  /* Mocha Subtext0 */
+  --highlight-color: #cba6f7;  /* Mocha Mauve */
+  --highlight-color-rgb: 203, 166, 247;
+  --highlight-shadow: 0px 0px 18px 1px rgba(203, 166, 247, 0.4);
+  --card-background-color: #313244; /* Mocha Surface0 */
+  --card-background-color-rgb: 49, 50, 68;
+  --icon-card-hover-background: #45475a; /* Mocha Surface1 */
+  --year-card-background: #45475a;       /* Mocha Surface1 */
+  --skeleton-bg-light: #313244;
+  --skeleton-bg-mid-light: #45475a;
+}
+
+/* --- Catppuccin Latte (Default Light) --- */
+[data-theme="latte"],
+[data-theme="catppuccin-latte"],
+[data-theme="light"] {
+  --background-color: #eff1f5; /* Latte Base */
+  --color: #4c4f69;            /* Latte Text */
+  --secondary-color: #6c6f85;  /* Latte Subtext0 */
+  --highlight-color: #8839ef;  /* Latte Mauve */
+  --highlight-color-rgb: 136, 57, 239;
+  --highlight-shadow: 0px 0px 18px 1px rgba(136, 57, 239, 0.3);
+  --card-background-color: #ffffff; /* Clean white card for crisp contrast */
+  --card-background-color-rgb: 255, 255, 255;
+  --icon-card-hover-background: #e6e9ef; /* Latte Mantle */
+  --year-card-background: #e6e9ef;
+  --skeleton-bg-light: #e6e9ef;
+  --skeleton-bg-mid-light: #dce0e8;
+}
+
+/* --- Catppuccin Macchiato (Dark Mid-Contrast) --- */
+[data-theme="macchiato"],
+[data-theme="catppuccin-macchiato"] {
+  --background-color: #24273a; /* Macchiato Base */
+  --color: #cad3f5;            /* Macchiato Text */
+  --secondary-color: #a5adcb;  /* Macchiato Subtext0 */
+  --highlight-color: #c6a0f6;  /* Macchiato Mauve */
+  --highlight-color-rgb: 198, 160, 246;
+  --highlight-shadow: 0px 0px 18px 1px rgba(198, 160, 246, 0.4);
+  --card-background-color: #363a4f; /* Macchiato Surface0 */
+  --card-background-color-rgb: 54, 58, 79;
+  --icon-card-hover-background: #494d64; /* Macchiato Surface1 */
+  --year-card-background: #494d64;
+  --skeleton-bg-light: #363a4f;
+  --skeleton-bg-mid-light: #494d64;
+}
+
+/* --- Catppuccin Frappé (Dark Muted) --- */
+[data-theme="frappe"],
+[data-theme="catppuccin-frappe"] {
+  --background-color: #303446; /* Frappé Base */
+  --color: #c6d0f5;            /* Frappé Text */
+  --secondary-color: #a5adce;  /* Frappé Subtext0 */
+  --highlight-color: #ca9ee6;  /* Frappé Mauve */
+  --highlight-color-rgb: 202, 158, 230;
+  --highlight-shadow: 0px 0px 18px 1px rgba(202, 158, 230, 0.4);
+  --card-background-color: #414559; /* Frappé Surface0 */
+  --card-background-color-rgb: 65, 69, 89;
+  --icon-card-hover-background: #51576d; /* Frappé Surface1 */
+  --year-card-background: #51576d;
+  --skeleton-bg-light: #414559;
+  --skeleton-bg-mid-light: #51576d;
+}
+
+/* --- Catppuccin Accent Palettes --- */
+
+/* Sapphire */
+[data-theme="catppuccin-sapphire-dark"] {
+  --background-color: #1e1e2e;
+  --color: #cdd6f4;
+  --secondary-color: #a6adc8;
+  --highlight-color: #74c7ec; /* Sapphire */
+  --highlight-color-rgb: 116, 199, 236;
+  --highlight-shadow: 0px 0px 18px 1px rgba(116, 199, 236, 0.4);
+  --card-background-color: #313244;
+  --card-background-color-rgb: 49, 50, 68;
+  --icon-card-hover-background: #45475a;
+  --year-card-background: #45475a;
+  --skeleton-bg-light: #313244;
+  --skeleton-bg-mid-light: #45475a;
+}
+
+[data-theme="catppuccin-sapphire-light"] {
+  --background-color: #eff1f5;
+  --color: #4c4f69;
+  --secondary-color: #6c6f85;
+  --highlight-color: #209fb5; /* Sapphire */
+  --highlight-color-rgb: 32, 159, 181;
+  --highlight-shadow: 0px 0px 18px 1px rgba(32, 159, 181, 0.3);
+  --card-background-color: #ffffff;
+  --card-background-color-rgb: 255, 255, 255;
+  --icon-card-hover-background: #e6e9ef;
+  --year-card-background: #e6e9ef;
+  --skeleton-bg-light: #e6e9ef;
+  --skeleton-bg-mid-light: #dce0e8;
+}
+
+/* Green */
+[data-theme="catppuccin-green-dark"] {
+  --background-color: #1e1e2e;
+  --color: #cdd6f4;
+  --secondary-color: #a6adc8;
+  --highlight-color: #a6e3a1; /* Green */
+  --highlight-color-rgb: 166, 227, 161;
+  --highlight-shadow: 0px 0px 18px 1px rgba(166, 227, 161, 0.4);
+  --card-background-color: #313244;
+  --card-background-color-rgb: 49, 50, 68;
+  --icon-card-hover-background: #45475a;
+  --year-card-background: #45475a;
+  --skeleton-bg-light: #313244;
+  --skeleton-bg-mid-light: #45475a;
+}
+
+[data-theme="catppuccin-green-light"] {
+  --background-color: #eff1f5;
+  --color: #4c4f69;
+  --secondary-color: #6c6f85;
+  --highlight-color: #40a02b; /* Green */
+  --highlight-color-rgb: 64, 160, 43;
+  --highlight-shadow: 0px 0px 18px 1px rgba(64, 160, 43, 0.3);
+  --card-background-color: #ffffff;
+  --card-background-color-rgb: 255, 255, 255;
+  --icon-card-hover-background: #e6e9ef;
+  --year-card-background: #e6e9ef;
+  --skeleton-bg-light: #e6e9ef;
+  --skeleton-bg-mid-light: #dce0e8;
+}
+
+/* Peach */
+[data-theme="catppuccin-peach-dark"] {
+  --background-color: #1e1e2e;
+  --color: #cdd6f4;
+  --secondary-color: #a6adc8;
+  --highlight-color: #fab387; /* Peach */
+  --highlight-color-rgb: 250, 179, 135;
+  --highlight-shadow: 0px 0px 18px 1px rgba(250, 179, 135, 0.4);
+  --card-background-color: #313244;
+  --card-background-color-rgb: 49, 50, 68;
+  --icon-card-hover-background: #45475a;
+  --year-card-background: #45475a;
+  --skeleton-bg-light: #313244;
+  --skeleton-bg-mid-light: #45475a;
+}
+
+[data-theme="catppuccin-peach-light"] {
+  --background-color: #eff1f5;
+  --color: #4c4f69;
+  --secondary-color: #6c6f85;
+  --highlight-color: #fe640b; /* Peach */
+  --highlight-color-rgb: 254, 100, 11;
+  --highlight-shadow: 0px 0px 18px 1px rgba(254, 100, 11, 0.3);
+  --card-background-color: #ffffff;
+  --card-background-color-rgb: 255, 255, 255;
+  --icon-card-hover-background: #e6e9ef;
+  --year-card-background: #e6e9ef;
+  --skeleton-bg-light: #e6e9ef;
+  --skeleton-bg-mid-light: #dce0e8;
+}
+
+/* Pink */
+[data-theme="catppuccin-pink-dark"] {
+  --background-color: #1e1e2e;
+  --color: #cdd6f4;
+  --secondary-color: #a6adc8;
+  --highlight-color: #f5c2e7; /* Pink */
+  --highlight-color-rgb: 245, 194, 231;
+  --highlight-shadow: 0px 0px 18px 1px rgba(245, 194, 231, 0.4);
+  --card-background-color: #313244;
+  --card-background-color-rgb: 49, 50, 68;
+  --icon-card-hover-background: #45475a;
+  --year-card-background: #45475a;
+  --skeleton-bg-light: #313244;
+  --skeleton-bg-mid-light: #45475a;
+}
+
+[data-theme="catppuccin-pink-light"] {
+  --background-color: #eff1f5;
+  --color: #4c4f69;
+  --secondary-color: #6c6f85;
+  --highlight-color: #ea76cb; /* Pink */
+  --highlight-color-rgb: 234, 118, 203;
+  --highlight-shadow: 0px 0px 18px 1px rgba(234, 118, 203, 0.3);
+  --card-background-color: #ffffff;
+  --card-background-color-rgb: 255, 255, 255;
+  --icon-card-hover-background: #e6e9ef;
+  --year-card-background: #e6e9ef;
+  --skeleton-bg-light: #e6e9ef;
+  --skeleton-bg-mid-light: #dce0e8;
+}
+
+/* Lavender */
+[data-theme="catppuccin-lavender-dark"] {
+  --background-color: #1e1e2e;
+  --color: #cdd6f4;
+  --secondary-color: #a6adc8;
+  --highlight-color: #b4befe; /* Lavender */
+  --highlight-color-rgb: 180, 190, 254;
+  --highlight-shadow: 0px 0px 18px 1px rgba(180, 190, 254, 0.4);
+  --card-background-color: #313244;
+  --card-background-color-rgb: 49, 50, 68;
+  --icon-card-hover-background: #45475a;
+  --year-card-background: #45475a;
+  --skeleton-bg-light: #313244;
+  --skeleton-bg-mid-light: #45475a;
+}
+
+[data-theme="catppuccin-lavender-light"] {
+  --background-color: #eff1f5;
+  --color: #4c4f69;
+  --secondary-color: #6c6f85;
+  --highlight-color: #7287fd; /* Lavender */
+  --highlight-color-rgb: 114, 135, 253;
+  --highlight-shadow: 0px 0px 18px 1px rgba(114, 135, 253, 0.3);
+  --card-background-color: #ffffff;
+  --card-background-color-rgb: 255, 255, 255;
+  --icon-card-hover-background: #e6e9ef;
+  --year-card-background: #e6e9ef;
+  --skeleton-bg-light: #e6e9ef;
+  --skeleton-bg-mid-light: #dce0e8;
 }
