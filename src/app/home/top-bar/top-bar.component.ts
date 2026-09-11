@@ -42,20 +42,23 @@ export class TopBarComponent implements OnInit {
     this.isPaletteOpen = false;
   }
 
-
   @HostListener('window:scroll')
   onWindowScroll() {
     const currentScroll = window.scrollY || document.documentElement.scrollTop;
-    
+
+    // Close palette drawer on any scroll
+    if (this.isPaletteOpen) {
+      this.isPaletteOpen = false;
+    }
+
+    // Hide/show navbar based on scroll direction
     if (currentScroll > this.lastScrollTop && currentScroll > 50) {
-      // Scrolling down
       this.isHidden = true;
     } else {
-      // Scrolling up
       this.isHidden = false;
     }
-    
-    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
   ngOnInit(): void {
@@ -70,6 +73,7 @@ export class TopBarComponent implements OnInit {
     this.commonService.setThemeWithTransition(() => {
       this.commonService.currentTheme = pallete;
     }, event);
+    this.isPaletteOpen = false;
   }
 
   changeMode(event?: MouseEvent) {

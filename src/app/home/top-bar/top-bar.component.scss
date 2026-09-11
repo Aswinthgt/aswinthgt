@@ -17,7 +17,6 @@
 
 .navbar-wrapper {
     position: relative;
-    /* Relative to fixed host */
     top: 2rem;
     width: 100%;
     display: flex;
@@ -25,23 +24,164 @@
     pointer-events: none;
 }
 
+/* The shell hugs the exact rendered width of the floating topbar. */
+.nav-shell {
+    position: relative;
+    width: fit-content;
+    max-width: 95%;
+    pointer-events: none;
+}
+
+.palette-drawer-accordion {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+        max-height 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.18s ease;
+}
+
+.palette-drawer-accordion.open {
+    max-height: 420px;
+    opacity: 1;
+    transition:
+        max-height 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease 0.08s;
+}
+
+.drawer-inner {
+    padding: 0.8rem 1.5rem 1.2rem;
+    border-top: 1px solid rgba(var(--highlight-color-rgb, 255, 255, 255), 0.12);
+}
+
+
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.drawer-title {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--color);
+    font-weight: 600;
+}
+
+.header-icon {
+    color: var(--highlight-color);
+}
+
+.active-badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0.1rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.palette-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.palette-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--highlight-color-rgb), 0.45);
+    background: rgba(var(--highlight-color-rgb), 0.08);
+}
+
+.palette-card.selected {
+    border-color: var(--highlight-color);
+    background: rgba(var(--highlight-color-rgb), 0.12);
+}
+
+.swatch-bubble {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 50%;
+}
+
+.palette-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.15rem;
+}
+
+.palette-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.palette-tag {
+    font-size: 0.72rem;
+}
+
+.check-icon {
+    margin-left: auto;
+    color: var(--highlight-color);
+}
+
 .floating-nav {
+    position: relative;
+    z-index: 2;
     pointer-events: auto;
     background: rgba(var(--card-background-color-rgb), 0.85);
-    /* Slightly more opaque */
-    /* background: var(--card-background-color); REMOVED to enable transparency */
-    padding: 1rem 2.5rem;
-    /* Increased padding */
     border-radius: 100px;
+    /* Transitions to rectangular bottom when drawer opens */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    max-width: 95%;
+    overflow: hidden;
+    transition: border-radius 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &.drawer-active {
+        border-radius: 30px 30px 22px 22px;
+    }
+}
+
+/* Inner row that holds brand/nav/controls */
+.nav-row {
     display: flex;
     align-items: center;
     gap: 3rem;
-    /* Increased gap */
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    /* More subtle */
-    backdrop-filter: blur(15px);
-    max-width: 95%;
+    padding: 1rem 2.5rem;
+    flex-shrink: 0;
 }
 
 .brand {
@@ -127,11 +267,18 @@
     }
 
     .floating-nav {
-        padding: 0.8rem 1.5rem; /* Reduced padding for mobile */
-        gap: 1rem; /* Reduced gap */
         width: 90%;
         max-width: 100%;
         border-radius: 100px;
+
+        &.drawer-active {
+            border-radius: 24px 24px 18px 18px;
+        }
+    }
+
+    .nav-row {
+        padding: 0.8rem 1.5rem;
+        gap: 1rem;
     }
 
     .nav-container {
@@ -184,6 +331,25 @@
         display: flex;
         gap: 0.8rem;
         flex-shrink: 0;
+    }
+
+    .nav-shell {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .floating-nav {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .drawer-inner {
+        padding: 0 1rem 1rem;
+    }
+
+    .palette-grid {
+        grid-template-columns: 1fr;
+        max-height: 220px;
     }
 
     .icon-btn {
