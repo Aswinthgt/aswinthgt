@@ -27,36 +27,34 @@
       <!-- Accordion section — inside the floating nav for perfectly matched edges -->
       <div class="palette-drawer-accordion" [class.open]="isPaletteOpen">
         <div class="drawer-inner">
+
+          <!-- Header row: dot + label | active badge -->
           <div class="drawer-header">
-            <div class="drawer-title">
-              <mat-icon class="header-icon">palette</mat-icon>
-              <span>Catppuccin Palettes</span>
+            <div class="drawer-label-group">
+              <span class="drawer-dot" [style.background]="commonService.currentTheme.previewColor"></span>
+              <span class="drawer-label">CATPPUCCIN PALETTE</span>
             </div>
-            <span class="active-badge" [style.color]="commonService.currentTheme.previewColor">
-              {{commonService.currentTheme.value}} Active
+            <span class="drawer-active-pill" [style.border-color]="commonService.currentTheme.previewColor" [style.color]="commonService.currentTheme.previewColor">
+              {{ commonService.currentTheme.value }}
             </span>
           </div>
 
+          <!-- 3-column pill grid -->
           <div class="palette-grid">
             @for(pallete of colorGalaries; track $index){
-              <div class="palette-card"
-                   [class.selected]="commonService.currentTheme.value === pallete.value"
-                   (click)="setColorPallete(pallete, $event)">
-                <span class="swatch-bubble"
-                      [style.background-color]="pallete.previewColor"
-                      [style.box-shadow]="'0 0 10px ' + pallete.previewColor"></span>
-                <div class="palette-info">
-                  <span class="palette-name">{{pallete.value}}</span>
-                  @if(pallete.badge) {
-                    <span class="palette-tag" [style.color]="pallete.previewColor">{{pallete.badge}}</span>
-                  }
-                </div>
+              <button class="palette-pill"
+                      [class.selected]="commonService.currentTheme.value === pallete.value"
+                      [style.--pill-color]="pallete.previewColor"
+                      (click)="setColorPallete(pallete, $event)">
+                <span class="pill-dot" [style.background]="pallete.previewColor"></span>
+                <span class="pill-name">{{ pallete.value }}</span>
                 @if(commonService.currentTheme.value === pallete.value) {
-                  <mat-icon class="check-icon">check_circle</mat-icon>
+                  <mat-icon class="pill-check">check</mat-icon>
                 }
-              </div>
+              </button>
             }
           </div>
+
         </div>
       </div>
 
