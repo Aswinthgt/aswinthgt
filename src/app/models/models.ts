@@ -31,7 +31,9 @@ export interface Navigate {
 export interface ThemePallete {
   value: string,
   dark: string,
-  light: string
+  light: string,
+  previewColor?: string,
+  badge?: string
 }
 
 

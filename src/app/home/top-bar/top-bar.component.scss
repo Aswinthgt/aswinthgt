@@ -17,7 +17,6 @@
 
 .navbar-wrapper {
     position: relative;
-    /* Relative to fixed host */
     top: 2rem;
     width: 100%;
     display: flex;
@@ -25,23 +24,172 @@
     pointer-events: none;
 }
 
+/* The shell hugs the exact rendered width of the floating topbar. */
+.nav-shell {
+    position: relative;
+    width: fit-content;
+    max-width: 95%;
+    pointer-events: none;
+}
+
+.palette-drawer-accordion {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+        max-height 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.18s ease;
+}
+
+.palette-drawer-accordion.open {
+    max-height: 420px;
+    opacity: 1;
+    transition:
+        max-height 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease 0.08s;
+}
+
+.drawer-inner {
+    padding: 0.8rem 1.5rem 1.2rem;
+    border-top: 1px solid rgba(var(--highlight-color-rgb, 255, 255, 255), 0.12);
+}
+
+/* ── Drawer header ── */
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.drawer-label-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.drawer-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.drawer-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
+
+.drawer-active-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ── 3-column pill grid ── */
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+}
+
+.palette-pill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    min-width: 0;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.18s ease;
+    outline: none;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.22);
+        transform: translateY(-1px);
+    }
+
+    &.selected {
+        border-color: var(--pill-color, var(--highlight-color));
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.pill-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    .palette-pill:hover & {
+        transform: scale(1.25);
+    }
+}
+
+.pill-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+}
+
+.pill-check {
+    font-size: 0.85rem !important;
+    width: 0.85rem !important;
+    height: 0.85rem !important;
+    flex-shrink: 0;
+    color: var(--color);
+    margin-left: auto;
+    opacity: 0.9;
+}
+
 .floating-nav {
+    position: relative;
+    z-index: 2;
     pointer-events: auto;
     background: rgba(var(--card-background-color-rgb), 0.85);
-    /* Slightly more opaque */
-    /* background: var(--card-background-color); REMOVED to enable transparency */
-    padding: 1rem 2.5rem;
-    /* Increased padding */
     border-radius: 100px;
+    /* Transitions to rectangular bottom when drawer opens */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    max-width: 95%;
+    overflow: hidden;
+    transition: border-radius 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &.drawer-active {
+        border-radius: 30px 30px 22px 22px;
+    }
+}
+
+/* Inner row that holds brand/nav/controls */
+.nav-row {
     display: flex;
     align-items: center;
     gap: 3rem;
-    /* Increased gap */
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    /* More subtle */
-    backdrop-filter: blur(15px);
-    max-width: 95%;
+    padding: 1rem 2.5rem;
+    flex-shrink: 0;
 }
 
 .brand {
@@ -127,11 +275,18 @@
     }
 
     .floating-nav {
-        padding: 0.8rem 1.5rem; /* Reduced padding for mobile */
-        gap: 1rem; /* Reduced gap */
         width: 90%;
         max-width: 100%;
         border-radius: 100px;
+
+        &.drawer-active {
+            border-radius: 24px 24px 18px 18px;
+        }
+    }
+
+    .nav-row {
+        padding: 0.8rem 1.5rem;
+        gap: 1rem;
     }
 
     .nav-container {
@@ -184,6 +339,24 @@
         display: flex;
         gap: 0.8rem;
         flex-shrink: 0;
+    }
+
+    .nav-shell {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .floating-nav {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .drawer-inner {
+        padding: 0 1rem 1rem;
+    }
+
+    .palette-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .icon-btn {
