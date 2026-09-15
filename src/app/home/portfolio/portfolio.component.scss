@@ -280,4 +280,21 @@
     &:hover mat-icon {
         transform: translateX(5px);
     }
+
+    &:disabled,
+    &.disabled-btn {
+        background: none;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: var(--secondary-color);
+        color: var(--secondary-color);
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+
+        mat-icon {
+            -webkit-text-fill-color: var(--secondary-color);
+            color: var(--secondary-color);
+            transform: none !important;
+        }
+    }
 }

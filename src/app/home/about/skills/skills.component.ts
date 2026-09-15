@@ -28,6 +28,7 @@ export class SkillsComponent {
     {
       title: 'AI Agents & Frameworks',
       icons: [
+        { iconUrl: 'images/hermes-agent.png', iconName: 'Hermes Agent', percentage: 85 },
         { iconUrl: 'https://avatars.githubusercontent.com/u/126733545?s=200&v=4', iconName: 'LangChain', percentage: 85 },
         { iconUrl: 'https://github.com/genkit-ai/genkit/raw/main/docs/resources/genkit-logo-dark.png', iconName: 'Firebase Genkit', percentage: 80 },
         { iconUrl: 'https://opencode.ai/_build/assets/preview-opencode-wordmark-simple-light-JrIbT-1j.png', iconName: 'OpenCode', percentage: 90 },

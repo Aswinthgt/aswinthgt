@@ -46,11 +46,18 @@ export class PortfolioComponent implements OnInit {
           head: "Fintech AI Model",
           body: "A private fine-tuned model ('aswinth37/fintech-ai-model'). Created by crawling all pages of fintech.com to build a 98K dataset, ensuring the model possesses deep domain knowledge about the website.",
           url: "https://huggingface.co/aswinth37/fintech-ai-model",
-          backGroundImage: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+          backGroundImage: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+          isPrivate: true
         }
       ];
 
       this.portfolioData = [
+        {
+          head: "remote-coding-mcp",
+          body: "A zero-config MCP server that lets any AI (Gemini, Claude, GPT, etc.) read and write code directly on your machine — over the internet.",
+          url: "https://www.npmjs.com/package/remote-coding-mcp",
+          backGroundImage: "images/npm.jpg",
+        },
         {
           head: "Smoky AI Agent",
           body: "AI-powered coding assistant for VS Code with Copilot SDK, local LLM, and MCP tool support.",

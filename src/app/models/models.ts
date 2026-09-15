@@ -10,7 +10,8 @@ export interface PortfolioData {
   head: string,
   body: string,
   url: string,
-  backGroundImage: string
+  backGroundImage: string,
+  isPrivate?: boolean
 }
 
 export interface Experience {
