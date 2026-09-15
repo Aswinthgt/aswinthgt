@@ -45,9 +45,15 @@
                 }
             </div>
             <div class="ai-model-footer">
+                @if (content.isPrivate) {
+                <button [disabled]="true" class="view-btn ai-view-btn font-alegreya-sans disabled-btn" title="Private Model - Access Restricted">
+                    Explore Model <mat-icon>lock</mat-icon>
+                </button>
+                } @else {
                 <button matRipple (click)="goTo(content.url)" class="view-btn ai-view-btn font-alegreya-sans">
                     Explore Model <mat-icon>arrow_forward</mat-icon>
                 </button>
+                }
             </div>
         </div>
         }

@@ -73,6 +73,7 @@ AI & Machine Learning:
 - Fine-Tuning AI Models (PEFT LoRA adapters)
 
 AI Agents & Frameworks:
+- Hermes Agent
 - LangChain
 - Firebase Genkit
 - OpenCode
@@ -153,18 +154,22 @@ OPEN SOURCE & PROJECTS
 - A private fine-tuned model ('aswinth37/fintech-ai-model'). 
 - Created by crawling all pages of fintech.com to build a 98K dataset, ensuring deep domain knowledge.
 
-3) Smoky AI Agent
+3) remote-coding-mcp
+- A zero-config MCP server (npm package) that lets any AI (Gemini, Claude, GPT, etc.) read and write code directly on your machine over the internet.
+- Published on npm and GitHub.
+
+4) Smoky AI Agent
 - AI-powered coding assistant for VS Code with Copilot SDK, local LLM, and MCP tool support.
 - Published on VS Code marketplace.
 
-4) Replace Env Variables Task
+5) Replace Env Variables Task
 - Azure DevOps custom task that replaces placeholders in a file with values from pipeline/environment variables. 
 - Published on Visual Studio Marketplace.
 
-5) agt360image-view
+6) agt360image-view
 - Angular component (npm package) for displaying and interacting with 360-degree images.
 
-6) agtcalendar
+7) agtcalendar
 - npm package to view the calendar view in your Project.
 
 --------------------------------
